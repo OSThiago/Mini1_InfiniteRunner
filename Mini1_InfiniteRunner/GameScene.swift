@@ -11,6 +11,10 @@ import GameplayKit
 class GameScene: SKScene {
     // Propriedades globais
     
+    override init(size: CGSize) {
+        super.init(size: size)
+    }
+    
     override func didMove(to view: SKView) {
         
     }
@@ -18,5 +22,10 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+    }
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
