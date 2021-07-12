@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Mini1_InfiniteRunner
 //
-//  Created by Thiago de Oliveira Sousa on 12/07/21.
+//  Created by Team 10 on 12/07/21.
 //
 
 import UIKit

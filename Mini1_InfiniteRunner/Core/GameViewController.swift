@@ -2,7 +2,7 @@
 //  GameViewController.swift
 //  Mini1_InfiniteRunner
 //
-//  Created by Thiago de Oliveira Sousa on 12/07/21.
+//  Created by Team 10 on 12/07/21.
 //
 
 import UIKit
@@ -15,22 +15,24 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
+            // Definindo o tamanho do view com a base no tamanho do frame da tela
+            let scene = GameScene(size: view.frame.size)
+            
+            // Preenche toda a cena
+            scene.scaleMode = .aspectFill
+            
+            //Apresentando a cena na view
+            view.presentScene(scene)
             
             view.ignoresSiblingOrder = true
             
             view.showsFPS = true
             view.showsNodeCount = true
+            
         }
     }
-
+    
+    // Methodos para suportar a rotação na tela no sentido horizontal
     override var shouldAutorotate: Bool {
         return true
     }
@@ -46,4 +48,5 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
 }

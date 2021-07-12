@@ -58,16 +58,64 @@
 		9E7F7A93269CFFDE0062CC06 /* Mini1_InfiniteRunner */ = {
 			isa = PBXGroup;
 			children = (
-				9E7F7A94269CFFDE0062CC06 /* AppDelegate.swift */,
-				9E7F7A96269CFFDE0062CC06 /* GameScene.sks */,
-				9E7F7A98269CFFDE0062CC06 /* Actions.sks */,
 				9E7F7A9A269CFFDE0062CC06 /* GameScene.swift */,
-				9E7F7A9C269CFFDE0062CC06 /* GameViewController.swift */,
-				9E7F7A9E269CFFDE0062CC06 /* Main.storyboard */,
+				9E7F7AAE269D01A70062CC06 /* Layers */,
+				9E7F7AAD269D01960062CC06 /* Entities */,
+				9E7F7AAA269D013E0062CC06 /* Resources */,
+				9E7F7AA9269D00B90062CC06 /* Core */,
 				9E7F7AA1269CFFE10062CC06 /* Assets.xcassets */,
 				9E7F7AA3269CFFE10062CC06 /* Info.plist */,
 			);
 			path = Mini1_InfiniteRunner;
+			sourceTree = "<group>";
+		};
+		9E7F7AA9269D00B90062CC06 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9E7F7AAC269D016E0062CC06 /* Extensions */,
+				9E7F7A94269CFFDE0062CC06 /* AppDelegate.swift */,
+				9E7F7A96269CFFDE0062CC06 /* GameScene.sks */,
+				9E7F7A98269CFFDE0062CC06 /* Actions.sks */,
+				9E7F7A9C269CFFDE0062CC06 /* GameViewController.swift */,
+				9E7F7A9E269CFFDE0062CC06 /* Main.storyboard */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		9E7F7AAA269D013E0062CC06 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9E7F7AAB269D01590062CC06 /* Sounds */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9E7F7AAB269D01590062CC06 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		9E7F7AAC269D016E0062CC06 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9E7F7AAD269D01960062CC06 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		9E7F7AAE269D01A70062CC06 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Layers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,7 +340,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.team10.Mini1-InfiniteRunner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -311,7 +359,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.team10.Mini1-InfiniteRunner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
