@@ -11,6 +11,10 @@ import GameplayKit
 class GameScene: SKScene {
     // Propriedades globais
     
+    /*
+     oi minha florzinha
+     */
+    
     override func didMove(to view: SKView) {
         
     }
