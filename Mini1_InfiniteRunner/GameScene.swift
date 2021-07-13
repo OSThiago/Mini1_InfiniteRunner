@@ -13,10 +13,19 @@ class GameScene: SKScene {
     
     override init(size: CGSize) {
         super.init(size: size)
+        
+        //Criando a geração de chão(criação e movimentação)
+        generateGrounds(time: 2)
+        
+        //marcos lindo
     }
+
+    
+    
     
     override func didMove(to view: SKView) {
         
+        addSwipeGestureRecognizers()
     }
     
     
