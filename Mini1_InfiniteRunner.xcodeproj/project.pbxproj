@@ -64,8 +64,6 @@
 		9E7F7A93269CFFDE0062CC06 /* Mini1_InfiniteRunner */ = {
 			isa = PBXGroup;
 			children = (
-				9C96E97A269E45DA0044B930 /* GameScene+Generations.swift */,
-				9C96E976269E459F0044B930 /* GameScene+Mechanics.swift */,
 				9E7F7A9A269CFFDE0062CC06 /* GameScene.swift */,
 				9E7F7AAE269D01A70062CC06 /* Layers */,
 				9E7F7AAD269D01960062CC06 /* Entities */,
@@ -108,6 +106,8 @@
 		9E7F7AAC269D016E0062CC06 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9C96E97A269E45DA0044B930 /* GameScene+Generations.swift */,
+				9C96E976269E459F0044B930 /* GameScene+Mechanics.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
