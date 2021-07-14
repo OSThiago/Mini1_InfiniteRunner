@@ -23,7 +23,7 @@ extension GameScene{
     }
     
     @objc func handleSwipe(gesture: UISwipeGestureRecognizer){
-        // Faz um ação de acordo com a direcao do gesto
+        // Faz uma ação de acordo com a direcao do gesto
         switch gesture.direction {
         case .up:
             print("SwipeUP")

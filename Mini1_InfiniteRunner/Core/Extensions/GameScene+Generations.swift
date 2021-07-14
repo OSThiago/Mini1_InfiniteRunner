@@ -9,6 +9,7 @@ import SpriteKit
 
 extension GameScene{
     
+    
     //Função para criar o chão, com posição inicial
     func createGround(position: CGPoint)->SKSpriteNode{
         //Criação do chão com base em um arquivo
@@ -16,7 +17,7 @@ extension GameScene{
         
         //Definindo as escalas de acordo com o tamnho da tela
         ground.yScale = 0.05
-        ground.xScale = 0.15
+        ground.xScale = 0.20
         
         //Definindo o nome para a variável
         ground.name = "Ground"
@@ -40,7 +41,7 @@ extension GameScene{
     //Funcão para gerar o chão com base em um tempo
     func generateGrounds(time: TimeInterval){
         //Definindo a posição inicial na tela para gerar o chão
-        let initialPosition = CGPoint(x: size.width*2, y: size.height*0.5)
+        let initialPosition = CGPoint(x: size.width*1.5, y: size.height*0.5)
         
         //Atribuindo uma ação ao chão
         let groundCreated = SKAction.run {
@@ -51,7 +52,7 @@ extension GameScene{
             self.addChild(ground)
             
             //Colocando o chão para se mover
-            self.moveGround(node: ground)
+            self.moveGround(node: ground, time: time)
         }
         
         //Tempo de espera entre criação dos nodes
@@ -70,9 +71,14 @@ extension GameScene{
     
     
     //Função para fazer a movimentação do chão
-    func moveGround(node: SKSpriteNode){
+    func moveGround(node: SKSpriteNode, time: TimeInterval){
         //Atribuindo a posição inicial até um ponto específico e o tempo para a movimentação
-        let moveAction = SKAction.moveBy(x: size.width*(-2.8), y: 0, duration: 8)
+        
+        // Esse mutiplicador server para encaixar a geração do chão ao mesmo tempo da velocidade que ele anda
+        // gambiarra
+        let multiplier = 3.9
+        
+        let moveAction = SKAction.moveBy(x: size.width*(-2.8), y: 0, duration: time*multiplier)
         
         //Criando a remoção do node(chão)
         let removeNode = SKAction.removeFromParent()
@@ -82,6 +88,21 @@ extension GameScene{
         
         //Inicializando a repetição para a remoção
         node.run(removeSequence)
+    }
+    
+    func initialGround(timeSpeed: TimeInterval) {
+ 
+        // Posição inicila no centro da tela
+        let initialPosition = CGPoint(x: size.width*0.5, y: size.height*0.5)
         
+        //Criando o chão
+        let ground = self.createGround(position: initialPosition)
+            
+        //Adicionando o chão na tela
+        self.addChild(ground)
+            
+        //Colocando o chão para se mover
+        self.moveGround(node: ground, time: timeSpeed)
+    
     }
 }

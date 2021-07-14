@@ -21,7 +21,7 @@
 
 /* Begin PBXFileReference section */
 		9C96E976269E459F0044B930 /* GameScene+Mechanics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Mechanics.swift"; sourceTree = "<group>"; };
-		9C96E97A269E45DA0044B930 /* GameScene+Generations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Generations.swift"; sourceTree = "<group>"; };
+		9C96E97A269E45DA0044B930 /* GameScene+Generations.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = "GameScene+Generations.swift"; sourceTree = "<group>"; };
 		9E7F7A91269CFFDE0062CC06 /* Mini1_InfiniteRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mini1_InfiniteRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E7F7A94269CFFDE0062CC06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E7F7A96269CFFDE0062CC06 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
