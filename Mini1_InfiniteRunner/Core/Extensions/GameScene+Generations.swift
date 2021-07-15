@@ -39,6 +39,9 @@ extension GameScene{
      
      //Funcão para gerar o chão com base em um tempo
      func generateGrounds(time: TimeInterval){
+          
+          initialGround(time: time)
+          
           //Definindo a posição inicial na tela para gerar o chão
           let initialPosition = CGPoint(x: size.width*1.5, y: size.height*0.5)
           
