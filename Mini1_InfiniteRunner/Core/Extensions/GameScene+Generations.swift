@@ -13,13 +13,13 @@ extension GameScene{
      //Função para criar o chão, com posição inicial
      func createGround(position: CGPoint)->SKSpriteNode{
           //Criação do chão com base em um arquivo
-          let ground = SKSpriteNode(imageNamed: "Ground")
+          let ground = SKSpriteNode(imageNamed: "Ground2")
           
           //Definindo as escalas de acordo com o tamnho da tela
           ground.setScale(2.5)
           
           //Definindo o nome para a variável
-          ground.name = "Ground"
+          ground.name = "Ground2"
           
           //Definindo a posição com base na referência
           ground.position = position
