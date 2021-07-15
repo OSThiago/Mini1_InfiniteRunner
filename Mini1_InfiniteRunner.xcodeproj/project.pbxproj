@@ -17,6 +17,7 @@
 		9E7F7AA0269CFFDE0062CC06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E7F7A9E269CFFDE0062CC06 /* Main.storyboard */; };
 		9E7F7AA2269CFFE10062CC06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E7F7AA1269CFFE10062CC06 /* Assets.xcassets */; };
 		9E7F7AB0269D0F060062CC06 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7F7AAF269D0F060062CC06 /* Player.swift */; };
+		9E8407C6269FDB9300846CE3 /* GameScene+BackGrounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8407C5269FDB9300846CE3 /* GameScene+BackGrounds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		9E7F7AA1269CFFE10062CC06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E7F7AA3269CFFE10062CC06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E7F7AAF269D0F060062CC06 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		9E8407C5269FDB9300846CE3 /* GameScene+BackGrounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+BackGrounds.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				9C96E97A269E45DA0044B930 /* GameScene+Generations.swift */,
 				9C96E976269E459F0044B930 /* GameScene+Mechanics.swift */,
+				9E8407C5269FDB9300846CE3 /* GameScene+BackGrounds.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			files = (
 				9E7F7AB0269D0F060062CC06 /* Player.swift in Sources */,
 				9E7F7A9B269CFFDE0062CC06 /* GameScene.swift in Sources */,
+				9E8407C6269FDB9300846CE3 /* GameScene+BackGrounds.swift in Sources */,
 				9C96E97B269E45DA0044B930 /* GameScene+Generations.swift in Sources */,
 				9E7F7A9D269CFFDE0062CC06 /* GameViewController.swift in Sources */,
 				9C96E977269E459F0044B930 /* GameScene+Mechanics.swift in Sources */,
