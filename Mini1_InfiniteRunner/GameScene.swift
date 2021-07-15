@@ -15,7 +15,7 @@ class GameScene: SKScene {
         super.init(size: size)
         
         //Criando a geração de chão(criação e movimentação)
-        initialGround(timeSpeed: 3.0)
+        initialGround(time: 3.0)
         generateGrounds(time: 3.0)
         
         //marcos lindo
