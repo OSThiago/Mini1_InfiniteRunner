@@ -17,8 +17,7 @@ class GameViewController: UIViewController {
         if let view = self.view as! SKView? {
             // Definindo o tamanho do view com a base no tamanho do frame da tela
             let scene = GameScene(size: view.frame.size)
-
-           // let tile = SKTileMapNode(fileNamed: "GameScene.sks")
+            
             // Preenche toda a cena
             scene.scaleMode = .aspectFill
             
@@ -26,7 +25,6 @@ class GameViewController: UIViewController {
             view.presentScene(scene)
             
             view.ignoresSiblingOrder = true
-            
             view.showsFPS = true
             view.showsNodeCount = true
             

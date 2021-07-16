@@ -11,13 +11,27 @@ import GameplayKit
 class GameScene: SKScene {
     // Propriedades globais
     
+    let player = Player(imageName: "Personagem_lado")
+    
     override init(size: CGSize) {
         super.init(size: size)
+        
+        self.physicsWorld.contactDelegate = self
         
         //Criando a geração de chão(criação e movimentação)
         generateGrounds(time: 2.0)
         
+        // Adicionando o Player a cena
+        let initalPosition = CGPoint(x: size.width*0.5, y: size.height*0.8)
+        
+        self.addChild(player.getNode())
+        player.setPosition(position: initalPosition)
+        
         parallax()
+        // Adicionando inimigos a cena
+        generatEnemys(time: 2.0)
+        
+        
         
     }
 

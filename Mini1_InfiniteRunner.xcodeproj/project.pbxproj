@@ -18,6 +18,8 @@
 		9E7F7AA2269CFFE10062CC06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E7F7AA1269CFFE10062CC06 /* Assets.xcassets */; };
 		9E7F7AB0269D0F060062CC06 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7F7AAF269D0F060062CC06 /* Player.swift */; };
 		9E8407C6269FDB9300846CE3 /* GameScene+BackGrounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8407C5269FDB9300846CE3 /* GameScene+BackGrounds.swift */; };
+		9E906A5426A1D68E0026B7A7 /* GameScene+Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E906A5326A1D68E0026B7A7 /* GameScene+Physics.swift */; };
+		9E906A5626A1D6E50026B7A7 /* GameScene+EnemyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E906A5526A1D6E50026B7A7 /* GameScene+EnemyGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		9E7F7AA3269CFFE10062CC06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E7F7AAF269D0F060062CC06 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		9E8407C5269FDB9300846CE3 /* GameScene+BackGrounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+BackGrounds.swift"; sourceTree = "<group>"; };
+		9E906A5326A1D68E0026B7A7 /* GameScene+Physics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Physics.swift"; sourceTree = "<group>"; };
+		9E906A5526A1D6E50026B7A7 /* GameScene+EnemyGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+EnemyGenerator.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				9E7F7A9A269CFFDE0062CC06 /* GameScene.swift */,
-				9E7F7AAE269D01A70062CC06 /* Layers */,
 				9E7F7AAD269D01960062CC06 /* Entities */,
 				9E7F7AAA269D013E0062CC06 /* Resources */,
 				9E7F7AA9269D00B90062CC06 /* Core */,
@@ -81,11 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				9E7F7AAC269D016E0062CC06 /* Extensions */,
-				9E7F7A94269CFFDE0062CC06 /* AppDelegate.swift */,
-				9E7F7A96269CFFDE0062CC06 /* GameScene.sks */,
-				9E7F7A98269CFFDE0062CC06 /* Actions.sks */,
-				9E7F7A9C269CFFDE0062CC06 /* GameViewController.swift */,
-				9E7F7A9E269CFFDE0062CC06 /* Main.storyboard */,
+				9E906A5726A1D7D50026B7A7 /* Others */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -108,9 +107,11 @@
 		9E7F7AAC269D016E0062CC06 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9C96E97A269E45DA0044B930 /* GameScene+Generations.swift */,
 				9C96E976269E459F0044B930 /* GameScene+Mechanics.swift */,
+				9E906A5326A1D68E0026B7A7 /* GameScene+Physics.swift */,
+				9C96E97A269E45DA0044B930 /* GameScene+Generations.swift */,
 				9E8407C5269FDB9300846CE3 /* GameScene+BackGrounds.swift */,
+				9E906A5526A1D6E50026B7A7 /* GameScene+EnemyGenerator.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -123,11 +124,16 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		9E7F7AAE269D01A70062CC06 /* Layers */ = {
+		9E906A5726A1D7D50026B7A7 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				9E7F7A94269CFFDE0062CC06 /* AppDelegate.swift */,
+				9E7F7A96269CFFDE0062CC06 /* GameScene.sks */,
+				9E7F7A98269CFFDE0062CC06 /* Actions.sks */,
+				9E7F7A9C269CFFDE0062CC06 /* GameViewController.swift */,
+				9E7F7A9E269CFFDE0062CC06 /* Main.storyboard */,
 			);
-			path = Layers;
+			path = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E906A5426A1D68E0026B7A7 /* GameScene+Physics.swift in Sources */,
 				9E7F7AB0269D0F060062CC06 /* Player.swift in Sources */,
 				9E7F7A9B269CFFDE0062CC06 /* GameScene.swift in Sources */,
 				9E8407C6269FDB9300846CE3 /* GameScene+BackGrounds.swift in Sources */,
@@ -208,6 +215,7 @@
 				9E7F7A9D269CFFDE0062CC06 /* GameViewController.swift in Sources */,
 				9C96E977269E459F0044B930 /* GameScene+Mechanics.swift in Sources */,
 				9E7F7A95269CFFDE0062CC06 /* AppDelegate.swift in Sources */,
+				9E906A5626A1D6E50026B7A7 /* GameScene+EnemyGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

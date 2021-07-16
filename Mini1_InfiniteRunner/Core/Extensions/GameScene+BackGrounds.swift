@@ -2,7 +2,7 @@
 //  GameScene+BackGrounds.swift
 //  Mini1_InfiniteRunner
 //
-//  Created by Thiago de Oliveira Sousa on 14/07/21.
+//  Created by Team 10 on 14/07/21.
 //
 
 import SpriteKit

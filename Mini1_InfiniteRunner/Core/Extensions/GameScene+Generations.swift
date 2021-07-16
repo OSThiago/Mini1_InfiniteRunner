@@ -2,7 +2,7 @@
 //  GameScene+Generations.swift
 //  Mini1_InfiniteRunner
 //
-//  Created by Team10 on 13/07/21.
+//  Created by Team 10 on 13/07/21.
 //
 
 import SpriteKit
