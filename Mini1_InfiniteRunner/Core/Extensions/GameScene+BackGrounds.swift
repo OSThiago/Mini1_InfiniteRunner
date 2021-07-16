@@ -12,18 +12,16 @@ extension GameScene {
     // Efeito parallax no backGround
     func parallax() {
         
-        let initialPosition = CGPoint(x: size.width*0.50, y: size.height*0.50)
-        
-        let background = createBackGround(imageName: "plx-1", position: initialPosition, deph: -4)
-        
-        self.addChild(background)
-        
-        
         initialsBackGrounds()
         
-        generationBackGrounds(time: 6, imageName: "plx-2", deph: -3)
-        generationBackGrounds(time: 4, imageName: "plx-3", deph: -2)
-        generationBackGrounds(time: 3, imageName: "plx-4", deph: -1)
+        
+       // generationBackGrounds(time: 0, imageName: "plx-3", deph: -7)
+        generationBackGrounds(time: 70, imageName: "plx-2", deph: -6)
+        generationBackGrounds(time: 45, imageName: "plx-4", deph: -5)
+        generationBackGrounds(time: 27, imageName: "plx-5", deph: -4)
+        generationBackGrounds(time: 17, imageName: "plx-6", deph: -3)
+        generationBackGrounds(time: 3, imageName: "plx-7", deph: -2)
+       
         
     }
     
@@ -31,17 +29,39 @@ extension GameScene {
     func initialsBackGrounds() {
         let initialPosition = CGPoint(x: size.width*0.5, y: size.height*0.5)
         
-        let backGround1 = createBackGround(imageName: "plx-2", position: initialPosition, deph: -3)
-        self.addChild(backGround1)
-        moveBackGround(node: backGround1, timeSpeed: 6)
         
-        let backGround2 = createBackGround(imageName: "plx-3", position: initialPosition, deph: -2)
-        moveBackGround(node: backGround2, timeSpeed: 4)
+        let background = createBackGround(imageName: "plx-1", position: initialPosition, deph: -9)
+        let backGround1 = createBackGround(imageName: "plx-3", position: initialPosition, deph: -7)
+        self.addChild(background)
+        self.addChild(backGround1)
+//        let backGround1 = createBackGround(imageName: "plx-3", position: initialPosition, deph: -7)
+//
+//        moveBackGround(node: backGround1, timeSpeed: 70)
+//
+        let backGround2 = createBackGround(imageName: "plx-2", position: initialPosition, deph: -6)
+        moveBackGround(node: backGround2, timeSpeed: 70)
         self.addChild(backGround2)
         
-        let backGround3 = createBackGround(imageName: "plx-4", position: initialPosition, deph: -1)
-        moveBackGround(node: backGround3, timeSpeed: 3)
+        let backGround3 = createBackGround(imageName: "plx-4", position: initialPosition, deph: -5)
+        moveBackGround(node: backGround3, timeSpeed: 45)
         self.addChild(backGround3)
+        
+        let backGround4 = createBackGround(imageName: "plx-5", position: initialPosition, deph: -4)
+        moveBackGround(node: backGround4, timeSpeed: 27)
+        self.addChild(backGround4)
+
+        let backGround5 = createBackGround(imageName: "plx-6", position: initialPosition, deph: -3)
+        moveBackGround(node: backGround5, timeSpeed: 17)
+        self.addChild(backGround5)
+
+        let backGround6 = createBackGround(imageName: "plx-7", position: initialPosition, deph: -2)
+        moveBackGround(node: backGround6, timeSpeed: 3)
+        self.addChild(backGround6)
+        
+        
+
+
+        
     }
     
     
