@@ -15,6 +15,8 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
+            
+            
             // Definindo o tamanho do view com a base no tamanho do frame da tela
             let scene = GameScene(size: view.frame.size)
             
