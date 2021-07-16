@@ -32,7 +32,7 @@ class GameScene: SKScene {
         generatEnemys(time: 2.0)
         
         
-        
+        pauseButton()
     }
 
     
@@ -41,6 +41,28 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         
         addSwipeGestureRecognizers()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches{
+            let location = touch.location(in: self)
+            if let node = self.atPoint(location) as? SKSpriteNode{
+                if (node.name == "pauseButton"){
+                    self.scene?.view?.isPaused = true
+                }
+                if(node.name != "pauseButton"){
+                    self.scene?.view?.isPaused = false
+                }
+            }
+        }
+    }
+    
+    func pauseButton(){
+        let pauseButton = SKSpriteNode(imageNamed: "pauseButton")
+        pauseButton.name = "pauseButton"
+        pauseButton.position = CGPoint(x: 807, y: 356)
+        pauseButton.size = CGSize(width: 35, height: 35)
+        addChild(pauseButton)
     }
     
     

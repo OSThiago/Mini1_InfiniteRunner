@@ -9,7 +9,7 @@ import SpriteKit
 
 extension GameScene{
     
-     
+     //tiago lindo
      //Função para criar o chão, com posição inicial
      func createGround(position: CGPoint)->SKSpriteNode{
           //Criação do chão com base em um arquivo
