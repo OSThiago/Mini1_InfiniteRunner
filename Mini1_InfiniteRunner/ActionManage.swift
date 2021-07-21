@@ -37,10 +37,10 @@ class ActionManage{
         
         guard let scene = getScene(toScene) else{ return }
         if let transition = transition{
-            scene.scaleMode = .resizeFill
+            scene.scaleMode = .aspectFill
             fromScene.view?.presentScene(scene, transition: transition)
         }else{
-            scene.scaleMode = .resizeFill
+            scene.scaleMode = .aspectFill
             fromScene.view?.presentScene(scene)
         }
     }
@@ -48,7 +48,7 @@ class ActionManage{
     func getScene(_ sceneType: SceneType) -> SKScene?{
         switch sceneType {
         case SceneType.MainMenuScene:
-            return MainMenuScene(size: CGSize(width: 500, height: 500))
+            return MainMenuScene(size: CGSize(width: 693.0, height: 320.0))
         case SceneType.GameScene:
             return GameScene(size: CGSize(width: 844.0, height: 390.0))
 

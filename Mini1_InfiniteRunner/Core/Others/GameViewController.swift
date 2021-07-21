@@ -19,7 +19,7 @@ class GameViewController: UIViewController {
             
             let menu = MainMenuScene(size: view.frame.size)
             print(view.frame.size)
-            menu.scaleMode = .aspectFill
+            menu.scaleMode = .resizeFill
             view.presentScene(menu)
             
             view.ignoresSiblingOrder = true

@@ -58,7 +58,7 @@ class MainMenuScene: SKScene{
     func configButton(){
         let configButton = SKSpriteNode(imageNamed: "configButton")
         configButton.name = "configButton"
-        configButton.position = CGPoint.init(x: 379, y: 160)
+        configButton.position = CGPoint.init(x: 310, y: 130)
         configButton.size = CGSize(width: 35, height: 35)
         addChild(configButton)
     }
