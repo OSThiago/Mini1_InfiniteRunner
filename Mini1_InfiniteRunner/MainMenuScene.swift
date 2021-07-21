@@ -13,6 +13,7 @@ class MainMenuScene: SKScene{
         print("Dentro do Menu")
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
+        createBackground()
         configButton()
         playButton()
     }
@@ -36,10 +37,20 @@ class MainMenuScene: SKScene{
         }
     }
     
+    func createBackground(){
+        let menuBackground = SKSpriteNode(imageNamed: "leticiah")
+        menuBackground.name = "menuBackground"
+        menuBackground.position = CGPoint.zero
+        menuBackground.size = CGSize(width: 844.0, height: 390.0)
+        menuBackground.zPosition = -1
+        addChild(menuBackground)
+    }
+    
     func playButton(){
         let playButton = SKSpriteNode(imageNamed: "playButton")
         playButton.name = "playButton"
         playButton.position = CGPoint.zero
+        playButton.zPosition = 1
         playButton.size = CGSize(width: 100, height: 100)
         addChild(playButton)
     }

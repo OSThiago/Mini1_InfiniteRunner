@@ -32,6 +32,7 @@ class GameScene: SKScene {
         generatEnemys(time: 2.0)
         
         
+        
         pauseButton()
     }
 

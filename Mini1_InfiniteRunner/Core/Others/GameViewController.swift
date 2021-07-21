@@ -8,6 +8,7 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import GameKit
 
 class GameViewController: UIViewController {
 
@@ -16,22 +17,35 @@ class GameViewController: UIViewController {
         
         if let view = self.view as! SKView? {
             
-            
-            // Definindo o tamanho do view com a base no tamanho do frame da tela
-            let scene = GameScene(size: view.frame.size)
-            
-            // Preenche toda a cena
-            scene.scaleMode = .aspectFill
-            
-            //Apresentando a cena na view
-            view.presentScene(scene)
+            let menu = MainMenuScene(size: view.frame.size)
+            print(view.frame.size)
+            menu.scaleMode = .aspectFill
+            view.presentScene(menu)
             
             view.ignoresSiblingOrder = true
             view.showsFPS = true
             view.showsNodeCount = true
             
+          //  authenticateUser()
+            
         }
     }
+    
+    private func authenticateUser(){
+        let playerGamer = GKLocalPlayer.local
+        
+        playerGamer.authenticateHandler = { viewControler, error in
+            
+            guard error == nil else{
+                print(error?.localizedDescription ?? "")
+                return
+            }
+            if let viewControler = viewControler{
+                self.present(viewControler, animated: true, completion: nil)
+            }
+        }
+    }
+    
     
     // Methodos para suportar a rotação na tela no sentido horizontal
     override var shouldAutorotate: Bool {
@@ -49,5 +63,15 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    
+    @IBAction func scoreButton(_ sender: Any) {
+        
+        
+    }
+    
+    
+    
+    
     
 }

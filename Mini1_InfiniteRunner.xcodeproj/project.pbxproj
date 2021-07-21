@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9C05885026A209A50014AA23 /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C05884F26A209A50014AA23 /* MainMenuScene.swift */; };
 		9C05885226A209D20014AA23 /* ActionManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C05885126A209D20014AA23 /* ActionManage.swift */; };
+		9C05885526A215C70014AA23 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C05885426A215C70014AA23 /* GameKit.framework */; };
 		9C96E977269E459F0044B930 /* GameScene+Mechanics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96E976269E459F0044B930 /* GameScene+Mechanics.swift */; };
 		9C96E97B269E45DA0044B930 /* GameScene+Generations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96E97A269E45DA0044B930 /* GameScene+Generations.swift */; };
 		9E7F7A95269CFFDE0062CC06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7F7A94269CFFDE0062CC06 /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		9C05884F26A209A50014AA23 /* MainMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
 		9C05885126A209D20014AA23 /* ActionManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionManage.swift; sourceTree = "<group>"; };
+		9C05885426A215C70014AA23 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		9C96E976269E459F0044B930 /* GameScene+Mechanics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Mechanics.swift"; sourceTree = "<group>"; };
 		9C96E97A269E45DA0044B930 /* GameScene+Generations.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = "GameScene+Generations.swift"; sourceTree = "<group>"; };
 		9E7F7A91269CFFDE0062CC06 /* Mini1_InfiniteRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mini1_InfiniteRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,17 +51,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C05885526A215C70014AA23 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C05885326A215C70014AA23 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C05885426A215C70014AA23 /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9E7F7A88269CFFDE0062CC06 = {
 			isa = PBXGroup;
 			children = (
 				9E7F7A93269CFFDE0062CC06 /* Mini1_InfiniteRunner */,
 				9E7F7A92269CFFDE0062CC06 /* Products */,
+				9C05885326A215C70014AA23 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -295,6 +307,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -350,6 +363,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
