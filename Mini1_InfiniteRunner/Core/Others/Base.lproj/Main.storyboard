@@ -32,6 +32,14 @@
                                     <action selector="showLeaderboards:" destination="BV1-FR-VrT" eventType="touchUpInside" id="zMj-YE-1bl"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBt-nk-ITQ">
+                                <rect key="frame" x="40" y="182" width="84" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="scoreButton"/>
+                                <connections>
+                                    <action selector="scoreButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="bfX-PZ-R5m"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

@@ -11,7 +11,7 @@ import GameplayKit
 import GameKit
 
 class GameViewController: UIViewController{
-    
+    var candyCollectedScore = Int()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,8 +100,13 @@ class GameViewController: UIViewController{
     
     
     @IBAction func scoreButton(_ sender: Any) {
-        
-        
+        candyCollectedScore += 1
+    }
+    
+    func highScore(number: Int){
+        if GKLocalPlayer.local.isAuthenticated{
+            
+        }
     }
     
     
