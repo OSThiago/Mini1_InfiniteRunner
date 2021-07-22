@@ -17,6 +17,8 @@ class GameScene: SKScene {
     //--------------------------------------------------------
     
     let player = Player(imageName: "Personagem_lado")
+   
+    
     
     override init(size: CGSize) {
         super.init(size: size)
@@ -29,7 +31,7 @@ class GameScene: SKScene {
         // Adicionando o Player a cena
         let initalPosition = CGPoint(x: size.width*0.5, y: size.height*0.8)
         
-        self.addChild(player.getNode())
+        self.addChild(player)
         player.setPosition(position: initalPosition)
         
         parallax()

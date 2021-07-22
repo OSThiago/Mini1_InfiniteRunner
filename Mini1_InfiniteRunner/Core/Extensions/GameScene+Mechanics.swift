@@ -57,27 +57,35 @@ extension GameScene {
     
     // Troca a posicao do player e a gravidade do mundo
     func reversePlayer(heightPosition: CGFloat) {
-        player.getNode().position = CGPoint(x: size.width*(0.5), y: size.height*(heightPosition))
-        player.getNode().yScale = player.getNode().yScale*(-1)
-         physicsWorld.gravity.dy = physicsWorld.gravity.dy*(-1)
-        changePlayerSide(atualSide: player.getPlayerSide())
-        //print(player.getPlayerSide())
+        // Tira o corpo fisico do player
+        player.physicsBody = nil
+        
+        // Movendo o player de posicao
+        let move = SKAction.moveTo(y: size.height*(heightPosition), duration: 0.3)
+        
+        // Recolocando a fisica de volta para o player
+        let replacePhysics = SKAction.run {
+            self.player.physicsBody = self.player.createBody()
+        }
+        
+        // Colocando a sequencia de acoes
+        let sequence = SKAction.sequence([move,replacePhysics])
+        player.run(sequence)
+        
+        // Colocando o player de cabeça para baixo
+        player.yScale = player.yScale*(-1)
+        
+        // Colocando a fisica ao contrario
+        physicsWorld.gravity.dy = physicsWorld.gravity.dy*(-1)
+        
+        // Trocando a posicao do player
+        player.reversePlayerSide()
+        
     }
     
     // Aplica impulso no player, pode ser para cima ou para baixo
     func jumpPlayer(heightJump: CGFloat) {
-        player.getNode().physicsBody?.applyImpulse(CGVector(dx: 0, dy: CGFloat(player.getNode().size.height*(heightJump))))
+        player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: CGFloat(player.size.height*(heightJump))))
     }
-    
-    // Verifica a posição atual do player e troca para o inverso
-    func changePlayerSide(atualSide: PlayerSide) {
-        switch atualSide {
-        case .TOP:
-            player.setPlayerSide(side: .BOTTOM)
-        case .BOTTOM:
-            player.setPlayerSide(side: .TOP)
-        }
-    }
-    
     
 }
