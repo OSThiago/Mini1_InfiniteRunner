@@ -11,6 +11,7 @@ import GameplayKit
 import GameKit
 
 class GameViewController: UIViewController{
+    @IBOutlet var Label: UILabel! //APENAS PARA TESTE
     var candyCollectedScore = Int()
 
     override func viewDidLoad() {
@@ -32,7 +33,8 @@ class GameViewController: UIViewController{
             
         }
     }
-    /*
+    
+    /*DEIXAR APAGADO POR ENQUANTO
     private func authenticateUser(){
         let playerGamer = GKLocalPlayer.local
         
@@ -48,6 +50,8 @@ class GameViewController: UIViewController{
         }
     }
     */
+    
+    //FUNÇÃO PARA MOSTRAR AS CONQUISTAS
     @IBAction func showAchievements(_ sender: Any) {
         let viewControler = GKGameCenterViewController()
         viewControler.gameCenterDelegate = self
@@ -56,6 +60,7 @@ class GameViewController: UIViewController{
     }
     
     
+    //FUNÇÃO PARA MOSTRAR OS PLACARES
     @IBAction func showLeaderboards(_ sender: Any) {
         let viewControler = GKGameCenterViewController()
         viewControler.gameCenterDelegate = self
@@ -64,6 +69,17 @@ class GameViewController: UIViewController{
         present(viewControler, animated: true, completion: nil)
     }
     
+    /* DEIXAR APAGADO POR ENQUANTO
+    @IBAction func showLeaderBoard(){
+        let viewController = self.view.window?.rootViewController
+        let gameCenterViewControler = GKGameCenterViewController()
+        gameCenterViewControler.gameCenterDelegate = self
+        viewController?.present(gameCenterViewControler, animated: true, completion: nil)
+        
+    }
+    */
+    
+    //FUNÇÃO PARA AUTENTICAR O JOGADOR
     func authenticatePlayer(){
         let localPlayer = GKLocalPlayer.local
         
@@ -79,13 +95,30 @@ class GameViewController: UIViewController{
     }
     
     
-    
-    
-    // Methodos para suportar a rotação na tela no sentido horizontal
-    override var shouldAutorotate: Bool {
-        return true
+    //FUNÇÃO PARA SER CHAMADA TODA VEZ QUE COLETAR UM DOCE
+    @IBAction func scoreButton(_ sender: Any) {
+        candyCollectedScore += 1
+        Label.text = "\(candyCollectedScore)"
     }
-
+    
+    //FUNÇÃO PARA MANDAR O PLACAR PARA O GAMECENTER
+    @IBAction func CallGameCenter(_ sender: Any){
+        highScore(number: candyCollectedScore)
+    }
+    
+    //FUNÇÃO PARA SALVAR O PLACAR MAIS ALTO
+    func highScore(number: Int){
+        if GKLocalPlayer.local.isAuthenticated{
+            let scoreReporter = GKScore(leaderboardIdentifier: "com.team10.Mini1.CandiesCollected")
+            scoreReporter.value = Int64(number)
+            let scoreArray: [GKScore] = [scoreReporter]
+            GKScore.report(scoreArray, withCompletionHandler: nil)
+        }
+    }
+    
+    
+    
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
             return .allButUpsideDown
@@ -99,19 +132,10 @@ class GameViewController: UIViewController{
     }
     
     
-    @IBAction func scoreButton(_ sender: Any) {
-        candyCollectedScore += 1
+    // Methodos para suportar a rotação na tela no sentido horizontal
+    override var shouldAutorotate: Bool {
+        return true
     }
-    
-    func highScore(number: Int){
-        if GKLocalPlayer.local.isAuthenticated{
-            
-        }
-    }
-    
-    
-    
-    
     
 }
 
