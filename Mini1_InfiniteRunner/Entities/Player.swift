@@ -1,3 +1,4 @@
+
 //
 //  Player.swift
 //  Mini1_InfiniteRunner
@@ -6,6 +7,9 @@
 //
 
 import SpriteKit
+
+let score = "Score"
+let bestScore = "BestScore"
 
 class Player {
     // Propriedades
@@ -21,6 +25,29 @@ class Player {
         self.playerSide = .TOP
         self.player.physicsBody = self.intialBody()
         
+    }
+    
+    static let shared = Player(imageName: "Personagem_lado")
+    
+    func setScore(_ value: Int){
+        if value > getBestScore(){
+            setBestScore(value)
+        }
+        UserDefaults.standard.set(value, forKey: score)
+        UserDefaults.standard.synchronize()
+    }
+    
+    func getScore() -> Int{
+        return UserDefaults.standard.integer(forKey: score)
+    }
+   
+    func setBestScore(_ value: Int){
+        UserDefaults.standard.set(value, forKey: bestScore)
+        UserDefaults.standard.synchronize()
+    }
+    
+    func getBestScore() -> Int{
+        return UserDefaults.standard.integer(forKey: bestScore)
     }
 
     

@@ -10,7 +10,8 @@ import SpriteKit
 import GameplayKit
 import GameKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController{
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +27,12 @@ class GameViewController: UIViewController {
             view.showsFPS = true
             view.showsNodeCount = true
             
-          //  authenticateUser()
+          //authenticateUser()
+            authenticatePlayer()
             
         }
     }
-    
+    /*
     private func authenticateUser(){
         let playerGamer = GKLocalPlayer.local
         
@@ -45,6 +47,38 @@ class GameViewController: UIViewController {
             }
         }
     }
+    */
+    @IBAction func showAchievements(_ sender: Any) {
+        let viewControler = GKGameCenterViewController()
+        viewControler.gameCenterDelegate = self
+        viewControler.viewState = .achievements
+        present(viewControler, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func showLeaderboards(_ sender: Any) {
+        let viewControler = GKGameCenterViewController()
+        viewControler.gameCenterDelegate = self
+        viewControler.viewState = .leaderboards
+        viewControler.leaderboardIdentifier = "Coletaveis"
+        present(viewControler, animated: true, completion: nil)
+    }
+    
+    func authenticatePlayer(){
+        let localPlayer = GKLocalPlayer.local
+        
+        localPlayer.authenticateHandler = {
+            (view, Error) in
+            
+            if view != nil{
+                self.present(view!, animated: true, completion: nil)
+            }else{
+                print(GKLocalPlayer.local.isAuthenticated)
+            }
+        }
+    }
+    
+    
     
     
     // Methodos para suportar a rotação na tela no sentido horizontal
@@ -74,4 +108,12 @@ class GameViewController: UIViewController {
     
     
     
+}
+
+
+extension UIViewController:
+    GKGameCenterControllerDelegate {
+    public func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+            gameCenterViewController.dismiss(animated: true, completion: nil)
+        }
 }
