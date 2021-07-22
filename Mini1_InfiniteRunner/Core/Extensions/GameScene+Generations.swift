@@ -37,75 +37,40 @@ extension GameScene{
      }
      
      
-     //Funcão para gerar o chão com base em um tempo
-     func generateGrounds(time: TimeInterval){
-          
-          initialGround(time: time)
-          
-          //Definindo a posição inicial na tela para gerar o chão
-          let initialPosition = CGPoint(x: size.width*1.5, y: size.height*0.5)
-          
-          //Atribuindo uma ação ao chão
-          let groundCreated = SKAction.run {
-               //Criando o chão
-               let ground = self.createGround(position: initialPosition)
-               
-               //Adicionando o chão na tela
-               self.addChild(ground)
-               
-               //Colocando o chão para se mover
-               self.moveGround(node: ground, time: time)
-          }
-          
-          // Multiplicador para ajustar a o tempo de criaçao com a velocidade do movimento
-          
-          let mutiplier = 0.07
-          //Tempo de espera entre criação dos nodes
-          let waitInBetween = SKAction.wait(forDuration: time*mutiplier)
-          
-          //Atribuindo uma sequencia de ações
-          let sequence = SKAction.sequence([groundCreated, waitInBetween])
-          
-          //Colocando para repetição
-          let repeatForever = SKAction.repeatForever(sequence)
-          
-          //Inicializando a repetição
-          self.run(repeatForever)
-          
+ 
+    
+     //Função para fazer a movimentação do chão
+     func initialGround(time: TimeInterval) {
+         
+            // Criar blocos que preenche a tela ao iniciar
+            for i in 0...29 {
+                let initialPosition = CGPoint(x: size.width*(CGFloat(i)*0.05), y: size.height*0.5)
+                    //Criando o chão
+                    let ground = self.createGround(position: initialPosition)
+                           
+                    //Adicionando o chão na tela
+                    self.addChild(ground)
+                           
+                    //Colocando o chão para se mover
+                 self.start(ground: ground)
+         }
      }
      
     
-     //Função para fazer a movimentação do chão
-     func moveGround(node: SKSpriteNode, time: TimeInterval){
-          //Atribuindo a posição inicial até um ponto específico e o tempo para a movimentação
+     
+     func start(ground: SKSpriteNode){
           
-          // Esse mutiplicador server para encaixar a geração do chão ao mesmo tempo da velocidade que ele anda
-          let multiplier = 4.0
+          // defini movimento do ground
+         let moveLef = SKAction.moveBy(x: -frame.size.width/2, y: 0.0, duration: seconds)
+          //retorna o ground para a posicao inicial
+         let reset = SKAction.moveBy(x: frame.size.width/2, y: 0.0, duration: 0.0)
+          // sequencia de acoes
+         let sequence = SKAction.sequence([moveLef,reset])
           
-          let moveAction = SKAction.moveBy(x: size.width*(-2.8), y: 0, duration: time*multiplier)
-          
-          //Criando a remoção do node(chão)
-          let removeNode = SKAction.removeFromParent()
-          
-          //Criando a sequência, do movimento e a remoção
-          let removeSequence = SKAction.sequence([moveAction, removeNode])
-          
-          //Inicializando a repetição para a remoção
-          node.run(removeSequence)
-     }
-    
-     func initialGround(time: TimeInterval) {
-          // Criar blocos que preenche a tela ao iniciar
-          for i in 0...29 {
-               let initialPosition = CGPoint(x: size.width*(CGFloat(i)*0.05), y: size.height*0.5)
-               //Criando o chão
-               let ground = self.createGround(position: initialPosition)
-               
-               //Adicionando o chão na tela
-               self.addChild(ground)
-               
-               //Colocando o chão para se mover
-               self.moveGround(node: ground, time: time)
-          }
+          // chamada "recursiva para atualizar a velocidade do grround"
+         ground.run(sequence) {
+             self.start(ground: ground)
+             print(ground)
+         }
      }
 }

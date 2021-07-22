@@ -11,6 +11,11 @@ import GameplayKit
 class GameScene: SKScene {
     // Propriedades globais
     
+    // propriedades que vao definir o controle de velocidade
+    var renderTiming: TimeInterval = 1
+    var seconds: TimeInterval = 2
+    //--------------------------------------------------------
+    
     let player = Player(imageName: "Personagem_lado")
     
     override init(size: CGSize) {
@@ -19,7 +24,7 @@ class GameScene: SKScene {
         self.physicsWorld.contactDelegate = self
         
         //Criando a geração de chão(criação e movimentação)
-        generateGrounds(time: 2.0)
+        initialGround(time: seconds)
         
         // Adicionando o Player a cena
         let initalPosition = CGPoint(x: size.width*0.5, y: size.height*0.8)
@@ -68,6 +73,18 @@ class GameScene: SKScene {
     
     
     override func update(_ currentTime: TimeInterval) {
+        // atualiza o seconds a cada segundo
+        if currentTime > renderTiming{
+            if renderTiming > 0{
+                //certifica que o tempo vai ser maior que 0.5
+                if seconds > 0.5{
+                    seconds -= 0.01
+                }
+                
+                
+            }
+                renderTiming = currentTime+1
+        }
         // Called before each frame is rendered
     }
     
