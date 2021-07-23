@@ -13,7 +13,7 @@ class GameScene: SKScene {
     
     // propriedades que vao definir o controle de velocidade
     var renderTiming: TimeInterval = 1
-    var seconds: TimeInterval = 2
+    var seconds: TimeInterval = 1.43
     //--------------------------------------------------------
     
     let player = Player(imageName: "Personagem_lado")

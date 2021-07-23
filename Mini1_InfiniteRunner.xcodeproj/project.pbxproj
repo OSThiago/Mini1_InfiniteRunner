@@ -23,6 +23,7 @@
 		9E8407C6269FDB9300846CE3 /* GameScene+BackGrounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8407C5269FDB9300846CE3 /* GameScene+BackGrounds.swift */; };
 		9E906A5426A1D68E0026B7A7 /* GameScene+Physics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E906A5326A1D68E0026B7A7 /* GameScene+Physics.swift */; };
 		9E906A5626A1D6E50026B7A7 /* GameScene+EnemyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E906A5526A1D6E50026B7A7 /* GameScene+EnemyGenerator.swift */; };
+		9ED45EBE26AB8032002B33F5 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED45EBD26AB8032002B33F5 /* Enemy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		9E8407C5269FDB9300846CE3 /* GameScene+BackGrounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+BackGrounds.swift"; sourceTree = "<group>"; };
 		9E906A5326A1D68E0026B7A7 /* GameScene+Physics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Physics.swift"; sourceTree = "<group>"; };
 		9E906A5526A1D6E50026B7A7 /* GameScene+EnemyGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+EnemyGenerator.swift"; sourceTree = "<group>"; };
+		9ED45EBD26AB8032002B33F5 /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				9E7F7AAF269D0F060062CC06 /* Player.swift */,
+				9ED45EBD26AB8032002B33F5 /* Enemy.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				9E8407C6269FDB9300846CE3 /* GameScene+BackGrounds.swift in Sources */,
 				9C96E97B269E45DA0044B930 /* GameScene+Generations.swift in Sources */,
 				9E7F7A9D269CFFDE0062CC06 /* GameViewController.swift in Sources */,
+				9ED45EBE26AB8032002B33F5 /* Enemy.swift in Sources */,
 				9C96E977269E459F0044B930 /* GameScene+Mechanics.swift in Sources */,
 				9E7F7A95269CFFDE0062CC06 /* AppDelegate.swift in Sources */,
 				9E906A5626A1D6E50026B7A7 /* GameScene+EnemyGenerator.swift in Sources */,
