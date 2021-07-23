@@ -23,8 +23,10 @@ extension GameScene: SKPhysicsContactDelegate{
             ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
         }
         if (contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "player"){
-            contact.bodyA.node?.removeFromParent()
+            contact.bodyB.node?.removeFromParent()
             print("you loser my brother")
+            ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+            
         }
     }
     

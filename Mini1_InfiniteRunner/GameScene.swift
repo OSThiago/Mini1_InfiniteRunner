@@ -17,6 +17,8 @@ class GameScene: SKScene {
     //--------------------------------------------------------
     
     let player = Player(imageName: "Personagem_lado")
+   
+    
     
     override init(size: CGSize) {
         super.init(size: size)
@@ -29,7 +31,7 @@ class GameScene: SKScene {
         // Adicionando o Player a cena
         let initalPosition = CGPoint(x: size.width*0.5, y: size.height*0.8)
         
-        self.addChild(player.getNode())
+        self.addChild(player)
         player.setPosition(position: initalPosition)
         
         parallax()
@@ -73,6 +75,11 @@ class GameScene: SKScene {
     
     
     override func update(_ currentTime: TimeInterval) {
+        if player.position.x != size.width/2{
+            player.position.x = size.width/2
+        }
+        
+        
         // atualiza o seconds a cada segundo
         if currentTime > renderTiming{
             if renderTiming > 0{
@@ -80,12 +87,14 @@ class GameScene: SKScene {
                 if seconds > 0.5{
                     seconds -= 0.01
                 }
-                
-                
             }
                 renderTiming = currentTime+1
         }
         // Called before each frame is rendered
+        
+        
+        
+        
     }
     
     

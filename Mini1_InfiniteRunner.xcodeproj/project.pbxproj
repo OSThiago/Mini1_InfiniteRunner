@@ -86,9 +86,9 @@
 		9E7F7A93269CFFDE0062CC06 /* Mini1_InfiniteRunner */ = {
 			isa = PBXGroup;
 			children = (
+				9E7F7A9A269CFFDE0062CC06 /* GameScene.swift */,
 				9C05885126A209D20014AA23 /* ActionManage.swift */,
 				9C05884F26A209A50014AA23 /* MainMenuScene.swift */,
-				9E7F7A9A269CFFDE0062CC06 /* GameScene.swift */,
 				9E7F7AAD269D01960062CC06 /* Entities */,
 				9E7F7AAA269D013E0062CC06 /* Resources */,
 				9E7F7AA9269D00B90062CC06 /* Core */,

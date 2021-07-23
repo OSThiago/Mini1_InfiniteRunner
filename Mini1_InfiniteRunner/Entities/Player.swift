@@ -8,72 +8,63 @@
 
 import SpriteKit
 
-let score = "Score"
-let bestScore = "BestScore"
-
-class Player {
+class Player: SKSpriteNode {
     // Propriedades
-    private let player: SKSpriteNode
-    private let imageName: String
+    var imageNamed: String
     private var playerSide: PlayerSide
     
     // Inicializadores
     init(imageName: String) {
-        self.player = SKSpriteNode(imageNamed: imageName)
-        self.imageName = imageName
-        self.player.name = "player"
+        
+        self.imageNamed = imageName
+        let texture = SKTexture(imageNamed: imageName)
+        
         self.playerSide = .TOP
-        self.player.physicsBody = self.intialBody()
+        
+        super.init(texture: texture, color: UIColor.clear, size: texture.size())
+        
+       
+        self.name = "player"
+        self.zPosition = 1
+        self.physicsBody = createBody()
         
     }
     
     static let shared = Player(imageName: "Personagem_lado")
     
-    func setScore(_ value: Int){
-        if value > getBestScore(){
-            setBestScore(value)
-        }
-        UserDefaults.standard.set(value, forKey: score)
-        UserDefaults.standard.synchronize()
-    }
-    
-    func getScore() -> Int{
-        return UserDefaults.standard.integer(forKey: score)
-    }
-   
-    func setBestScore(_ value: Int){
-        UserDefaults.standard.set(value, forKey: bestScore)
-        UserDefaults.standard.synchronize()
-    }
-    
-    func getBestScore() -> Int{
-        return UserDefaults.standard.integer(forKey: bestScore)
-    }
+//    func setScore(_ value: Int){
+//        if value > getBestScore(){
+//            setBestScore(value)
+//        }
+//        UserDefaults.standard.set(value, forKey: score)
+//        UserDefaults.standard.synchronize()
+//    }
+//
+//    func getScore() -> Int{
+//        return UserDefaults.standard.integer(forKey: score)
+//    }
+//
+//    func setBestScore(_ value: Int){
+//        UserDefaults.standard.set(value, forKey: bestScore)
+//        UserDefaults.standard.synchronize()
+//    }
+//
+//    func getBestScore() -> Int{
+//        return UserDefaults.standard.integer(forKey: bestScore)
+//    }
 
     
     // Metodos
   
     // MARK: - Position
     func setPosition(position: CGPoint) {
-        player.position = position
+        self.position = position
     }
     
     func getPosition() -> CGPoint {
-        self.player.position
+        self.position
     }
-    
-    
-    
-    
-    // MARK: - BODY
-    
-    func setPhysicsBody(body: SKPhysicsBody) {
-        self.player.physicsBody = body
-    }
-    
-    func getNode() -> SKSpriteNode{
-        return self.player
-    }
+
     
     // MARK:- playerState
     
@@ -81,10 +72,19 @@ class Player {
         return self.playerSide
     }
     
-    func setPlayerSide(side: PlayerSide) {
-        self.playerSide = side
+    func reversePlayerSide() {
+        switch self.playerSide {
+        case .TOP:
+            self.playerSide = .BOTTOM
+        case .BOTTOM:
+            self.playerSide = .TOP
+        }
     }
     
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
 }
 
@@ -93,8 +93,8 @@ class Player {
 extension Player {
     
     // Função para adicionar o corpo fisico ao node player
-    func intialBody() ->SKPhysicsBody{
-        let body = SKPhysicsBody(texture: SKTexture(imageNamed: self.imageName), size: CGSize(width: player.size.width, height: player.size.height*(0.6)))//0.6
+    func createBody() ->SKPhysicsBody{
+        let body = SKPhysicsBody(texture: SKTexture(imageNamed: self.imageNamed), size: CGSize(width: self.size.width, height: self.size.height*(0.6)))//0.6
         
         body.affectedByGravity = true
         body.allowsRotation = false
