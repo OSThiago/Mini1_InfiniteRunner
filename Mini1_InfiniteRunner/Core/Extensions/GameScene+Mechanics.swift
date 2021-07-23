@@ -58,7 +58,10 @@ extension GameScene {
     // Troca a posicao do player e a gravidade do mundo
     func reversePlayer(heightPosition: CGFloat) {
         // Tira o corpo fisico do player
-        player.physicsBody = nil
+        let removePhysics = SKAction.run {
+            self.player.physicsBody = nil
+        }
+        
         
         // Movendo o player de posicao
         let move = SKAction.moveTo(y: size.height*(heightPosition), duration: 0.3)
@@ -69,7 +72,7 @@ extension GameScene {
         }
         
         // Colocando a sequencia de acoes
-        let sequence = SKAction.sequence([move,replacePhysics])
+        let sequence = SKAction.sequence([removePhysics,move,replacePhysics])
         player.run(sequence)
         
         // Colocando o player de cabeça para baixo

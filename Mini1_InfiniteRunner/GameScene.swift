@@ -82,12 +82,14 @@ class GameScene: SKScene {
                 if seconds > 0.5{
                     seconds -= 0.01
                 }
-                
-                
             }
                 renderTiming = currentTime+1
         }
         // Called before each frame is rendered
+        
+        
+        
+        
     }
     
     
