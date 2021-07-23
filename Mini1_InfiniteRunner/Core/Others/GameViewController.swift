@@ -11,8 +11,11 @@ import GameplayKit
 import GameKit
 
 class GameViewController: UIViewController{
-    @IBOutlet var Label: UILabel! //APENAS PARA TESTE
+    @IBOutlet var Label: UILabel! //APENAS PARA TESTE DOCE
+    @IBOutlet var label2: UILabel! //APENAS PARA TESTE DISTANCIA
+    
     var candyCollectedScore = Int()
+    var distanceReached = Float()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +30,7 @@ class GameViewController: UIViewController{
             view.ignoresSiblingOrder = true
             view.showsFPS = true
             view.showsNodeCount = true
-            
-          //authenticateUser()
+    
             authenticatePlayer()
             
         }
@@ -48,19 +50,14 @@ class GameViewController: UIViewController{
         let viewControler = GKGameCenterViewController()
         viewControler.gameCenterDelegate = self
         viewControler.viewState = .leaderboards
-        viewControler.leaderboardIdentifier = "Coletaveis"
+        viewControler.leaderboardIdentifier = "Candies Collected"
         present(viewControler, animated: true, completion: nil)
-    }
-    
-    /* DEIXAR APAGADO POR ENQUANTO
-    @IBAction func showLeaderBoard(){
-        let viewController = self.view.window?.rootViewController
-        let gameCenterViewControler = GKGameCenterViewController()
-        gameCenterViewControler.gameCenterDelegate = self
-        viewController?.present(gameCenterViewControler, animated: true, completion: nil)
+        
+        viewControler.leaderboardIdentifier = "Distance Reached"
+        present(viewControler, animated: true, completion: nil)
+        
         
     }
-    */
     
     //FUNÇÃO PARA AUTENTICAR O JOGADOR
     func authenticatePlayer(){
@@ -84,19 +81,46 @@ class GameViewController: UIViewController{
         Label.text = "\(candyCollectedScore)"
     }
     
+    
+    @IBAction func DistanceButton(_ sender: Any) {
+        distanceReached += 10
+        label2.text = "\(distanceReached)"
+        
+    }
+    
+    /*
+    func scoreDistance(_ sender: Any){
+        //IMPLEMENTAR AINDA
+        //COLOCAR LABEL NA TELA
+    }
+    */
+    
+    
+    
     //FUNÇÃO PARA MANDAR O PLACAR PARA O GAMECENTER
     @IBAction func CallGameCenter(_ sender: Any){
-        highScore(number: candyCollectedScore)
+        highCandyScore(number: candyCollectedScore)
+        highDistanceScore(number: distanceReached)
         //prox função pra distancia
     }
     
     //FUNÇÃO PARA SALVAR O PLACAR MAIS ALTO
-    func highScore(number: Int){
+    func highCandyScore(number: Int){
         if GKLocalPlayer.local.isAuthenticated{
-            let scoreReporter = GKScore(leaderboardIdentifier: "com.team10.Mini1.CandiesCollected")
-            scoreReporter.value = Int64(number)
-            let scoreArray: [GKScore] = [scoreReporter]
-            GKScore.report(scoreArray, withCompletionHandler: nil)
+            let scoreCandyReporter = GKScore(leaderboardIdentifier: "com.team10.Mini1.CandiesCollected")
+            scoreCandyReporter.value = Int64(number)
+            let scoreCandyArray: [GKScore] = [scoreCandyReporter]
+            GKScore.report(scoreCandyArray, withCompletionHandler: nil)
+        }
+    }
+    
+    //FUNÇÃO PARA SALVAR A DISTANCIA MAIS ALTA
+    func highDistanceScore(number: Float){
+        if GKLocalPlayer.local.isAuthenticated{
+            let scoreDistanceReporter = GKScore(leaderboardIdentifier: "com.team10.Mini1.DistanceReached")
+            scoreDistanceReporter.value = Int64(number)
+            let scoreDistanceArray: [GKScore] = [scoreDistanceReporter]
+            GKScore.report(scoreDistanceArray, withCompletionHandler: nil)
         }
     }
     
@@ -130,3 +154,4 @@ extension UIViewController:
             gameCenterViewController.dismiss(animated: true, completion: nil)
         }
 }
+

@@ -63,6 +63,10 @@ class MainMenuScene: SKScene{
         addChild(configButton)
     }
     
+    func gameCenterButton(){
+        
+    }
+    
 
     
     
