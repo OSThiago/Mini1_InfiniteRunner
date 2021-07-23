@@ -26,6 +26,7 @@ extension GameScene: SKPhysicsContactDelegate{
             contact.bodyB.node?.removeFromParent()
             print("you loser my brother")
             ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+            
         }
     }
     
