@@ -75,6 +75,11 @@ class GameScene: SKScene {
     
     
     override func update(_ currentTime: TimeInterval) {
+        if player.position.x != size.width/2{
+            player.position.x = size.width/2
+        }
+        
+        
         // atualiza o seconds a cada segundo
         if currentTime > renderTiming{
             if renderTiming > 0{
