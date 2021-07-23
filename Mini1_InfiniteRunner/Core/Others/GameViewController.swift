@@ -34,23 +34,6 @@ class GameViewController: UIViewController{
         }
     }
     
-    /*DEIXAR APAGADO POR ENQUANTO
-    private func authenticateUser(){
-        let playerGamer = GKLocalPlayer.local
-        
-        playerGamer.authenticateHandler = { viewControler, error in
-            
-            guard error == nil else{
-                print(error?.localizedDescription ?? "")
-                return
-            }
-            if let viewControler = viewControler{
-                self.present(viewControler, animated: true, completion: nil)
-            }
-        }
-    }
-    */
-    
     //FUNÇÃO PARA MOSTRAR AS CONQUISTAS
     @IBAction func showAchievements(_ sender: Any) {
         let viewControler = GKGameCenterViewController()
@@ -104,6 +87,7 @@ class GameViewController: UIViewController{
     //FUNÇÃO PARA MANDAR O PLACAR PARA O GAMECENTER
     @IBAction func CallGameCenter(_ sender: Any){
         highScore(number: candyCollectedScore)
+        //prox função pra distancia
     }
     
     //FUNÇÃO PARA SALVAR O PLACAR MAIS ALTO
