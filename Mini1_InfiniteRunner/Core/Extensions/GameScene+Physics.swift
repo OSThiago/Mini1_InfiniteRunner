@@ -28,6 +28,14 @@ extension GameScene: SKPhysicsContactDelegate{
             ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
             
         }
+        
+        if (contact.bodyA.node?.name == "player" && contact.bodyB.node?.name == "Ground2"){
+            self.player.isJuping = false
+        }
+        if (contact.bodyA.node?.name == "Ground2" && contact.bodyB.node?.name == "player"){
+            self.player.isJuping = false
+
+        }
     }
     
     func didEnd(_ contact: SKPhysicsContact) {

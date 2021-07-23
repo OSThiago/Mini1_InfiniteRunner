@@ -24,35 +24,40 @@ extension GameScene {
     
     @objc func handleSwipe(gesture: UISwipeGestureRecognizer){
         // Faz um ação de acordo com a direcao do gesto
-        switch gesture.direction {
-        
-        case .up:
-            print("SwipeUP")
-            // Olha o lado atual do player: em cima ou em baixo
-            switch player.getPlayerSide() {
-            case .TOP:
-                // Pula para cima
-                jumpPlayer(heightJump: 0.22)
-            case .BOTTOM:
-                // Passa para o mundo invertido
-                reversePlayer(heightPosition: 0.63)
-            }
+        if !player.isJuping{
             
-        case .down:
-            print("SwipeDown")
-            // Olha o lado atual do player: em cima ou em baixo
-            switch player.getPlayerSide() {
-            case .TOP:
-                // Volta para o mundo normal
-                reversePlayer(heightPosition: 0.39)
-            case .BOTTOM:
-                // Pula para baixo
-                jumpPlayer(heightJump: -0.22)
-            }
+            switch gesture.direction {
             
-        default:
-            print("No Direction")
+            case .up:
+                print("SwipeUP")
+                // Olha o lado atual do player: em cima ou em baixo
+                switch player.getPlayerSide() {
+                case .TOP:
+                    // Pula para cima
+                    jumpPlayer(heightJump: 0.22)
+                case .BOTTOM:
+                    // Passa para o mundo invertido
+                    reversePlayer(heightPosition: 0.63)
+                }
+                
+            case .down:
+                print("SwipeDown")
+                // Olha o lado atual do player: em cima ou em baixo
+                switch player.getPlayerSide() {
+                case .TOP:
+                    // Volta para o mundo normal
+                    reversePlayer(heightPosition: 0.39)
+                case .BOTTOM:
+                    // Pula para baixo
+                    jumpPlayer(heightJump: -0.22)
+                }
+                
+            default:
+                print("No Direction")
+            }
+            player.isJuping = true
         }
+       
     }
     
     // Troca a posicao do player e a gravidade do mundo

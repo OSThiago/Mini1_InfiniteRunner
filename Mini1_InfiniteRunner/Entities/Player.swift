@@ -11,6 +11,7 @@ import SpriteKit
 class Player: SKSpriteNode {
     // Propriedades
     var imageNamed: String
+    var isJuping: Bool = false
     private var playerSide: PlayerSide
     
     // Inicializadores
