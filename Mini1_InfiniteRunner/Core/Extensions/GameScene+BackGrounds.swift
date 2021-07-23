@@ -15,14 +15,18 @@ extension GameScene {
         initialsBackGrounds()
         
         
-       // generationBackGrounds(time: 0, imageName: "plx-3", deph: -7)
-        generationBackGrounds(time: 70, imageName: "plx-2", deph: -6)
-        generationBackGrounds(time: 45, imageName: "plx-4", deph: -5)
-        generationBackGrounds(time: 27, imageName: "plx-5", deph: -4)
-        generationBackGrounds(time: 17, imageName: "plx-6", deph: -3)
-        generationBackGrounds(time: 3, imageName: "plx-7", deph: -2)
-       
+        //generationBackGrounds(time: 0, imageName: "plx-3", deph: -7)
         
+        
+        generationBackGrounds(time: 80, imageName: "prlx2", deph: -7)
+        generationBackGrounds(time: 30, imageName: "prlx3", deph: -6)
+        generationBackGrounds(time: 30, imageName: "prlx4", deph: -5)
+        generationBackGrounds(time: 10, imageName: "prlx5", deph: -4)
+        generationBackGrounds(time: 8, imageName: "prlx6", deph: -3)
+        generationBackGrounds(time: 120, imageName: "prlx7", deph: -2)
+        generationBackGrounds(time: 7, imageName: "prlx8", deph: -1)
+        
+
     }
     
    // Gambiarra para iniciar os primeiros backGrounds no meio da tela
@@ -30,33 +34,37 @@ extension GameScene {
         let initialPosition = CGPoint(x: size.width*0.5, y: size.height*0.5)
         
         
-        let background = createBackGround(imageName: "plx-1", position: initialPosition, deph: -9)
-        let backGround1 = createBackGround(imageName: "plx-3", position: initialPosition, deph: -7)
+        let background = createBackGround(imageName: "prlx1", position: initialPosition, deph: -9)
         self.addChild(background)
-        self.addChild(backGround1)
-//        let backGround1 = createBackGround(imageName: "plx-3", position: initialPosition, deph: -7)
-//
-//        moveBackGround(node: backGround1, timeSpeed: 70)
-//
-        let backGround2 = createBackGround(imageName: "plx-2", position: initialPosition, deph: -6)
-        moveBackGround(node: backGround2, timeSpeed: 70)
+    
+        
+        let backGround2 = createBackGround(imageName: "prlx2", position: initialPosition, deph: -7)
+        moveBackGround(node: backGround2, timeSpeed: 80)
         self.addChild(backGround2)
         
-        let backGround3 = createBackGround(imageName: "plx-4", position: initialPosition, deph: -5)
-        moveBackGround(node: backGround3, timeSpeed: 45)
+        let backGround3 = createBackGround(imageName: "prlx3", position: initialPosition, deph: -6)
+        moveBackGround(node: backGround3, timeSpeed: 30)
         self.addChild(backGround3)
         
-        let backGround4 = createBackGround(imageName: "plx-5", position: initialPosition, deph: -4)
-        moveBackGround(node: backGround4, timeSpeed: 27)
+        let backGround4 = createBackGround(imageName: "prlx4", position: initialPosition, deph: -5)
+        moveBackGround(node: backGround4, timeSpeed: 30)
         self.addChild(backGround4)
 
-        let backGround5 = createBackGround(imageName: "plx-6", position: initialPosition, deph: -3)
-        moveBackGround(node: backGround5, timeSpeed: 17)
+        let backGround5 = createBackGround(imageName: "prlx5", position: initialPosition, deph: -4)
+        moveBackGround(node: backGround5, timeSpeed: 10)
         self.addChild(backGround5)
 
-        let backGround6 = createBackGround(imageName: "plx-7", position: initialPosition, deph: -2)
-        moveBackGround(node: backGround6, timeSpeed: 3)
+        let backGround6 = createBackGround(imageName: "prlx6", position: initialPosition, deph: -3)
+        moveBackGround(node: backGround6, timeSpeed: 8)
         self.addChild(backGround6)
+        
+        let backGround7 = createBackGround(imageName: "prlx7", position: initialPosition, deph: -2)
+        moveBackGround(node: backGround7, timeSpeed: 120)
+        self.addChild(backGround7)
+        
+        let backGround8 = createBackGround(imageName: "prlx8", position: initialPosition, deph: -1)
+        moveBackGround(node: backGround8, timeSpeed: 7)
+        self.addChild(backGround8)
         
         
 
@@ -74,6 +82,7 @@ extension GameScene {
         
         // Acao de criar background
         let createBackGround = SKAction.run {
+            
             let _backGround = self.createBackGround(imageName: imageName, position: initialPosition, deph: deph)
             
             self.addChild(_backGround)
@@ -118,8 +127,14 @@ extension GameScene {
         background.zPosition = deph
         
         // Alterando a escola para encaixar ao tamanho da tela
-        background.scale(to: CGSize(width: frame.size.width, height: frame.size.height))
+        //background.scale(to: CGSize(width: frame.size.width, height: frame.size.height*2))
+        
+        //teste escala
+        background.setScale(2.15)
         
         return background
     }
+    
+
+    
 }
