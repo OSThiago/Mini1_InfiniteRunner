@@ -44,8 +44,9 @@ extension GameScene{
         
         let waitInBetween = SKAction.wait(forDuration: time)
         let sequence = SKAction.sequence([creatEnemy,waitInBetween])
-        let repeatForever = SKAction.repeatForever(sequence)
-        self.run(repeatForever)
+        self.run(sequence) {
+            self.generatEnemys(time: self.seconds)
+        }
     }
     
     func randomPosition()->CGFloat{

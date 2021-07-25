@@ -13,7 +13,7 @@ class GameScene: SKScene {
     
     // propriedades que vao definir o controle de velocidade
     var renderTiming: TimeInterval = 1
-    var seconds: TimeInterval = 1.43
+    var seconds: TimeInterval = 2
     //--------------------------------------------------------
     
     let player = Player(imageName: "Personagem_lado")
@@ -26,7 +26,7 @@ class GameScene: SKScene {
         self.physicsWorld.contactDelegate = self
         
         //Criando a geração de chão(criação e movimentação)
-        initialGround(time: 2)
+        initialGround(time: seconds)
         
         // Adicionando o Player a cena
         let initalPosition = CGPoint(x: size.width*0.5, y: size.height*0.8)
