@@ -25,6 +25,8 @@
 		9E906A5626A1D6E50026B7A7 /* GameScene+EnemyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E906A5526A1D6E50026B7A7 /* GameScene+EnemyGenerator.swift */; };
 		9ED45EBE26AB8032002B33F5 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED45EBD26AB8032002B33F5 /* Enemy.swift */; };
 		9ED45EC626ADDDE7002B33F5 /* Grounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED45EC526ADDDE7002B33F5 /* Grounds.swift */; };
+		9ED45EC826ADF5FF002B33F5 /* Candy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED45EC726ADF5FF002B33F5 /* Candy.swift */; };
+		9ED45ECA26ADF74F002B33F5 /* GameScene+Candy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED45EC926ADF74F002B33F5 /* GameScene+Candy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		9E906A5526A1D6E50026B7A7 /* GameScene+EnemyGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+EnemyGenerator.swift"; sourceTree = "<group>"; };
 		9ED45EBD26AB8032002B33F5 /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		9ED45EC526ADDDE7002B33F5 /* Grounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grounds.swift; sourceTree = "<group>"; };
+		9ED45EC726ADF5FF002B33F5 /* Candy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Candy.swift; sourceTree = "<group>"; };
+		9ED45EC926ADF74F002B33F5 /* GameScene+Candy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Candy.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,7 @@
 				94E6D59426ADD7E900B82E17 /* GameScene+Ground.swift */,
 				9E8407C5269FDB9300846CE3 /* GameScene+BackGrounds.swift */,
 				9E906A5526A1D6E50026B7A7 /* GameScene+EnemyGenerator.swift */,
+				9ED45EC926ADF74F002B33F5 /* GameScene+Candy.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 				9E7F7AAF269D0F060062CC06 /* Player.swift */,
 				9ED45EBD26AB8032002B33F5 /* Enemy.swift */,
 				9ED45EC526ADDDE7002B33F5 /* Grounds.swift */,
+				9ED45EC726ADF5FF002B33F5 /* Candy.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -240,8 +246,10 @@
 				9E8407C6269FDB9300846CE3 /* GameScene+BackGrounds.swift in Sources */,
 				9E7F7A9D269CFFDE0062CC06 /* GameViewController.swift in Sources */,
 				9ED45EBE26AB8032002B33F5 /* Enemy.swift in Sources */,
+				9ED45EC826ADF5FF002B33F5 /* Candy.swift in Sources */,
 				9ED45EC626ADDDE7002B33F5 /* Grounds.swift in Sources */,
 				9C96E977269E459F0044B930 /* GameScene+Mechanics.swift in Sources */,
+				9ED45ECA26ADF74F002B33F5 /* GameScene+Candy.swift in Sources */,
 				9E7F7A95269CFFDE0062CC06 /* AppDelegate.swift in Sources */,
 				9E906A5626A1D6E50026B7A7 /* GameScene+EnemyGenerator.swift in Sources */,
 			);

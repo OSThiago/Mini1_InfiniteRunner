@@ -38,7 +38,7 @@ class MainMenuScene: SKScene{
     }
     
     func createBackground(){
-        let menuBackground = SKSpriteNode(imageNamed: "leticiah")
+        let menuBackground = SKSpriteNode(imageNamed: "MenuBackGround")
         menuBackground.name = "menuBackground"
         menuBackground.position = CGPoint.zero
         menuBackground.size = CGSize(width: 844.0, height: 390.0)
