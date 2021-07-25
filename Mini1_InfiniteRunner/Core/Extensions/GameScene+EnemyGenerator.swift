@@ -37,7 +37,7 @@ extension GameScene{
             self.moveEnemy(node: enemy, time: time)
             
             // Gambiarra para ajustar a altura
-            // Perguntar para o vini como reajusta o centro do node
+            
             
             
         }
@@ -45,7 +45,7 @@ extension GameScene{
         let waitInBetween = SKAction.wait(forDuration: time)
         let sequence = SKAction.sequence([creatEnemy,waitInBetween])
         self.run(sequence) {
-            self.generatEnemys(time: self.seconds)
+            self.generatEnemys(time: self.enemySpeed)
         }
     }
     
