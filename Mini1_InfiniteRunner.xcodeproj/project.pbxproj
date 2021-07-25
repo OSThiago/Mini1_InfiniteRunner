@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94E6D59526ADD7E900B82E17 /* GameScene+Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E6D59426ADD7E900B82E17 /* GameScene+Ground.swift */; };
 		9C05885026A209A50014AA23 /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C05884F26A209A50014AA23 /* MainMenuScene.swift */; };
 		9C05885226A209D20014AA23 /* ActionManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C05885126A209D20014AA23 /* ActionManage.swift */; };
 		9C05885526A215C70014AA23 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C05885426A215C70014AA23 /* GameKit.framework */; };
 		9C96E977269E459F0044B930 /* GameScene+Mechanics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96E976269E459F0044B930 /* GameScene+Mechanics.swift */; };
-		9C96E97B269E45DA0044B930 /* GameScene+Generations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96E97A269E45DA0044B930 /* GameScene+Generations.swift */; };
 		9E7F7A95269CFFDE0062CC06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7F7A94269CFFDE0062CC06 /* AppDelegate.swift */; };
 		9E7F7A97269CFFDE0062CC06 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E7F7A96269CFFDE0062CC06 /* GameScene.sks */; };
 		9E7F7A99269CFFDE0062CC06 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E7F7A98269CFFDE0062CC06 /* Actions.sks */; };
@@ -27,11 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		94E6D59426ADD7E900B82E17 /* GameScene+Ground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Ground.swift"; sourceTree = "<group>"; };
 		9C05884F26A209A50014AA23 /* MainMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
 		9C05885126A209D20014AA23 /* ActionManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionManage.swift; sourceTree = "<group>"; };
 		9C05885426A215C70014AA23 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		9C96E976269E459F0044B930 /* GameScene+Mechanics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Mechanics.swift"; sourceTree = "<group>"; };
-		9C96E97A269E45DA0044B930 /* GameScene+Generations.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = "GameScene+Generations.swift"; sourceTree = "<group>"; };
 		9E7F7A91269CFFDE0062CC06 /* Mini1_InfiniteRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mini1_InfiniteRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E7F7A94269CFFDE0062CC06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E7F7A96269CFFDE0062CC06 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 			children = (
 				9C96E976269E459F0044B930 /* GameScene+Mechanics.swift */,
 				9E906A5326A1D68E0026B7A7 /* GameScene+Physics.swift */,
-				9C96E97A269E45DA0044B930 /* GameScene+Generations.swift */,
+				94E6D59426ADD7E900B82E17 /* GameScene+Ground.swift */,
 				9E8407C5269FDB9300846CE3 /* GameScene+BackGrounds.swift */,
 				9E906A5526A1D6E50026B7A7 /* GameScene+EnemyGenerator.swift */,
 			);
@@ -230,11 +230,11 @@
 			files = (
 				9C05885026A209A50014AA23 /* MainMenuScene.swift in Sources */,
 				9E906A5426A1D68E0026B7A7 /* GameScene+Physics.swift in Sources */,
+				94E6D59526ADD7E900B82E17 /* GameScene+Ground.swift in Sources */,
 				9E7F7AB0269D0F060062CC06 /* Player.swift in Sources */,
 				9E7F7A9B269CFFDE0062CC06 /* GameScene.swift in Sources */,
 				9C05885226A209D20014AA23 /* ActionManage.swift in Sources */,
 				9E8407C6269FDB9300846CE3 /* GameScene+BackGrounds.swift in Sources */,
-				9C96E97B269E45DA0044B930 /* GameScene+Generations.swift in Sources */,
 				9E7F7A9D269CFFDE0062CC06 /* GameViewController.swift in Sources */,
 				9ED45EBE26AB8032002B33F5 /* Enemy.swift in Sources */,
 				9C96E977269E459F0044B930 /* GameScene+Mechanics.swift in Sources */,
