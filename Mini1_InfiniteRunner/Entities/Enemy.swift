@@ -46,7 +46,7 @@ extension Enemy {
         body.allowsRotation = false
         body.isDynamic = false
         body.categoryBitMask = UInt32(mask.enemy.rawValue)
-        body.contactTestBitMask = UInt32(mask.player.rawValue)
+        body.contactTestBitMask = UInt32(mask.player.rawValue) | UInt32(mask.candy.rawValue)
         
         return body
     }

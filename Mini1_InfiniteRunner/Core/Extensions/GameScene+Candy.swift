@@ -56,8 +56,9 @@ extension GameScene {
         // Acao de intervalo entra cada geracao de node
         let waitInBetween = SKAction.wait(forDuration: time+1, withRange: time+5)
         let sequence = SKAction.sequence([createCandy,waitInBetween])
-        let repeateForever = SKAction.repeatForever(sequence)
-        self.run(repeateForever)
+        self.run(sequence) {
+            self.generateRandomCandy(speed: self.enemySpeed, time: self.candyTiminig, position: position)
+        }
     }
     
 }

@@ -15,6 +15,7 @@ class GameScene: SKScene {
     var renderTiming: TimeInterval = 1
     var seconds: TimeInterval = 1.9
     var enemySpeed: TimeInterval = 2.5
+    var candyTiminig: TimeInterval = 7
     //--------------------------------------------------------
     
     let player = Player(imageName: "Personagem_lado")
@@ -37,8 +38,7 @@ class GameScene: SKScene {
         
         parallax()
         // Adicionando inimigos a cena
-        generatEnemys(time: 2.0)
-        generateCandy(speed: 2.0, time: 2.0)
+        generateCandy(speed: 2.5, time: candyTiminig)
         generatEnemys(time: 2.5)
         
         
