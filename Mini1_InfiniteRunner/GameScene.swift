@@ -26,13 +26,13 @@ class GameScene: SKScene {
         self.physicsWorld.contactDelegate = self
         
         //Criando a geração de chão(criação e movimentação)
-        initialGround(time: seconds)
+        initialGround(time: 2)
         
         // Adicionando o Player a cena
         let initalPosition = CGPoint(x: size.width*0.5, y: size.height*0.8)
         
         self.addChild(player)
-        player.setPosition(position: initalPosition)
+        self.player.position = initalPosition
         
         parallax()
         // Adicionando inimigos a cena

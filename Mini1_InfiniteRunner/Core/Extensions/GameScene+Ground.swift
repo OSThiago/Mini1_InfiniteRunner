@@ -9,36 +9,6 @@ import SpriteKit
 
 extension GameScene{
     
-     //tiago lindo
-     //Função para criar o chão, com posição inicial
-     func createGround(position: CGPoint)->SKSpriteNode{
-          //Criação do chão com base em um arquivo
-          let ground = SKSpriteNode(imageNamed: "Ground2")
-          
-          //Definindo as escalas de acordo com o tamnho da tela
-          ground.setScale(2.5)
-          
-          //Definindo o nome para a variável
-          ground.name = "Ground2"
-          
-          //Definindo a posição com base na referência
-          ground.position = position
-          
-          //Criando a física do chão
-          let physicToGround = SKPhysicsBody(rectangleOf: ground.size)
-          physicToGround.affectedByGravity = true
-          physicToGround.allowsRotation = false
-          physicToGround.isDynamic = false
-          
-          //Atribuindo a física para o chão
-          ground.physicsBody = physicToGround
-          
-          return ground
-     }
-     
-     
- 
-    
      //Função para fazer a movimentação do chão
      func initialGround(time: TimeInterval) {
          
@@ -46,8 +16,9 @@ extension GameScene{
             for i in 0...29 {
                 let initialPosition = CGPoint(x: size.width*(CGFloat(i)*0.05), y: size.height*0.5)
                     //Criando o chão
-                    let ground = self.createGround(position: initialPosition)
-                           
+                    //let ground = createGround(position: initialPosition)
+                    let ground = Ground(position: initialPosition)
+                
                     //Adicionando o chão na tela
                     self.addChild(ground)
                            
@@ -73,4 +44,28 @@ extension GameScene{
              print(ground)
          }
      }
+    
+    func startGround(ground: SKSpriteNode, speed: TimeInterval){
+            let moveLeft = SKAction.moveBy(x: -frame.size.width/2, y: 0.0, duration: speed)
+            let reset = SKAction.moveBy(x: frame.size.width/2, y: 0.0, duration: 0.0)
+            let sequence = SKAction.sequence([moveLeft,reset])
+            //ground.run(SKAction.repeatForever(sequence))
+        ground.run(sequence) {
+            self.startGround(ground: ground, speed: speed)
+        }
+        
+        
+        func moveGroundLeft(speed: TimeInterval) -> SKAction{
+            return SKAction.moveBy(x: -frame.size.width/2, y: 0.0, duration: speed)
+        }
+        
+        func resetGroundPosition() ->SKAction{
+            return  SKAction.moveBy(x: frame.size.width/2, y: 0.0, duration: 0.0)
+        }
+        
+    }
+    
+    
+    
+    
 }

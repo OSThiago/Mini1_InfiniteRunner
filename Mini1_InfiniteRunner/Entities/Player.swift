@@ -30,22 +30,15 @@ class Player: SKSpriteNode {
         self.physicsBody = createBody()
         
     }
-    
-   // static let shared = Player(imageName: "Personagem_lado")
-    
-
-
-    
-    // Metodos
   
     // MARK: - Position
-    func setPosition(position: CGPoint) {
-        self.position = position
-    }
-    
-    func getPosition() -> CGPoint {
-        self.position
-    }
+//    func setPosition(position: CGPoint) {
+//        self.position = position
+//    }
+//    
+//    func getPosition() -> CGPoint {
+//        self.position
+//    }
 
     
     // MARK:- playerState

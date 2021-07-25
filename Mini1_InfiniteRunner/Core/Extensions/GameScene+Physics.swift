@@ -29,10 +29,10 @@ extension GameScene: SKPhysicsContactDelegate{
             
         }
         
-        if (contact.bodyA.node?.name == "player" && contact.bodyB.node?.name == "Ground2"){
+        if (contact.bodyA.node?.name == "player" && contact.bodyB.node?.name == "Ground"){
             self.player.isJuping = false
         }
-        if (contact.bodyA.node?.name == "Ground2" && contact.bodyB.node?.name == "player"){
+        if (contact.bodyA.node?.name == "Ground" && contact.bodyB.node?.name == "player"){
             self.player.isJuping = false
 
         }
