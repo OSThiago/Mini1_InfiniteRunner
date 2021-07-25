@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27732D4926AE01090013654F /* GameScene+Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27732D4826AE01090013654F /* GameScene+Camera.swift */; };
 		94E6D59526ADD7E900B82E17 /* GameScene+Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E6D59426ADD7E900B82E17 /* GameScene+Ground.swift */; };
 		9C05885026A209A50014AA23 /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C05884F26A209A50014AA23 /* MainMenuScene.swift */; };
 		9C05885226A209D20014AA23 /* ActionManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C05885126A209D20014AA23 /* ActionManage.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27732D4826AE01090013654F /* GameScene+Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Camera.swift"; sourceTree = "<group>"; };
 		94E6D59426ADD7E900B82E17 /* GameScene+Ground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Ground.swift"; sourceTree = "<group>"; };
 		9C05884F26A209A50014AA23 /* MainMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
 		9C05885126A209D20014AA23 /* ActionManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionManage.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				9E8407C5269FDB9300846CE3 /* GameScene+BackGrounds.swift */,
 				9E906A5526A1D6E50026B7A7 /* GameScene+EnemyGenerator.swift */,
 				9ED45EC926ADF74F002B33F5 /* GameScene+Candy.swift */,
+				27732D4826AE01090013654F /* GameScene+Camera.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				9ED45EC626ADDDE7002B33F5 /* Grounds.swift in Sources */,
 				9C96E977269E459F0044B930 /* GameScene+Mechanics.swift in Sources */,
 				9ED45ECA26ADF74F002B33F5 /* GameScene+Candy.swift in Sources */,
+				27732D4926AE01090013654F /* GameScene+Camera.swift in Sources */,
 				9E7F7A95269CFFDE0062CC06 /* AppDelegate.swift in Sources */,
 				9E906A5626A1D6E50026B7A7 /* GameScene+EnemyGenerator.swift in Sources */,
 			);

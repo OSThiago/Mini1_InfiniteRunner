@@ -20,7 +20,7 @@ class GameScene: SKScene {
     
     let player = Player(imageName: "Personagem_lado")
    
-    
+    var cameraNode = SKCameraNode()
     
     override init(size: CGSize) {
         super.init(size: size)
@@ -31,7 +31,7 @@ class GameScene: SKScene {
         initialGround(time: 1.9)
         
         // Adicionando o Player a cena
-        let initalPosition = CGPoint(x: size.width*0.5, y: size.height*0.8)
+        let initalPosition = CGPoint(x: size.width*0.5, y: size.height*0.7)
         
         self.addChild(player)
         self.player.position = initalPosition
@@ -44,6 +44,18 @@ class GameScene: SKScene {
         
         
         pauseButton()
+        
+        
+        addChild(cameraNode)
+        camera = cameraNode
+        cameraNode.position.x = size.width/2
+        cameraNode.position.y = size.height/2
+        boundsCamera()
+        
+        
+        
+        
+        
     }
 
     
@@ -97,7 +109,7 @@ class GameScene: SKScene {
         // Called before each frame is rendered
         
         
-        
+        moveCamera()
         
     }
     
