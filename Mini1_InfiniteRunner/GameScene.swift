@@ -37,7 +37,7 @@ class GameScene: SKScene {
         parallax()
         // Adicionando inimigos a cena
         generatEnemys(time: 2.0)
-        
+        generateCandy(speed: 2.0, time: 2.0)
         
         
         pauseButton()
