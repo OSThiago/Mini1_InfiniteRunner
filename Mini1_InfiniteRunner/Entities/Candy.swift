@@ -43,9 +43,9 @@ extension Candy {
     
     private func createBody(imageNamed image: String) -> SKPhysicsBody {
         let body = SKPhysicsBody(texture: SKTexture(imageNamed: image), size: self.size)
-        body.affectedByGravity = true
+        body.affectedByGravity = false
         body.allowsRotation = false
-        body.isDynamic = false
+        body.isDynamic = true
         body.categoryBitMask = UInt32(mask.candy.rawValue)
         body.contactTestBitMask = UInt32(mask.player.rawValue) | UInt32(mask.enemy.rawValue)
         return body

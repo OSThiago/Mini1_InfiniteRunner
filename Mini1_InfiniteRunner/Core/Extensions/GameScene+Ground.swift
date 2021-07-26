@@ -18,7 +18,7 @@ extension GameScene{
                     //Criando o chão
                     //let ground = createGround(position: initialPosition)
                     let ground = Ground(position: initialPosition)
-                
+                    ground.texture?.filteringMode = .nearest
                     //Adicionando o chão na tela
                     self.addChild(ground)
                            

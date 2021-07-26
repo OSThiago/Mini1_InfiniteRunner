@@ -19,7 +19,7 @@ class GameScene: SKScene {
     //--------------------------------------------------------
     
     let player = Player(imageName: "Personagem_lado")
-   
+    
     var cameraNode = SKCameraNode()
     
     override init(size: CGSize) {
@@ -44,6 +44,7 @@ class GameScene: SKScene {
         
         //iniciar a animacao de corrida do personagem
         player.runner()
+        player.texture?.filteringMode = .nearest
         
         pauseButton()
         

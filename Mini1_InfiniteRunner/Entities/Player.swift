@@ -28,11 +28,13 @@ class Player: SKSpriteNode {
         self.name = "player"
         self.zPosition = 1
         self.physicsBody = createBody()
+        self.xScale = self.xScale*1.5
+        
         
     }
     
     func runner(){
-        self.run(.repeatForever(.animate(with: .init(format: "Running_character%@", frameCount: 1...5), timePerFrame: 0.1)))
+        self.run(.repeatForever(.animate(with: .init(format: "Running_character%@", frameCount: 1...4), timePerFrame: 0.1)))
     }
     
     // MARK: - Position

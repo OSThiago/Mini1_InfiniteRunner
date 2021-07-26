@@ -46,6 +46,7 @@ extension GameScene {
             let random = Int.random(in: 1...4)
             let candy = Candy(image: "coletavel-\(random)", position: position)
             
+            candy.texture?.filteringMode = .nearest
             self.addChild(candy)
             self.moveCandy(node: candy, time: speed)
             

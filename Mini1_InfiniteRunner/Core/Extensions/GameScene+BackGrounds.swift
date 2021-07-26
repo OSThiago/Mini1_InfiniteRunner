@@ -131,6 +131,7 @@ extension GameScene {
         
         //teste escala
         background.setScale(2.15)
+        background.texture?.filteringMode = .nearest
         
         return background
     }

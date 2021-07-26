@@ -28,11 +28,12 @@ extension GameScene{
             enemy.position.y = initialPosition.y * self.adjustHeight(imageNumber: imageNumber)
             
             
-            if enemy.position.y < self.size.height*0.5 {
-                enemy.yScale = enemy.yScale*(-1)
-            }
+//            if enemy.position.y < self.size.height*0.6 {
+//                enemy.yScale = enemy.yScale*(-1)
+//            }
             
-            
+            enemy.setScale(1.5)
+            enemy.texture?.filteringMode = .nearest
             self.addChild(enemy)
             self.moveEnemy(node: enemy, time: time)
             
@@ -89,17 +90,17 @@ extension GameScene{
     func adjustHeight(imageNumber image: Int) -> CGFloat{
         switch image {
         case 1:
-            return 1.2
+            return 1.13
         case 2:
-            return 1.15
+            return 1.089
         case 3:
-            return 1.4
+            return 1.25
         case 5:
-            return 0.85
+            return 0.939
         case 6:
-            return 0.75
+            return 0.85
         case 7:
-            return 0.45
+            return 0.55
         default:
             return 1.0
         }
