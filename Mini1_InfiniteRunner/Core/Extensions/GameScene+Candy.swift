@@ -14,7 +14,7 @@ extension GameScene {
         let topPosition = CGPoint(x: self.size.width*1.5, y: self.size.height*0.63)
         
         // Posicao em baixo
-        let bottomPosition = CGPoint(x: self.size.width*1.5, y: self.size.height*0.39)
+        let bottomPosition = CGPoint(x: self.size.width*1.7, y: self.size.height*0.39)
         
         // Gerando doce em cima
         generateRandomCandy(speed: speed, time: time, position: topPosition)

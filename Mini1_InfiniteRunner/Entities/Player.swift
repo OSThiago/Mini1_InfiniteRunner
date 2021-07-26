@@ -30,7 +30,11 @@ class Player: SKSpriteNode {
         self.physicsBody = createBody()
         
     }
-  
+    
+    func runner(){
+        self.run(.repeatForever(.animate(with: .init(format: "Running_character%@", frameCount: 1...5), timePerFrame: 0.1)))
+    }
+    
     // MARK: - Position
 //    func setPosition(position: CGPoint) {
 //        self.position = position
@@ -84,4 +88,15 @@ extension Player {
 enum PlayerSide {
     case TOP, BOTTOM
     
+}
+
+
+extension Array where Element == SKTexture{
+    init(format: String, frameCount: ClosedRange<Int>){
+        self = frameCount.map({ (index) in
+            let imageName = String(format: format, "\(index)")
+            return SKTexture(imageNamed: imageName)
+        })
+        
+    }
 }

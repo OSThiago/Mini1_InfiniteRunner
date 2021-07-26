@@ -42,6 +42,8 @@ class GameScene: SKScene {
         generatEnemys(time: 2.5)
         
         
+        //iniciar a animacao de corrida do personagem
+        player.runner()
         
         pauseButton()
         
