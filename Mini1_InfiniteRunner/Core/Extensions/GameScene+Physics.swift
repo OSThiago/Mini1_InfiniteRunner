@@ -69,6 +69,7 @@ extension GameScene: SKPhysicsContactDelegate{
             
             // Vibração
             let generator = UIImpactFeedbackGenerator()
+            generator.prepare()
             generator.impactOccurred()
             
         }
@@ -90,6 +91,7 @@ extension GameScene: SKPhysicsContactDelegate{
             
             // Vibração
             let generator = UIImpactFeedbackGenerator()
+            generator.prepare()
             generator.impactOccurred()
             
         }
