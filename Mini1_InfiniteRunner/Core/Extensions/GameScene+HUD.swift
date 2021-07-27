@@ -19,6 +19,7 @@ extension GameScene {
         countLabel.fontName = "Early GameBoy"
         countLabel.position = CGPoint(x: frame.size.width*(0.4), y: frame.size.height*(0.34))
         countLabel.zPosition = 4
+        countLabel.horizontalAlignmentMode = .left
         
         pumpkinHUD.position = CGPoint(x: frame.size.width*(0.35), y: frame.size.height*(0.38))
     }
