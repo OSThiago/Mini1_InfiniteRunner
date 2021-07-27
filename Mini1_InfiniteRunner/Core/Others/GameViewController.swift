@@ -26,6 +26,7 @@ class GameViewController: UIViewController{
             view.presentScene(menu)
             
             GameViewController.sharedGC.authenticatePlayer()
+            GameViewController.sharedGC.transitionToGameCenter()
             
             view.ignoresSiblingOrder = true
             view.showsFPS = true
@@ -34,6 +35,7 @@ class GameViewController: UIViewController{
             
         }
     }
+
     
 
     
@@ -66,7 +68,7 @@ extension UIViewController:
     public func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
             gameCenterViewController.dismiss(animated: true, completion: nil)
         }
+} */
+
  
-}
- */
 

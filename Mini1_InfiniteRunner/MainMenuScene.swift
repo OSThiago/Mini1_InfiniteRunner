@@ -41,7 +41,6 @@ class MainMenuScene: SKScene{
                         if node.contains(touch.location(in: self)){
                             //implementar o game center ao tocar ak
                             print("Game center")
-                            //MainMenuScene.sharedGC.firstTransition()
                             MainMenuScene.sharedGC.transitionToGameCenter()
                         }
                     }

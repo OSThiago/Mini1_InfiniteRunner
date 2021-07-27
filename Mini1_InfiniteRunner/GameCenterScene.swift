@@ -11,7 +11,7 @@ import GameKit
 import UIKit
 
 
-class GameCenterScene: UIViewController,GKGameCenterControllerDelegate{
+class GameCenterScene: UIViewController{
     
     var Label: UILabel! //APENAS PARA TESTE DOCE
     var label2: UILabel! //APENAS PARA TESTE DISTANCIA
@@ -127,25 +127,22 @@ class GameCenterScene: UIViewController,GKGameCenterControllerDelegate{
         }
     }
     
-    /*
-    func firstTransition(){
-        GameCenterScene.sharedGC.transitionToGameCenter()
-    }
-    */
+
+    
     
     func transitionToGameCenter(){
-            print("Opening Game Center")
-            let vc = self.view?.window?.rootViewController
-            let gc = GKGameCenterViewController()
-            gc.gameCenterDelegate = self
-            vc?.present(gc, animated: true, completion: nil)
+        print("Opening Game Center")
+        let vc = self.view?.window?.rootViewController
+        let gc = GKGameCenterViewController()
+        gc.gameCenterDelegate = self
+        vc?.present(gc, animated: true, completion: nil)
 
-        }
-
+    }
+/*
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
-            gameCenterViewController.dismiss(animated: true, completion: nil)
-        }
-    
+        gameCenterViewController.dismiss(animated: true, completion: nil)
+    }
+    */
     
     /*
     override func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
@@ -160,4 +157,11 @@ class GameCenterScene: UIViewController,GKGameCenterControllerDelegate{
     }
    
     
+}
+
+extension UIViewController:
+    GKGameCenterControllerDelegate {
+    public func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+            gameCenterViewController.dismiss(animated: true, completion: nil)
+        }
 }

@@ -45,6 +45,7 @@ extension GameScene: SKPhysicsContactDelegate{
         if (contact.bodyA.node?.name == "candy" && contact.bodyB.node?.name == "player") {
             contact.bodyA.node?.removeFromParent()
             //Contador de doces
+            playSoundCandieCollected()
             GameScene.sharedGC.scoreButton()
             print(GameScene.sharedGC.candyCollectedInOneGame)
             
@@ -53,6 +54,7 @@ extension GameScene: SKPhysicsContactDelegate{
         if (contact.bodyA.node?.name == "player" && contact.bodyB.node?.name == "candy") {
             contact.bodyB.node?.removeFromParent()
             //Contador de doces
+            playSoundCandieCollected()
             GameScene.sharedGC.scoreButton()
             print(GameScene.sharedGC.candyCollectedInOneGame)
         }
@@ -72,6 +74,16 @@ extension GameScene: SKPhysicsContactDelegate{
         
         
     }
+    
+    func playSoundCandieCollected(){
+        let audioNode = SKAudioNode(fileNamed: "SoundCandieCollected.wav")
+        audioNode.autoplayLooped = false
+        audioNode.name = "AudioCandieCollected"
+        self.addChild(audioNode)
+        
+        audioNode.run(.changeVolume(to: 1, duration: 0))
+    }
+
     
     func didEnd(_ contact: SKPhysicsContact) {
       //  print("perdeu o contato")
