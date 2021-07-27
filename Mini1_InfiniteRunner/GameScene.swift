@@ -72,7 +72,7 @@ class GameScene: SKScene {
         boundsCamera()
         
         
-        metersCountLabel()
+        
         
         self.generator.prepare()
     }
@@ -83,6 +83,7 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         HUDScoreLabel()
         HUDPumpkin()
+        HUDMetersCount()
         addSwipeGestureRecognizers()
     }
     
