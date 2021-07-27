@@ -87,11 +87,13 @@ class GameScene: SKScene {
     }
     
     func pauseButton(){
-        let pauseButton = SKSpriteNode(imageNamed: "pauseButton")
+        let pauseButton = SKSpriteNode(imageNamed: "pause_button")
         pauseButton.name = "pauseButton"
-        pauseButton.position = CGPoint(x: 807, y: 356)
+//        pauseButton.position = CGPoint(x: frame.size.width*0.1, y: frame.size.height*1.3)
+        pauseButton.position = CGPoint(x: -380, y: 150)
         pauseButton.size = CGSize(width: 35, height: 35)
-        addChild(pauseButton)
+        pauseButton.zPosition = 100
+        cameraNode.addChild(pauseButton)
     }
     
     

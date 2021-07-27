@@ -82,6 +82,7 @@ extension GameScene: SKPhysicsContactDelegate{
         self.addChild(audioNode)
         
         audioNode.run(.changeVolume(to: 1, duration: 0))
+        
     }
 
     
