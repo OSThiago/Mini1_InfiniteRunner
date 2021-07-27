@@ -7,6 +7,8 @@
 
 import SpriteKit
 
+
+
 class MainMenuScene: SKScene{
     
     //static let sharedGC = GameCenterScene()
@@ -16,9 +18,9 @@ class MainMenuScene: SKScene{
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
         playSoundMainMenu()
-        
         createBackground()
-        configButton()
+        soundButton()
+        gameCenterButton()
         playButton()
     }
     
@@ -31,10 +33,15 @@ class MainMenuScene: SKScene{
                         if node.contains(touch.location(in: self)){
                             ActionManage.shared.sceneTransition(self, toScene: .GameScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
                         }
-                    }else if node.name == "configButton"{
+                    }else if node.name == "soundButton"{
                         if node.contains(touch.location(in: self)){
-                            print("ainda nn faz nada o botao de config")
-                            self.gameCenterButton()
+                            print("ainda nn faz nada o botao de sound")
+                        }
+                    }else if node.name == "gameCenterButton"{
+                        if node.contains(touch.location(in: self)){
+                            //implementar o game center ao tocar ak
+                            print("Game center")
+                            //self.gameCenterButton()
                         }
                     }
                 })
@@ -60,16 +67,22 @@ class MainMenuScene: SKScene{
         addChild(playButton)
     }
     
-    func configButton(){
-        let configButton = SKSpriteNode(imageNamed: "configButton")
-        configButton.name = "configButton"
-        configButton.position = CGPoint.init(x: 310, y: 130)
-        configButton.size = CGSize(width: 35, height: 35)
+    
+    func soundButton(){
+        let configButton = SKSpriteNode(imageNamed: "soundButton")
+        configButton.name = "soundButton"
+        configButton.position = CGPoint.init(x: 290, y: 120)
+        configButton.size = CGSize(width: 80, height: 60)
         addChild(configButton)
     }
     
     func gameCenterButton(){
-        GameScene.sharedGC.showLeaderboards(self)
+        //GameScene.sharedGC.showLeaderboards(self)
+        let gameCenterButton = SKSpriteNode(imageNamed: "gameCenterButton")
+        gameCenterButton.name = "gameCenterButton"
+        gameCenterButton.position = CGPoint.init(x: -300, y: -125)
+        gameCenterButton.size = CGSize.init(width: 40, height: 40)
+        self.addChild(gameCenterButton)
     }
        
     func playSoundMainMenu(){

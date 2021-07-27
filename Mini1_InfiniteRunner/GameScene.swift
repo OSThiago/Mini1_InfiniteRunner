@@ -38,6 +38,7 @@ class GameScene: SKScene {
         self.addChild(player)
         self.player.position = initalPosition
         
+        
         parallax()
         // Adicionando inimigos a cena
         generateCandy(speed: 2.5, time: candyTiminig)
@@ -124,7 +125,6 @@ class GameScene: SKScene {
         audioNode.autoplayLooped = true
         audioNode.name = "AudioGameStarted"
         self.addChild(audioNode)
-        
         audioNode.run(.changeVolume(by: 0.25, duration: 0))
     }
     

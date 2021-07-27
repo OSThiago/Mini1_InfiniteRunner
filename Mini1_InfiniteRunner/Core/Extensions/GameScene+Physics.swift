@@ -23,6 +23,7 @@ extension GameScene: SKPhysicsContactDelegate{
             //Enviar as pontuações de doces para o gameCenter
             GameScene.sharedGC.CallGameCenter(self)
             ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+            GameScene.sharedGC.candyCollectedInOneGame = 0
         }
         if (contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "player"){
             contact.bodyB.node?.removeFromParent()
@@ -30,7 +31,7 @@ extension GameScene: SKPhysicsContactDelegate{
             //Enviar as pontuações de doces para o gameCenter
             GameScene.sharedGC.CallGameCenter(self)
             ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
-            
+            GameScene.sharedGC.candyCollectedInOneGame = 0
         }
         
         if (contact.bodyA.node?.name == "player" && contact.bodyB.node?.name == "Ground"){
