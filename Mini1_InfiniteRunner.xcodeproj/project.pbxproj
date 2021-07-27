@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		27732D4926AE01090013654F /* GameScene+Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27732D4826AE01090013654F /* GameScene+Camera.swift */; };
+		940D76C826B07F6900900F29 /* Early GameBoy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 940D76C726B07F6900900F29 /* Early GameBoy.ttf */; };
 		94E6D59526ADD7E900B82E17 /* GameScene+Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E6D59426ADD7E900B82E17 /* GameScene+Ground.swift */; };
 		9C05885026A209A50014AA23 /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C05884F26A209A50014AA23 /* MainMenuScene.swift */; };
 		9C05885226A209D20014AA23 /* ActionManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C05885126A209D20014AA23 /* ActionManage.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		27732D4826AE01090013654F /* GameScene+Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Camera.swift"; sourceTree = "<group>"; };
+		940D76C726B07F6900900F29 /* Early GameBoy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Early GameBoy.ttf"; path = "../../../../../Downloads/Early GameBoy.ttf"; sourceTree = "<group>"; };
 		94E6D59426ADD7E900B82E17 /* GameScene+Ground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Ground.swift"; sourceTree = "<group>"; };
 		9C05884F26A209A50014AA23 /* MainMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
 		9C05885126A209D20014AA23 /* ActionManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionManage.swift; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		940D76C626B07EE300900F29 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				940D76C726B07F6900900F29 /* Early GameBoy.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		9C05885326A215C70014AA23 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +144,7 @@
 		9E7F7AAA269D013E0062CC06 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				940D76C626B07EE300900F29 /* Fonts */,
 				9E7F7AAB269D01590062CC06 /* Sounds */,
 			);
 			path = Resources;
@@ -255,6 +266,7 @@
 				9C198ECE26AF829600254DEC /* SoundMainMenu.wav in Resources */,
 				9C198ED426B083CB00254DEC /* Sound8bitGameStarted.wav in Resources */,
 				9E7F7A99269CFFDE0062CC06 /* Actions.sks in Resources */,
+				940D76C826B07F6900900F29 /* Early GameBoy.ttf in Resources */,
 				9C198ED026AFA6B400254DEC /* SoundCandieCollected.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
