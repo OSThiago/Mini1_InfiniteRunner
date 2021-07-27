@@ -91,7 +91,7 @@ class MainMenuScene: SKScene{
     }
        
     func playSoundMainMenu(){
-        let audioNode = SKAudioNode(fileNamed: "SoundMainMenu.wav")
+        let audioNode = SKAudioNode(fileNamed: "Sound8bitMainMenu.wav")
         audioNode.autoplayLooped = true
         audioNode.name = "AudioMainMenu"
         self.addChild(audioNode)
