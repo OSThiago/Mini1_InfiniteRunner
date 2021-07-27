@@ -13,7 +13,6 @@
 		9C05885026A209A50014AA23 /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C05884F26A209A50014AA23 /* MainMenuScene.swift */; };
 		9C05885226A209D20014AA23 /* ActionManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C05885126A209D20014AA23 /* ActionManage.swift */; };
 		9C05885526A215C70014AA23 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C05885426A215C70014AA23 /* GameKit.framework */; };
-		9C198ECA26AF812E00254DEC /* GameCenterScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C198EC926AF812E00254DEC /* GameCenterScene.swift */; };
 		9C198ECC26AF822E00254DEC /* SoundGameStarted.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9C198ECB26AF822E00254DEC /* SoundGameStarted.wav */; };
 		9C198ECE26AF829600254DEC /* SoundMainMenu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9C198ECD26AF829600254DEC /* SoundMainMenu.wav */; };
 		9C198ED026AFA6B400254DEC /* SoundCandieCollected.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9C198ECF26AFA6B400254DEC /* SoundCandieCollected.wav */; };
@@ -34,6 +33,7 @@
 		9ED45EC626ADDDE7002B33F5 /* Grounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED45EC526ADDDE7002B33F5 /* Grounds.swift */; };
 		9ED45EC826ADF5FF002B33F5 /* Candy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED45EC726ADF5FF002B33F5 /* Candy.swift */; };
 		9ED45ECA26ADF74F002B33F5 /* GameScene+Candy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED45EC926ADF74F002B33F5 /* GameScene+Candy.swift */; };
+		C6D7518026B07D2000D7A116 /* GameViewController+GKGameCenterControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D7517F26B07D2000D7A116 /* GameViewController+GKGameCenterControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +43,6 @@
 		9C05884F26A209A50014AA23 /* MainMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
 		9C05885126A209D20014AA23 /* ActionManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionManage.swift; sourceTree = "<group>"; };
 		9C05885426A215C70014AA23 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		9C198EC926AF812E00254DEC /* GameCenterScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterScene.swift; sourceTree = "<group>"; };
 		9C198ECB26AF822E00254DEC /* SoundGameStarted.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = SoundGameStarted.wav; path = Sounds/SoundGameStarted.wav; sourceTree = SOURCE_ROOT; };
 		9C198ECD26AF829600254DEC /* SoundMainMenu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = SoundMainMenu.wav; path = Sounds/SoundMainMenu.wav; sourceTree = SOURCE_ROOT; };
 		9C198ECF26AFA6B400254DEC /* SoundCandieCollected.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = SoundCandieCollected.wav; path = Sounds/SoundCandieCollected.wav; sourceTree = SOURCE_ROOT; };
@@ -66,6 +65,7 @@
 		9ED45EC526ADDDE7002B33F5 /* Grounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grounds.swift; sourceTree = "<group>"; };
 		9ED45EC726ADF5FF002B33F5 /* Candy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Candy.swift; sourceTree = "<group>"; };
 		9ED45EC926ADF74F002B33F5 /* GameScene+Candy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Candy.swift"; sourceTree = "<group>"; };
+		C6D7517F26B07D2000D7A116 /* GameViewController+GKGameCenterControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+GKGameCenterControllerDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +119,6 @@
 				9E7F7A9A269CFFDE0062CC06 /* GameScene.swift */,
 				9C05885126A209D20014AA23 /* ActionManage.swift */,
 				9C05884F26A209A50014AA23 /* MainMenuScene.swift */,
-				9C198EC926AF812E00254DEC /* GameCenterScene.swift */,
 				9E7F7AAD269D01960062CC06 /* Entities */,
 				9E7F7AAA269D013E0062CC06 /* Resources */,
 				9E7F7AA9269D00B90062CC06 /* Core */,
@@ -190,6 +189,7 @@
 				9E7F7A96269CFFDE0062CC06 /* GameScene.sks */,
 				9E7F7A98269CFFDE0062CC06 /* Actions.sks */,
 				9E7F7A9C269CFFDE0062CC06 /* GameViewController.swift */,
+				C6D7517F26B07D2000D7A116 /* GameViewController+GKGameCenterControllerDelegate.swift */,
 				9E7F7A9E269CFFDE0062CC06 /* Main.storyboard */,
 			);
 			path = Others;
@@ -277,8 +277,8 @@
 				9E7F7A9B269CFFDE0062CC06 /* GameScene.swift in Sources */,
 				9C05885226A209D20014AA23 /* ActionManage.swift in Sources */,
 				9E33815026B038F700B97EAB /* GameScene+HUD.swift in Sources */,
-				9C198ECA26AF812E00254DEC /* GameCenterScene.swift in Sources */,
 				9E8407C6269FDB9300846CE3 /* GameScene+BackGrounds.swift in Sources */,
+				C6D7518026B07D2000D7A116 /* GameViewController+GKGameCenterControllerDelegate.swift in Sources */,
 				9E7F7A9D269CFFDE0062CC06 /* GameViewController.swift in Sources */,
 				9ED45EBE26AB8032002B33F5 /* Enemy.swift in Sources */,
 				9ED45EC826ADF5FF002B33F5 /* Candy.swift in Sources */,

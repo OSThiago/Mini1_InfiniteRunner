@@ -14,24 +14,26 @@ enum mask: Int {
 }
 extension GameScene: SKPhysicsContactDelegate{
     
-    static let sharedGC = GameCenterScene()
+    static let sharedGVC = GameViewController()
     
     func didBegin(_ contact: SKPhysicsContact) {
         if (contact.bodyA.node?.name == "player" && contact.bodyB.node?.name == "enemy"){
             contact.bodyA.node?.removeFromParent()
             print("you loser my brother")
             //Enviar as pontuações de doces para o gameCenter
-            GameScene.sharedGC.CallGameCenter(self)
+            GameScene.sharedGVC.callGameCenter(self)
             ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
-            GameScene.sharedGC.candyCollectedInOneGame = 0
+           // GameScene.sharedGVC.candyCollectedInOneGame = 0
+            self.countCandy = 0
         }
         if (contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "player"){
             contact.bodyB.node?.removeFromParent()
             print("you loser my brother")
             //Enviar as pontuações de doces para o gameCenter
-            GameScene.sharedGC.CallGameCenter(self)
+            GameScene.sharedGVC.callGameCenter(self)
             ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
-            GameScene.sharedGC.candyCollectedInOneGame = 0
+            //GameScene.sharedGVC.candyCollectedInOneGame = 0
+            self.countCandy = 0
         }
         
         if (contact.bodyA.node?.name == "player" && contact.bodyB.node?.name == "Ground"){
@@ -44,29 +46,32 @@ extension GameScene: SKPhysicsContactDelegate{
         // Contato entre o player o os coletaveis
         if (contact.bodyA.node?.name == "candy" && contact.bodyB.node?.name == "player") {
             contact.bodyA.node?.removeFromParent()
-            
-            //Contador de doces
-            playSoundCandieCollected()
-            GameScene.sharedGC.scoreButton()
-            print(GameScene.sharedGC.candyCollectedInOneGame)
-            
             // HUD
             self.countCandy += 1
             self.countLabel.text = "\(self.countCandy)"
+            
+            //Contador de doces
+            playSoundCandieCollected()
+            GameScene.sharedGVC.totalCandyCollectedScore += 1
+            GameScene.sharedGVC.highCandyScore(number: self.countCandy)
+            GameScene.sharedGVC.allCandiesCollected(number: GameScene.sharedGVC.totalCandyCollectedScore)
+
+        
             
         }
         
         if (contact.bodyA.node?.name == "player" && contact.bodyB.node?.name == "candy") {
             contact.bodyB.node?.removeFromParent()
             
-            //Contador de doces
-            playSoundCandieCollected()
-            GameScene.sharedGC.scoreButton()
-            print(GameScene.sharedGC.candyCollectedInOneGame)
-            
             // HUD
             self.countCandy += 1
             self.countLabel.text = "\(self.countCandy)"
+            
+            //Contador de doces
+            playSoundCandieCollected()
+            GameScene.sharedGVC.totalCandyCollectedScore += 1
+            GameScene.sharedGVC.highCandyScore(number: self.countCandy)
+            GameScene.sharedGVC.allCandiesCollected(number: GameScene.sharedGVC.totalCandyCollectedScore)
         }
         
         
