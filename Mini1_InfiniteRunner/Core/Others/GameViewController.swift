@@ -99,6 +99,7 @@ class GameViewController: UIViewController{
         }
     }
     
+    //FUNÇÃO PARA SALVAR O TOTAL DE DOCES COLETADOS
     func allCandiesCollected(number: Int){
         if GKLocalPlayer.local.isAuthenticated{
             let scoreDistanceReporter = GKScore(leaderboardIdentifier: "com.team10.Mini1.TotalCandies")
@@ -108,17 +109,16 @@ class GameViewController: UIViewController{
         }
     }
     
+    //FUNÇÃO PARA CHAMAR OS LEADERBOARDS
     func transitionToGameCenter(){
         print("Opening Game Center")
-        let viewController = GKGameCenterViewController(
-                        leaderboardID: "com.team10.Mini1.DistanceReached",
-                        playerScope: .global,
-                        timeScope: .allTime)
+        let viewController = GKGameCenterViewController(state: .leaderboards)
         viewController.gameCenterDelegate = self
         present(viewController, animated: true, completion: nil)
     }
 
     
+    //FUNÇÃO APENAS PARA TESTE VALIDAÇÃO
     func showScores(){
         print("Candies in one game: \(candyCollectedInOneGame)")
         print("Total candies:  \(totalCandyCollectedScore)")
