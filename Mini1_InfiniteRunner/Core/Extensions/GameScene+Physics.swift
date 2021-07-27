@@ -50,6 +50,10 @@ extension GameScene: SKPhysicsContactDelegate{
             GameScene.sharedGC.scoreButton()
             print(GameScene.sharedGC.candyCollectedInOneGame)
             
+            // HUD
+            self.countCandy += 1
+            self.countLabel.text = "\(self.countCandy)"
+            
         }
         
         if (contact.bodyA.node?.name == "player" && contact.bodyB.node?.name == "candy") {
@@ -59,6 +63,10 @@ extension GameScene: SKPhysicsContactDelegate{
             playSoundCandieCollected()
             GameScene.sharedGC.scoreButton()
             print(GameScene.sharedGC.candyCollectedInOneGame)
+            
+            // HUD
+            self.countCandy += 1
+            self.countLabel.text = "\(self.countCandy)"
         }
         
         

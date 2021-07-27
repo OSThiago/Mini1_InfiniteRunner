@@ -21,6 +21,14 @@ class GameScene: SKScene {
     let player = Player(imageName: "Personagem_lado")
     
     var cameraNode = SKCameraNode()
+    //--------------------------------------------------------
+    
+    // Contador de doces
+    var countCandy = 0
+    var countLabel = SKLabelNode(fontNamed: "HelveticaNeue-CondensedBold")
+    let pumpkinHUD = SKSpriteNode(imageNamed: "punctuation")
+    
+    
     
     override init(size: CGSize) {
         super.init(size: size)
@@ -68,7 +76,8 @@ class GameScene: SKScene {
     
     
     override func didMove(to view: SKView) {
-        
+        HUDScoreLabel()
+        HUDPumpkin()
         addSwipeGestureRecognizers()
     }
     
@@ -98,6 +107,11 @@ class GameScene: SKScene {
     
     
     override func update(_ currentTime: TimeInterval) {
+        
+        moveCamera()
+        HUDCameraPosition()
+        
+        
         if player.position.x != size.width/2{
             player.position.x = size.width/2
         }
@@ -116,8 +130,6 @@ class GameScene: SKScene {
         }
         // Called before each frame is rendered
         
-        
-        moveCamera()
         
     }
     
