@@ -11,14 +11,11 @@ import GameplayKit
 import GameKit
 
 class GameViewController: UIViewController{
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
-            
             
             let menu = MainMenuScene(size: view.frame.size)
             print(view.frame.size)
@@ -26,58 +23,40 @@ class GameViewController: UIViewController{
             view.presentScene(menu)
             
             self.authenticatePlayer()
-            self.showLeaderboards(self)
+            self.showLeaderboards()
             
             view.ignoresSiblingOrder = true
             view.showsFPS = true
             view.showsNodeCount = true
-    
             
         }
     }
-
-    
-    var Label: UILabel! //APENAS PARA TESTE DOCE
-    var label2: UILabel! //APENAS PARA TESTE DISTANCIA
     
     //Total de doces coletados em todos os jogos
     var totalCandyCollectedScore = Int()
     //Total de doces coletados em uma partida
     var candyCollectedInOneGame = Int()
-
     //Total de distancia percorrida em uma partida
     var distanceReachedInOneGame = Float()
     
-
-
-    
     //FUNÇÃO PARA MOSTRAR AS CONQUISTAS
-    func showAchievements(_ sender: Any) {
-        let viewControler = GKGameCenterViewController()
+    func showAchievements() {
+        let viewControler = GKGameCenterViewController(state: .achievements)
         viewControler.gameCenterDelegate = self
-        viewControler.viewState = .achievements
         present(viewControler, animated: true, completion: nil)
-
-
     }
 
 
     //FUNÇÃO PARA MOSTRAR OS PLACARES
-    @IBAction func showLeaderboards(_ sender: Any) {
-        let viewControler = GKGameCenterViewController()
+    func showLeaderboards() {
+        let viewControler = GKGameCenterViewController(state: .leaderboards)
         viewControler.gameCenterDelegate = self
-        viewControler.viewState = .leaderboards
-        viewControler.leaderboardIdentifier = "Candies Collected"
-        present(viewControler, animated: true, completion: nil)
-
-        viewControler.leaderboardIdentifier = "Distance Reached"
         present(viewControler, animated: true, completion: nil)
     }
     
     //FUNÇÃO PARA AUTENTICAR O JOGADOR
     func authenticatePlayer(){
         let localPlayer = GKLocalPlayer.local
-        
         localPlayer.authenticateHandler = {
             (view, Error) in
             
@@ -89,37 +68,16 @@ class GameViewController: UIViewController{
         }
     }
     
-    
-    //FUNÇÃO PARA SER CHAMADA TODA VEZ QUE COLETAR UM DOCE
-    func scoreButton() {
-        candyCollectedInOneGame += 1
-        totalCandyCollectedScore += 1
-//        Label.text = "\(candyCollectedScore)"
-    }
-    
-    
-    func DistanceButton(_ sender: Any) {
-        //totalDistanceReachedScore += 10
-       // label2.text = "\(distanceReached)"
-        
-    }
-    
-    /*
-    func scoreDistance(_ sender: Any){
-        //IMPLEMENTAR AINDA
-        //COLOCAR LABEL NA TELA
-    }
-    */
-    
-    
-    
     //FUNÇÃO PARA MANDAR O PLACAR PARA O GAMECENTER
-    func CallGameCenter(_ sender: Any){
+    func callGameCenter(_ sender: Any){
         highCandyScore(number: candyCollectedInOneGame)
         allCandiesCollected(number: totalCandyCollectedScore)
         highDistanceScore(number: distanceReachedInOneGame)
         showScores()
     }
+    
+    
+    /** Doug: Procurar sobre GKLeaderboardEntry */
     
     //FUNÇÃO PARA SALVAR O PLACAR MAIS ALTO
     func highCandyScore(number: Int){
@@ -150,16 +108,14 @@ class GameViewController: UIViewController{
         }
     }
     
-
-    
-    
     func transitionToGameCenter(){
         print("Opening Game Center")
-        let vc = self.view?.window?.rootViewController
-        let gc = GKGameCenterViewController()
-        gc.gameCenterDelegate = self
-        vc?.present(gc, animated: true, completion: nil)
-
+        let viewController = GKGameCenterViewController(
+                        leaderboardID: "com.team10.Mini1.DistanceReached",
+                        playerScope: .global,
+                        timeScope: .allTime)
+        viewController.gameCenterDelegate = self
+        present(viewController, animated: true, completion: nil)
     }
 
     
@@ -186,16 +142,7 @@ class GameViewController: UIViewController{
     override var shouldAutorotate: Bool {
         return true
     }
-
-   
     
-}
-
-extension UIViewController:
-    GKGameCenterControllerDelegate {
-    public func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
-            gameCenterViewController.dismiss(animated: true, completion: nil)
-        }
 }
 
 

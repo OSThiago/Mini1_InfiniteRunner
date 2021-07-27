@@ -40,6 +40,11 @@ class MainMenuScene: SKScene{
                         if node.contains(touch.location(in: self)){
                             //implementar o game center ao tocar ak
                             print("Game center")
+                            
+                            guard let gameViewController = self.view?.window?.rootViewController as? GameViewController else {
+                                return
+                            }
+                            gameViewController.transitionToGameCenter()
                         }
                     }
                 })
