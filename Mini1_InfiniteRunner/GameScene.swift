@@ -127,7 +127,7 @@ class GameScene: SKScene {
     
     
     func playSoundGameStarted(){
-        let audioNode = SKAudioNode(fileNamed: "SoundGameStarted.wav")
+        let audioNode = SKAudioNode(fileNamed: "Mini1.Sound-8bitGameStarted.wav")
         audioNode.autoplayLooped = true
         audioNode.name = "AudioGameStarted"
         self.addChild(audioNode)
