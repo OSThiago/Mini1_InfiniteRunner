@@ -68,9 +68,8 @@ extension GameScene: SKPhysicsContactDelegate{
             GameScene.sharedGVC.showScores()
             
             // Vibração
-            let generator = UIImpactFeedbackGenerator()
-            generator.prepare()
-            generator.impactOccurred()
+            
+            self.generator.impactOccurred()
             
         }
         
@@ -90,9 +89,7 @@ extension GameScene: SKPhysicsContactDelegate{
             GameScene.sharedGVC.showScores()
             
             // Vibração
-            let generator = UIImpactFeedbackGenerator()
-            generator.prepare()
-            generator.impactOccurred()
+            self.generator.impactOccurred()
             
         }
         

@@ -10,6 +10,7 @@ import GameplayKit
 
 class GameScene: SKScene {
     // Propriedades globais
+    let generator = UIImpactFeedbackGenerator()
     
     // propriedades que vao definir o controle de velocidade
     var renderTiming: TimeInterval = 1
@@ -73,7 +74,7 @@ class GameScene: SKScene {
         
         metersCountLabel()
         
-        
+        self.generator.prepare()
     }
 
     
