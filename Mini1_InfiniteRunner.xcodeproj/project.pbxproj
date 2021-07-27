@@ -15,6 +15,8 @@
 		9C198ED026AFA6B400254DEC /* SoundCandieCollected.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9C198ECF26AFA6B400254DEC /* SoundCandieCollected.wav */; };
 		9C198ED826B08A5E00254DEC /* Sound8bitGameStarted.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9C198ED726B08A5E00254DEC /* Sound8bitGameStarted.wav */; };
 		9C198EDA26B08AC800254DEC /* Sound8bitMainMenu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9C198ED926B08AC800254DEC /* Sound8bitMainMenu.wav */; };
+		9C198EDC26B0AC2A00254DEC /* Mini1.SoundReverseDown.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9C198EDB26B0AC2A00254DEC /* Mini1.SoundReverseDown.wav */; };
+		9C198EDE26B0AC2E00254DEC /* Mini1.SoundReverseUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9C198EDD26B0AC2E00254DEC /* Mini1.SoundReverseUp.wav */; };
 		9C96E977269E459F0044B930 /* GameScene+Mechanics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96E976269E459F0044B930 /* GameScene+Mechanics.swift */; };
 		9E2B61B426B0A08700703A67 /* Early GameBoy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E2B61B326B0A08700703A67 /* Early GameBoy.ttf */; };
 		9E33815026B038F700B97EAB /* GameScene+HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33814F26B038F700B97EAB /* GameScene+HUD.swift */; };
@@ -45,6 +47,8 @@
 		9C198ECF26AFA6B400254DEC /* SoundCandieCollected.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = SoundCandieCollected.wav; path = Sounds/SoundCandieCollected.wav; sourceTree = SOURCE_ROOT; };
 		9C198ED726B08A5E00254DEC /* Sound8bitGameStarted.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Sound8bitGameStarted.wav; path = Sounds/Sound8bitGameStarted.wav; sourceTree = SOURCE_ROOT; };
 		9C198ED926B08AC800254DEC /* Sound8bitMainMenu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Sound8bitMainMenu.wav; path = Sounds/Sound8bitMainMenu.wav; sourceTree = SOURCE_ROOT; };
+		9C198EDB26B0AC2A00254DEC /* Mini1.SoundReverseDown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Mini1.SoundReverseDown.wav; sourceTree = "<group>"; };
+		9C198EDD26B0AC2E00254DEC /* Mini1.SoundReverseUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Mini1.SoundReverseUp.wav; sourceTree = "<group>"; };
 		9C96E976269E459F0044B930 /* GameScene+Mechanics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Mechanics.swift"; sourceTree = "<group>"; };
 		9E2B61B326B0A08700703A67 /* Early GameBoy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Early GameBoy.ttf"; sourceTree = "<group>"; };
 		9E33814F26B038F700B97EAB /* GameScene+HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+HUD.swift"; sourceTree = "<group>"; };
@@ -149,6 +153,8 @@
 		9E7F7AAB269D01590062CC06 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				9C198EDD26B0AC2E00254DEC /* Mini1.SoundReverseUp.wav */,
+				9C198EDB26B0AC2A00254DEC /* Mini1.SoundReverseDown.wav */,
 				9C198ED926B08AC800254DEC /* Sound8bitMainMenu.wav */,
 				9C198ED726B08A5E00254DEC /* Sound8bitGameStarted.wav */,
 				9C198ECF26AFA6B400254DEC /* SoundCandieCollected.wav */,
@@ -252,12 +258,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C198EDE26B0AC2E00254DEC /* Mini1.SoundReverseUp.wav in Resources */,
 				9E2B61B426B0A08700703A67 /* Early GameBoy.ttf in Resources */,
 				9E7F7AA0269CFFDE0062CC06 /* Main.storyboard in Resources */,
 				9C198EDA26B08AC800254DEC /* Sound8bitMainMenu.wav in Resources */,
 				9C198ED826B08A5E00254DEC /* Sound8bitGameStarted.wav in Resources */,
 				9E7F7A97269CFFDE0062CC06 /* GameScene.sks in Resources */,
 				9E7F7AA2269CFFE10062CC06 /* Assets.xcassets in Resources */,
+				9C198EDC26B0AC2A00254DEC /* Mini1.SoundReverseDown.wav in Resources */,
 				9E7F7A99269CFFDE0062CC06 /* Actions.sks in Resources */,
 				9C198ED026AFA6B400254DEC /* SoundCandieCollected.wav in Resources */,
 			);
