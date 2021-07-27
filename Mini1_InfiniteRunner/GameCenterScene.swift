@@ -4,7 +4,7 @@
 //
 //  Created by Douglas Figueirôa on 26/07/21.
 //
-
+/*
 import SpriteKit
 import GameplayKit
 import GameKit
@@ -138,17 +138,7 @@ class GameCenterScene: UIViewController{
         vc?.present(gc, animated: true, completion: nil)
 
     }
-/*
-    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
-        gameCenterViewController.dismiss(animated: true, completion: nil)
-    }
-    */
-    
-    /*
-    override func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
-        gameCenterViewController.dismiss(animated: true, completion: nil)
-    }
-    */
+
     
     func showScores(){
         print("Candies in one game: \(candyCollectedInOneGame)")
@@ -165,3 +155,4 @@ extension UIViewController:
             gameCenterViewController.dismiss(animated: true, completion: nil)
         }
 }
+*/
