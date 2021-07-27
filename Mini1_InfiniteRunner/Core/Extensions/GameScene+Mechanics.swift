@@ -34,7 +34,7 @@ extension GameScene {
                 switch player.getPlayerSide() {
                 case .TOP:
                     // Pula para cima
-                    jumpPlayer(heightJump: 0.25)
+                    jumpPlayer(heightJump: 0.35)//0.25
                 case .BOTTOM:
                     // Passa para o mundo invertido
                     reversePlayer(heightPosition: 0.63)
@@ -49,7 +49,7 @@ extension GameScene {
                     reversePlayer(heightPosition: 0.39)
                 case .BOTTOM:
                     // Pula para baixo
-                    jumpPlayer(heightJump: -0.25)
+                    jumpPlayer(heightJump: 1.8)//-0.25
                 }
                 
             default:

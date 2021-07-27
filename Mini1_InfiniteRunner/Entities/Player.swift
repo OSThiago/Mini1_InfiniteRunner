@@ -27,8 +27,9 @@ class Player: SKSpriteNode {
        
         self.name = "player"
         self.zPosition = 1
-        self.physicsBody = createBody()
         self.xScale = self.xScale*1.5
+        self.physicsBody = createBody()
+        
         
         
     }
