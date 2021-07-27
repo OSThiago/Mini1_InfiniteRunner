@@ -43,8 +43,10 @@ extension GameScene {
         // Acao para gerar nodes dos doces
         let createCandy = SKAction.run {
             
-            let random = Int.random(in: 1...4)
+            let random = Int.random(in: 2...6)
             let candy = Candy(image: "coletavel-\(random)", position: position)
+            
+            self.reajustCandySize(candyID: random, node: candy)
             
             candy.texture?.filteringMode = .nearest
             self.addChild(candy)
@@ -59,6 +61,16 @@ extension GameScene {
         let sequence = SKAction.sequence([createCandy,waitInBetween])
         self.run(sequence) {
             self.generateRandomCandy(speed: self.enemySpeed, time: self.candyTiminig, position: position)
+        }
+    }
+    
+    
+    func reajustCandySize(candyID: Int, node: SKSpriteNode) {
+        switch candyID {
+        case 5,6:
+            node.setScale(3)
+        default:
+            break
         }
     }
     

@@ -23,7 +23,7 @@ class Candy: SKSpriteNode {
         self.position = position
         self.zPosition = 1
         self.name = "candy"
-        self.setScale(1.25)
+        self.setScale(2.0)
         self.physicsBody = createBody(imageNamed: image)
         
     }
