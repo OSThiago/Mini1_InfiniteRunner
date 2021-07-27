@@ -66,6 +66,11 @@ extension GameScene: SKPhysicsContactDelegate{
             GameScene.sharedGVC.highCandyScore(number: GameScene.sharedGVC.candyCollectedInOneGame )
             GameScene.sharedGVC.allCandiesCollected(number: GameScene.sharedGVC.totalCandyCollectedScore)
             GameScene.sharedGVC.showScores()
+            
+            // Vibração
+            let generator = UIImpactFeedbackGenerator()
+            generator.impactOccurred()
+            
         }
         
         if (contact.bodyA.node?.name == "player" && contact.bodyB.node?.name == "candy") {
@@ -82,6 +87,11 @@ extension GameScene: SKPhysicsContactDelegate{
             GameScene.sharedGVC.highCandyScore(number: GameScene.sharedGVC.candyCollectedInOneGame )
             GameScene.sharedGVC.allCandiesCollected(number: GameScene.sharedGVC.totalCandyCollectedScore)
             GameScene.sharedGVC.showScores()
+            
+            // Vibração
+            let generator = UIImpactFeedbackGenerator()
+            generator.impactOccurred()
+            
         }
         
         

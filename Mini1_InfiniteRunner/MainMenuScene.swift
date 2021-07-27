@@ -31,6 +31,9 @@ class MainMenuScene: SKScene{
                     if node.name == "playButton"{
                         if node.contains(touch.location(in: self)){
                             ActionManage.shared.sceneTransition(self, toScene: .GameScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+                            // Vibração
+                            let generator = UIImpactFeedbackGenerator()
+                            generator.impactOccurred()
                         }
                     }else if node.name == "soundButton"{
                         if node.contains(touch.location(in: self)){
@@ -44,6 +47,11 @@ class MainMenuScene: SKScene{
                             guard let gameViewController = self.view?.window?.rootViewController as? GameViewController else {
                                 return
                             }
+                            
+                            // Vibração
+                            let generator = UIImpactFeedbackGenerator()
+                            generator.impactOccurred()
+                            
                             gameViewController.transitionToGameCenter()
                         }
                     }
