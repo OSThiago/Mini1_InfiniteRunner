@@ -28,10 +28,14 @@ class GameScene: SKScene {
     var countLabel = SKLabelNode(fontNamed: "HelveticaNeue-CondensedBold")
     let pumpkinHUD = SKSpriteNode(imageNamed: "punctuation")
     
+    //Contador de distancia
+    var meters: Float = 0.0
+    var metersLabel = SKLabelNode(fontNamed: "HelveticaNeue-CondensedBold")
     
     
     override init(size: CGSize) {
         super.init(size: size)
+        clearMeters()
         
         self.playSoundGameStarted()
         
@@ -67,7 +71,7 @@ class GameScene: SKScene {
         boundsCamera()
         
         
-        
+        metersCountLabel()
         
         
     }
@@ -124,6 +128,42 @@ class GameScene: SKScene {
         
         
     }
+    
+    
+    //FUNÇÃO PARA LIMPAR A QUANTIDADE DE METROS E INICIAR A CONTAGEM
+    func clearMeters(){
+        self.meters = 0
+        GameScene.sharedGVC.distanceReachedInOneGame = 0
+        //countMeters()
+    }
+    
+    //FUNÇÃO PARA LIMPAR O LABEL DA CONTAGEM
+    func clearLabelCount(){
+        self.metersLabel.removeAllActions()
+    }
+    
+    //FUNÇÃO PARA FAZER A SOMA DE METROS E DE ALTERAR O LABEL
+    func countMeters(){
+        let sequence = SKAction.sequence([SKAction.run {
+            self.meters += 10
+            self.metersLabel.text = "\(self.meters)"
+            GameScene.sharedGVC.distanceReachedInOneGame = self.meters
+        },
+        SKAction.wait(forDuration: 0.2)
+        ])
+        self.metersLabel.run(SKAction.repeatForever(sequence))
+    }
+    
+    
+    func metersCountLabel(){
+        self.metersLabel = SKLabelNode(text: "0m")
+        self.metersLabel.fontSize = 40
+        self.metersLabel.position = CGPoint(x: 300, y: 150)
+        self.addChild(metersLabel)
+        countMeters()
+    }
+    
+    
     
     
     func playSoundGameStarted(){
