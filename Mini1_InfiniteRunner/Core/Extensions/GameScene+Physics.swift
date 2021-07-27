@@ -6,7 +6,7 @@
 //
 
 import SpriteKit
-
+import UIKit
 
 enum mask: Int {
     case player = 1, ground , enemy, candy
@@ -21,6 +21,9 @@ extension GameScene: SKPhysicsContactDelegate{
                 contact.bodyA.node?.removeFromParent()
                 print("you loser my brother")
                 
+                let generator = UIImpactFeedbackGenerator()
+                generator.impactOccurred()
+                
                 //Enviar as pontuações de doces para o gameCenter
                 GameScene.sharedGVC.callGameCenter(self)
                 ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
@@ -31,6 +34,8 @@ extension GameScene: SKPhysicsContactDelegate{
             if (contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "player"){
                 contact.bodyB.node?.removeFromParent()
                 print("you loser my brother")
+                let generator = UIImpactFeedbackGenerator()
+                generator.impactOccurred()
                 
                 //Enviar as pontuações de doces para o gameCenter
                 GameScene.sharedGVC.callGameCenter(self)
