@@ -11,7 +11,7 @@ import SpriteKit
 
 class MainMenuScene: SKScene{
     
-    //static let sharedGC = GameCenterScene()
+    static let sharedGC = GameCenterScene()
     
     override func didMove(to view: SKView) {
         print("Dentro do Menu")
@@ -41,13 +41,16 @@ class MainMenuScene: SKScene{
                         if node.contains(touch.location(in: self)){
                             //implementar o game center ao tocar ak
                             print("Game center")
-                            //self.gameCenterButton()
+                            //MainMenuScene.sharedGC.firstTransition()
+                            MainMenuScene.sharedGC.transitionToGameCenter()
                         }
                     }
                 })
             }
         }
     }
+    
+    
     
     func createBackground(){
         let menuBackground = SKSpriteNode(imageNamed: "MenuBackGround")
@@ -91,6 +94,8 @@ class MainMenuScene: SKScene{
         audioNode.name = "AudioMainMenu"
         self.addChild(audioNode)
     }
+    
+    
 
     
 

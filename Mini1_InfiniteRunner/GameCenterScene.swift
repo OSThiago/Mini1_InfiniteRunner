@@ -10,7 +10,8 @@ import GameplayKit
 import GameKit
 import UIKit
 
-class GameCenterScene: UIViewController{
+
+class GameCenterScene: UIViewController,GKGameCenterControllerDelegate{
     
     var Label: UILabel! //APENAS PARA TESTE DOCE
     var label2: UILabel! //APENAS PARA TESTE DISTANCIA
@@ -19,14 +20,13 @@ class GameCenterScene: UIViewController{
     var totalCandyCollectedScore = Int()
     //Total de doces coletados em uma partida
     var candyCollectedInOneGame = Int()
-    
-    //Total de distancia percorrida em todos os jogos
-    //var totalDistanceReachedScore = Float()
+
     //Total de distancia percorrida em uma partida
     var distanceReachedInOneGame = Float()
+    
+    static let sharedGC = GameViewController()
 
-    
-    
+
     
     //FUNÇÃO PARA MOSTRAR AS CONQUISTAS
     func showAchievements(_ sender: Any) {
@@ -34,11 +34,11 @@ class GameCenterScene: UIViewController{
         viewControler.gameCenterDelegate = self
         viewControler.viewState = .achievements
         present(viewControler, animated: true, completion: nil)
-        
-        
+
+
     }
-    
-    
+
+
     //FUNÇÃO PARA MOSTRAR OS PLACARES
     func showLeaderboards(_ sender: Any) {
         let viewControler = GKGameCenterViewController()
@@ -46,11 +46,9 @@ class GameCenterScene: UIViewController{
         viewControler.viewState = .leaderboards
         viewControler.leaderboardIdentifier = "Candies Collected"
         present(viewControler, animated: true, completion: nil)
-        
+
         viewControler.leaderboardIdentifier = "Distance Reached"
         present(viewControler, animated: true, completion: nil)
-        
-        
     }
     
     //FUNÇÃO PARA AUTENTICAR O JOGADOR
@@ -129,10 +127,31 @@ class GameCenterScene: UIViewController{
         }
     }
     
+    /*
+    func firstTransition(){
+        GameCenterScene.sharedGC.transitionToGameCenter()
+    }
+    */
+    
+    func transitionToGameCenter(){
+            print("Opening Game Center")
+            let vc = self.view?.window?.rootViewController
+            let gc = GKGameCenterViewController()
+            gc.gameCenterDelegate = self
+            vc?.present(gc, animated: true, completion: nil)
+
+        }
+
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+            gameCenterViewController.dismiss(animated: true, completion: nil)
+        }
+    
+    
+    /*
     override func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismiss(animated: true, completion: nil)
     }
-    
+    */
     
     func showScores(){
         print("Candies in one game: \(candyCollectedInOneGame)")

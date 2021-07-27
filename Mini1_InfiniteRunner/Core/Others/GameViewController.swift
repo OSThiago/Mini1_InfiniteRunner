@@ -19,6 +19,7 @@ class GameViewController: UIViewController{
         
         if let view = self.view as! SKView? {
             
+            
             let menu = MainMenuScene(size: view.frame.size)
             print(view.frame.size)
             menu.scaleMode = .resizeFill
@@ -33,6 +34,7 @@ class GameViewController: UIViewController{
             
         }
     }
+    
 
     
     
@@ -53,14 +55,18 @@ class GameViewController: UIViewController{
     override var shouldAutorotate: Bool {
         return true
     }
+
+
     
 }
 
-
+/*
 extension UIViewController:
     GKGameCenterControllerDelegate {
     public func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
             gameCenterViewController.dismiss(animated: true, completion: nil)
         }
+ 
 }
+ */
 
