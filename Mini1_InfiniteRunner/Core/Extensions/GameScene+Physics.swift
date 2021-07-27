@@ -14,17 +14,21 @@ enum mask: Int {
 }
 extension GameScene: SKPhysicsContactDelegate{
     
-    
+    static let sharedGC = GameCenterScene()
     
     func didBegin(_ contact: SKPhysicsContact) {
         if (contact.bodyA.node?.name == "player" && contact.bodyB.node?.name == "enemy"){
             contact.bodyA.node?.removeFromParent()
             print("you loser my brother")
+            //Enviar as pontuações de doces para o gameCenter
+            GameScene.sharedGC.CallGameCenter(self)
             ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
         }
         if (contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "player"){
             contact.bodyB.node?.removeFromParent()
             print("you loser my brother")
+            //Enviar as pontuações de doces para o gameCenter
+            GameScene.sharedGC.CallGameCenter(self)
             ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
             
         }
@@ -39,16 +43,17 @@ extension GameScene: SKPhysicsContactDelegate{
         // Contato entre o player o os coletaveis
         if (contact.bodyA.node?.name == "candy" && contact.bodyB.node?.name == "player") {
             contact.bodyA.node?.removeFromParent()
-            
-            // Colocar aqui para somar o contador
+            //Contador de doces
+            GameScene.sharedGC.scoreButton()
+            print(GameScene.sharedGC.candyCollectedInOneGame)
             
         }
         
         if (contact.bodyA.node?.name == "player" && contact.bodyB.node?.name == "candy") {
             contact.bodyB.node?.removeFromParent()
-            
-            
-            // Colocar aqui para somar o contador
+            //Contador de doces
+            GameScene.sharedGC.scoreButton()
+            print(GameScene.sharedGC.candyCollectedInOneGame)
         }
         
         

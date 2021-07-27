@@ -9,9 +9,13 @@ import SpriteKit
 
 class MainMenuScene: SKScene{
     
+    //static let sharedGC = GameCenterScene()
+    
     override func didMove(to view: SKView) {
         print("Dentro do Menu")
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        
+        playSoundMainMenu()
         
         createBackground()
         configButton()
@@ -30,6 +34,7 @@ class MainMenuScene: SKScene{
                     }else if node.name == "configButton"{
                         if node.contains(touch.location(in: self)){
                             print("ainda nn faz nada o botao de config")
+                            self.gameCenterButton()
                         }
                     }
                 })
@@ -64,8 +69,16 @@ class MainMenuScene: SKScene{
     }
     
     func gameCenterButton(){
-        
+        GameScene.sharedGC.showLeaderboards(self)
     }
+       
+    func playSoundMainMenu(){
+        let audioNode = SKAudioNode(fileNamed: "SoundMainMenu.wav")
+        audioNode.autoplayLooped = true
+        audioNode.name = "AudioMainMenu"
+        self.addChild(audioNode)
+    }
+
     
 
     

@@ -25,6 +25,8 @@ class GameScene: SKScene {
     override init(size: CGSize) {
         super.init(size: size)
         
+        self.playSoundGameStarted()
+        
         self.physicsWorld.contactDelegate = self
         
         //Criando a geração de chão(criação e movimentação)
@@ -114,6 +116,16 @@ class GameScene: SKScene {
         
         moveCamera()
         
+    }
+    
+    
+    func playSoundGameStarted(){
+        let audioNode = SKAudioNode(fileNamed: "SoundGameStarted.wav")
+        audioNode.autoplayLooped = true
+        audioNode.name = "AudioGameStarted"
+        self.addChild(audioNode)
+        
+        audioNode.run(.changeVolume(by: 0.25, duration: 0))
     }
     
     
