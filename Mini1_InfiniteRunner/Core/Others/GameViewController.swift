@@ -63,7 +63,7 @@ class GameViewController: UIViewController{
 
 
     //FUNÇÃO PARA MOSTRAR OS PLACARES
-    func showLeaderboards(_ sender: Any) {
+    @IBAction func showLeaderboards(_ sender: Any) {
         let viewControler = GKGameCenterViewController()
         viewControler.gameCenterDelegate = self
         viewControler.viewState = .leaderboards
