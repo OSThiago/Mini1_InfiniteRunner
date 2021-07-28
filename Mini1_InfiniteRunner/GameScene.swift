@@ -32,13 +32,17 @@ class GameScene: SKScene {
     
     var hud: HUD!
     
+    // Constantes usadas na configuração do som
+    static let sharedGS = MainMenuScene(size: CGSize(width: 844, height: 390) )
+    let audioNode = SKAudioNode(fileNamed: "Sound8bitGameStarted.wav")
+    
     
     override init(size: CGSize) {
         
         super.init(size: size)
         //self.hud.clearMeters()
         
-        self.playSoundGameStarted()
+        //self.playSoundGameStarted()
         
         self.physicsWorld.contactDelegate = self
         
@@ -74,6 +78,19 @@ class GameScene: SKScene {
         self.hud = HUD(view: self, camera: self.cameraNode)
         
         self.generator.prepare()
+        
+        if !MainMenuScene.flag {
+            audioNode.autoplayLooped = true
+            audioNode.name = "AudioGameStarted"
+            audioNode.run(.changeVolume(by: 0.10, duration: 0))
+            self.addChild(audioNode)
+        } else {
+            self.removeChildren(in: [self.audioNode] )
+           // audioNode.run(.changeVolume(to: 0.0, duration: 0))
+        }
+        
+        
+        
     }
 
     
@@ -149,14 +166,14 @@ class GameScene: SKScene {
   
     
     
-    
-    func playSoundGameStarted(){
-        let audioNode = SKAudioNode(fileNamed: "Sound8bitGameStarted.wav")
-        audioNode.autoplayLooped = true
-        audioNode.name = "AudioGameStarted"
-        self.addChild(audioNode)
-        audioNode.run(.changeVolume(by: 0.10, duration: 0))
-    }
+//
+//    func playSoundGameStarted(){
+//        let audioNode = SKAudioNode(fileNamed: "Sound8bitGameStarted.wav")
+//        audioNode.autoplayLooped = true
+//        audioNode.name = "AudioGameStarted"
+//        self.addChild(audioNode)
+//        audioNode.run(.changeVolume(by: 0.10, duration: 0))
+//    }
     
     
     required init?(coder aDecoder: NSCoder) {

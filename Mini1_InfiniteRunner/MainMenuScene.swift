@@ -14,6 +14,15 @@ class MainMenuScene: SKScene{
     var startMenu: StartMenu!
     
     
+    var music = true
+        
+    let audioNode = SKAudioNode(fileNamed: "Sound8bitMainMenu.wav")
+        
+    static var flag = false
+        
+    static let sharedGS = GameScene(size: CGSize(width: 844, height: 390))
+
+    
     override init(size: CGSize) {
         super.init(size: size)
         
@@ -31,8 +40,15 @@ class MainMenuScene: SKScene{
         // Adicionado as imagens na cena
         startMenu.CreatebackGroundHUD()
         
+        if !MainMenuScene.flag{
+            audioNode.autoplayLooped = true
+            audioNode.name = "AudioMainMenu"
+            audioNode.run(.changeVolume(to: 0.50, duration: 0))
+            addChild(audioNode)
+        }
+
         
-        playSoundMainMenu()
+        //playSoundMainMenu()
         //createBackground()
         soundButton()
         gameCenterButton()
@@ -56,7 +72,16 @@ class MainMenuScene: SKScene{
                         }
                     case "soundButton":
                         if node.contains(touch.location(in: self)){
-                            print("ainda nn faz nada o botao de sound")
+                            if MainMenuScene.flag {
+                                self.audioNode.run(.changeVolume(to: 0.5, duration: 0))
+                                self.addChild(self.audioNode)
+                                MainMenuScene.flag = false
+                            } else {
+                                self.audioNode.run(.changeVolume(to: 0.0, duration: 0))
+                                self.removeChildren(in: [self.audioNode])
+                                MainMenuScene.flag = true
+                            }
+
                         }
                     case "gameCenterButton":
                         if node.contains(touch.location(in: self)){
@@ -118,14 +143,14 @@ class MainMenuScene: SKScene{
         self.addChild(gameCenterButton)
     }
        
-    func playSoundMainMenu(){
-        let audioNode = SKAudioNode(fileNamed: "Sound8bitMainMenu.wav")
-        audioNode.autoplayLooped = true
-        audioNode.name = "AudioMainMenu"
-        audioNode.run(.changeVolume(to: 0.50, duration: 0))
-        self.addChild(audioNode)
-    }
-    
+//    func playSoundMainMenu(){
+//        let audioNode = SKAudioNode(fileNamed: "Sound8bitMainMenu.wav")
+//        audioNode.autoplayLooped = true
+//        audioNode.name = "AudioMainMenu"
+//        audioNode.run(.changeVolume(to: 0.50, duration: 0))
+//        self.addChild(audioNode)
+//    }
+//
     
 
     
