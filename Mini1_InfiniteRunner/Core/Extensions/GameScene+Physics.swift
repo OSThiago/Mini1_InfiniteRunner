@@ -57,7 +57,7 @@ extension GameScene: SKPhysicsContactDelegate{
             
             // HUD
             self.countCandy += 1
-            self.countLabel.text = "\(self.countCandy)"
+            self.hud.incrementCandyLabel(count: self.countCandy)
             
             //Contador de doces
             playSoundCandieCollected()
@@ -78,7 +78,8 @@ extension GameScene: SKPhysicsContactDelegate{
             
             // HUD
             self.countCandy += 1
-            self.countLabel.text = "\(self.countCandy)"
+            //self.countLabel.text = "\(self.countCandy)"
+            self.hud.incrementCandyLabel(count: self.countCandy)
             
             //Contador de doces
             playSoundCandieCollected()
