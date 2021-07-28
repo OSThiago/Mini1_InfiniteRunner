@@ -158,7 +158,7 @@ class GameScene: SKScene {
         audioNode.autoplayLooped = true
         audioNode.name = "AudioGameStarted"
         self.addChild(audioNode)
-        audioNode.run(.changeVolume(by: 0.25, duration: 0))
+        audioNode.run(.changeVolume(by: 0.10, duration: 0))
     }
     
     
