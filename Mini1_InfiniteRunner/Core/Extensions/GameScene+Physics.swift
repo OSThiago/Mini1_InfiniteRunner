@@ -63,7 +63,6 @@ extension GameScene: SKPhysicsContactDelegate{
             playSoundCandieCollected()
             GameScene.sharedGVC.candyCollectedInOneGame += 1
             GameScene.sharedGVC.totalCandyCollectedScore += 1
-            GameScene.sharedGVC.showScores()
             
             // Vibração
             
@@ -83,7 +82,6 @@ extension GameScene: SKPhysicsContactDelegate{
             playSoundCandieCollected()
             GameScene.sharedGVC.candyCollectedInOneGame += 1
             GameScene.sharedGVC.totalCandyCollectedScore += 1
-            GameScene.sharedGVC.showScores()
             
             // Vibração
             self.generator.impactOccurred()
