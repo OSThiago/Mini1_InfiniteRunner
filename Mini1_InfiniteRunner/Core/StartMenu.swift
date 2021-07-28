@@ -16,7 +16,7 @@ class StartMenu {
     let logo: SKSpriteNode
     let playButton: SKSpriteNode
     let scoreButton: SKSpriteNode
-    
+    let musicButton: SKSpriteNode
     
     init(view: SKScene) {
         // Propriedades da gameScene
@@ -25,9 +25,9 @@ class StartMenu {
         // Imagens
         self.backGround = SKSpriteNode(imageNamed: "BG_menu")
         self.logo = SKSpriteNode(imageNamed: "name")
-        self.playButton = SKSpriteNode(imageNamed: "button_play")
-        self.scoreButton = SKSpriteNode(imageNamed: "button_score")
-        
+        self.playButton = SKSpriteNode(imageNamed: "playButton")
+        self.scoreButton = SKSpriteNode(imageNamed: "gameCenterButton")
+        self.musicButton = SKSpriteNode(imageNamed: "button_sound_on")
     }
     
     // MARK:- BACKGROUND
@@ -54,7 +54,7 @@ class StartMenu {
         
     }
     
-    
+    // MARK: - Play BUTTON
     func createPlayButtom() {
         playButton.name = "playButton"
         playButton.zPosition = 1
@@ -64,8 +64,25 @@ class StartMenu {
         GameView.addChild(playButton)
     }
     
+    // MARK: - Music BUTTON
+    
+    func createMusicButtom() {
+        musicButton.name = "soundButton"
+        musicButton.zPosition = 1
+        musicButton.position = CGPoint(x: GameView.frame.width*(0.4), y: GameView.frame.height*(0.35))
+        musicButton.setScale(2.0)
+        musicButton.texture?.filteringMode = .nearest
+        GameView.addChild(musicButton)
+    }
+    
+    // MARK: - GameCenter BUTTON
     func createGameCenterButtom() {
-        
+        scoreButton.name = "gameCenterButton"
+        scoreButton.zPosition = 1
+        scoreButton.position = CGPoint(x: GameView.frame.width*(0.33), y: GameView.frame.height*(0.35))
+        scoreButton.setScale(2.0)
+        scoreButton.texture?.filteringMode = .nearest
+        GameView.addChild(scoreButton)
     }
     
     

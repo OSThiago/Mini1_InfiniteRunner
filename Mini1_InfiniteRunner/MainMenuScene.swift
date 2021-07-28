@@ -30,7 +30,6 @@ class MainMenuScene: SKScene{
         
     }
     
-   
     
     
     override func didMove(to view: SKView) {
@@ -38,7 +37,7 @@ class MainMenuScene: SKScene{
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
         // Adicionado as imagens na cena
-        startMenu.CreatebackGroundHUD()
+        //startMenu.CreatebackGroundHUD()
         
         if !MainMenuScene.flag{
             audioNode.autoplayLooped = true
@@ -47,12 +46,13 @@ class MainMenuScene: SKScene{
             addChild(audioNode)
         }
 
-        
-        //playSoundMainMenu()
-        //createBackground()
-        soundButton()
-        gameCenterButton()
-        //playButton()
+        // Colocando as imagens da tela de inicio
+        startMenu.createbackGroundHUD()
+        startMenu.createLogo()
+        startMenu.createPlayButtom()
+        startMenu.createGameCenterButtom()
+        startMenu.createMusicButtom()
+    
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
