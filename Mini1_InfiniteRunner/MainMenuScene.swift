@@ -52,7 +52,7 @@ class MainMenuScene: SKScene{
         //createBackground()
         soundButton()
         gameCenterButton()
-        playButton()
+        //playButton()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
