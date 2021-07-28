@@ -16,7 +16,7 @@ class GameScene: SKScene {
     var renderTiming: TimeInterval = 1
     var seconds: TimeInterval = 1.9
     var enemySpeed: TimeInterval = 2.5
-    var candyTiminig: TimeInterval = 7
+    var candyTiminig: TimeInterval = 3
     //--------------------------------------------------------
     
     let player = Player(imageName: "Personagem_lado")
