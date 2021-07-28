@@ -10,6 +10,7 @@ import SpriteKit
 class HUD {
     
     let Gameview: SKScene
+    let pauseButtom: SKSpriteNode
     let playButtom: SKSpriteNode
     let cameraNode: SKCameraNode
     let pumpkin: SKSpriteNode
@@ -18,18 +19,23 @@ class HUD {
     var meters: Int
     
     
+    
     init(view: SKScene, camera: SKCameraNode){
+        // Atributos da gameScene
         self.Gameview = view
         self.cameraNode = camera
         
+        // Imagens
         self.playButtom = SKSpriteNode(imageNamed: "forward")
-        self.playButtom.name = "playButtom"
+        self.pumpkin = SKSpriteNode(imageNamed: "pontuacao")
+        self.pauseButtom = SKSpriteNode(imageNamed: "button_pause")
         
-        self.pumpkin = SKSpriteNode(imageNamed: "punctuation")
+        // Textos
         self.countCandyLabel = SKLabelNode(fontNamed: "HelveticaNeue-CondensedBold")
         
         self.metersLabel = SKLabelNode(fontNamed: "HelveticaNeue-CondensedBold")
         
+        // Contadores
         self.meters = 0
         
     }
@@ -50,10 +56,24 @@ class HUD {
         removePlayButtom()
     }
     
+    //MARK:- PAUSE
     
+    func pauseButtonHUD() {
+        pauseButtom.name = "pauseButton"
+        pauseButtom.zPosition = 10
+        pauseButtom.setScale(2.5)
+        pauseButtom.texture?.filteringMode = .nearest
+        self.cameraNode.addChild(pauseButtom)
+    }
+    
+    
+    
+    //MARK:- ABOBORA / CONTADOR
     func pumpkinHUD() {
+        pumpkin.name = "pumpkin"
         pumpkin.zPosition = 10
-        pumpkin.size = CGSize(width: 50, height: 50)
+        pumpkin.setScale(2.5)
+        //pumpkin.size = CGSize(width: 50, height: 50)
         pumpkin.texture?.filteringMode = .nearest
         self.cameraNode.addChild(pumpkin)
     }
@@ -74,6 +94,7 @@ class HUD {
     }
     
     
+    //MARK:- METROS
     func metersLabelHUD() {
         metersLabel.fontName = "Early GameBoy"
         metersLabel.fontSize = 30
@@ -114,6 +135,7 @@ class HUD {
 extension HUD {
     
     private func addPlayButtom() {
+        playButtom.name = "playButtom"
         playButtom.setScale(5)
         playButtom.texture?.filteringMode = .nearest
         playButtom.zPosition = 10

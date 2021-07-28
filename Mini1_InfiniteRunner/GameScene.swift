@@ -29,7 +29,6 @@ class GameScene: SKScene {
     
     // Contador de distancia
     var meters: Float = 0.0
-    //var metersLabel = SKLabelNode(fontNamed: "HelveticaNeue-CondensedBold")
     
     var hud: HUD!
     
@@ -63,7 +62,7 @@ class GameScene: SKScene {
         player.runner()
         player.texture?.filteringMode = .nearest
         
-        pauseButton()
+        //pauseButton()
         
         
         addChild(cameraNode)
@@ -84,6 +83,7 @@ class GameScene: SKScene {
         //HUDScoreLabel()
         
         // Iniciando os elementos do HUD na tela
+        self.hud.pauseButtonHUD()
         self.hud.pumpkinHUD()
         self.hud.countCandyLabelHUD()
         self.hud.metersLabelHUD()
@@ -106,16 +106,13 @@ class GameScene: SKScene {
     }
     
    
+    // Ações que ocorrem ao clicar nos botoes da tela de pause
     func touchPaused(node: SKSpriteNode) {
         switch node.name {
         case "pauseButton":
             hud.pauseGame()
-            
-            //HUDPause(node: node)
         case "playButtom":
-            
             hud.playGame()
-            //HUDPlay()
         default:
             break
         }
