@@ -12,6 +12,7 @@ class Player: SKSpriteNode {
     // Propriedades
     var imageNamed: String
     var isJuping: Bool = false
+    var isAlive = true
     private var playerSide: PlayerSide
     
     // Inicializadores

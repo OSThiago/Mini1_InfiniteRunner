@@ -25,6 +25,8 @@ extension GameScene {
         
         metersLabel.position = CGPoint(x: frame.size.width*(0.25), y: frame.size.height*(0.35))
         
+        playButtom.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(0.0))
+        
     }
     
     func HUDMetersCount() {
@@ -47,6 +49,9 @@ extension GameScene {
         
     }
     
+    //MARK:- PAUSE GAME
+    
+    
     func pauseButton(){
         let pauseButton = SKSpriteNode(imageNamed: "pause_button")
         pauseButton.name = "pauseButton"
@@ -56,6 +61,24 @@ extension GameScene {
         pauseButton.zPosition = 10
         pauseButton.texture?.filteringMode = .nearest
         cameraNode.addChild(pauseButton)
+    }
+    
+    
+    
+    // MARK:- End Game
+    
+    func EndhomeButtom() {
+        
+        let texture = SKTexture(imageNamed: "home")
+        
+        let homeButtom = SKSpriteNode(texture: texture, color: UIColor.clear, size: texture.size())
+        
+        homeButtom.position = CGPoint(x: size.width*0.5, y: size.height*0.5)
+        
+        homeButtom.zPosition = 10
+        
+        self.addChild(homeButtom)
+        
     }
     
     

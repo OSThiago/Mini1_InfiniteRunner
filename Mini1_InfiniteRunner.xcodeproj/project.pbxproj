@@ -19,6 +19,7 @@
 		9C198EDE26B0AC2E00254DEC /* Mini1.SoundReverseUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9C198EDD26B0AC2E00254DEC /* Mini1.SoundReverseUp.wav */; };
 		9C96E977269E459F0044B930 /* GameScene+Mechanics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96E976269E459F0044B930 /* GameScene+Mechanics.swift */; };
 		9E2B61B426B0A08700703A67 /* Early GameBoy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E2B61B326B0A08700703A67 /* Early GameBoy.ttf */; };
+		9E2B61B626B127C000703A67 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B61B526B127C000703A67 /* HUD.swift */; };
 		9E33815026B038F700B97EAB /* GameScene+HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33814F26B038F700B97EAB /* GameScene+HUD.swift */; };
 		9E7F7A95269CFFDE0062CC06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7F7A94269CFFDE0062CC06 /* AppDelegate.swift */; };
 		9E7F7A97269CFFDE0062CC06 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E7F7A96269CFFDE0062CC06 /* GameScene.sks */; };
@@ -51,6 +52,7 @@
 		9C198EDD26B0AC2E00254DEC /* Mini1.SoundReverseUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Mini1.SoundReverseUp.wav; sourceTree = "<group>"; };
 		9C96E976269E459F0044B930 /* GameScene+Mechanics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Mechanics.swift"; sourceTree = "<group>"; };
 		9E2B61B326B0A08700703A67 /* Early GameBoy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Early GameBoy.ttf"; sourceTree = "<group>"; };
+		9E2B61B526B127C000703A67 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		9E33814F26B038F700B97EAB /* GameScene+HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+HUD.swift"; sourceTree = "<group>"; };
 		9E7F7A91269CFFDE0062CC06 /* Mini1_InfiniteRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mini1_InfiniteRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E7F7A94269CFFDE0062CC06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		9E7F7AA9269D00B90062CC06 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9E2B61B526B127C000703A67 /* HUD.swift */,
 				9E7F7AAC269D016E0062CC06 /* Extensions */,
 				9E906A5726A1D7D50026B7A7 /* Others */,
 			);
@@ -281,6 +284,7 @@
 				9C05885026A209A50014AA23 /* MainMenuScene.swift in Sources */,
 				9E906A5426A1D68E0026B7A7 /* GameScene+Physics.swift in Sources */,
 				94E6D59526ADD7E900B82E17 /* GameScene+Ground.swift in Sources */,
+				9E2B61B626B127C000703A67 /* HUD.swift in Sources */,
 				9E7F7AB0269D0F060062CC06 /* Player.swift in Sources */,
 				9E7F7A9B269CFFDE0062CC06 /* GameScene.swift in Sources */,
 				9C05885226A209D20014AA23 /* ActionManage.swift in Sources */,

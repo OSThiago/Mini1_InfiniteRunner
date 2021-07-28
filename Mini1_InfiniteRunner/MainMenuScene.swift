@@ -28,18 +28,21 @@ class MainMenuScene: SKScene{
             if touch == touches.first{
                 print("Indo para o jogo")
                 enumerateChildNodes(withName: "//*", using: {(node,stop) in
-                    if node.name == "playButton"{
+                    
+                    
+                    switch node.name {
+                    case "playButton":
                         if node.contains(touch.location(in: self)){
                             ActionManage.shared.sceneTransition(self, toScene: .GameScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
                             // Vibração
                             let generator = UIImpactFeedbackGenerator()
                             generator.impactOccurred()
                         }
-                    }else if node.name == "soundButton"{
+                    case "soundButton":
                         if node.contains(touch.location(in: self)){
                             print("ainda nn faz nada o botao de sound")
                         }
-                    }else if node.name == "gameCenterButton"{
+                    case "gameCenterButton":
                         if node.contains(touch.location(in: self)){
                             //implementar o game center ao tocar ak
                             print("Game center")
@@ -51,10 +54,11 @@ class MainMenuScene: SKScene{
                             // Vibração
                             let generator = UIImpactFeedbackGenerator()
                             generator.impactOccurred()
-                            
                             gameViewController.transitionToGameCenter()
                         }
+                    default: break
                     }
+                    
                 })
             }
         }

@@ -29,12 +29,17 @@ class GameScene: SKScene {
     var countLabel = SKLabelNode(fontNamed: "HelveticaNeue-CondensedBold")
     let pumpkinHUD = SKSpriteNode(imageNamed: "punctuation")
     
-    //Contador de distancia
+    // Contador de distancia
     var meters: Float = 0.0
     var metersLabel = SKLabelNode(fontNamed: "HelveticaNeue-CondensedBold")
     
+    // verificao para quando o jogo estiver pausado
+    let playButtom = SKSpriteNode(imageNamed: "forward")
+    var hud: HUD!
+    
     
     override init(size: CGSize) {
+        
         super.init(size: size)
         clearMeters()
         
@@ -71,8 +76,7 @@ class GameScene: SKScene {
         cameraNode.position.y = size.height/2
         boundsCamera()
         
-        
-        
+        self.hud = HUD(view: self, camera: self.cameraNode)
         
         self.generator.prepare()
     }
@@ -91,17 +95,29 @@ class GameScene: SKScene {
         for touch in touches{
             let location = touch.location(in: self)
             if let node = self.atPoint(location) as? SKSpriteNode{
-                if (node.name == "pauseButton"){
-                    self.scene?.view?.isPaused = true
-                }
-                if(node.name != "pauseButton"){
-                    self.scene?.view?.isPaused = false
-                }
+                
+                touchPaused(node: node)
+                
+                
             }
         }
     }
     
    
+    func touchPaused(node: SKSpriteNode) {
+        switch node.name {
+        case "pauseButton":
+            hud.pauseGame()
+            
+            //HUDPause(node: node)
+        case "playButtom":
+            
+            hud.playGame()
+            //HUDPlay()
+        default:
+            break
+        }
+    }
     
     
     override func update(_ currentTime: TimeInterval) {
