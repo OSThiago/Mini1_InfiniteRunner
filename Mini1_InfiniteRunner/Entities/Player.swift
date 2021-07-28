@@ -59,9 +59,39 @@ class Player: SKSpriteNode {
         switch self.playerSide {
         case .TOP:
             self.playerSide = .BOTTOM
+            self.playReverseSoundDown()
         case .BOTTOM:
             self.playerSide = .TOP
+            self.playReverseSoundUp()
         }
+    }
+    
+    func playReverseSoundUp(){
+        /*
+        let audioNode = SKAudioNode(fileNamed: "SoundReverseUp.wav")
+        audioNode.autoplayLooped = true
+        audioNode.name = "AudioGameReverseUp"
+        self.addChild(audioNode)
+        audioNode.run(.changeVolume(by: 0.25, duration: 0))*/
+        let reverseSoundUp: SKAction = {
+            return SKAction.playSoundFileNamed("SoundReverseUp.wav", waitForCompletion: false)
+        }()
+        self.run(reverseSoundUp)
+        self.run(.changeVolume(to: 2, duration: 0))
+    }
+    
+    func playReverseSoundDown(){
+        /*
+        let audioNode = SKAudioNode(fileNamed: "SoundReverseDown.wav")
+        audioNode.autoplayLooped = true
+        audioNode.name = "AudioGameReverseDown"
+        self.addChild(audioNode)
+        audioNode.run(.changeVolume(by: 0.25, duration: 0))*/
+        let reverseSoundDown: SKAction = {
+            return SKAction.playSoundFileNamed("SoundReverseDown.wav", waitForCompletion: false)
+        }()
+        self.run(reverseSoundDown)
+        self.run(.changeVolume(to: 2, duration: 0))
     }
     
     

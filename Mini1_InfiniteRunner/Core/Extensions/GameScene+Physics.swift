@@ -63,8 +63,6 @@ extension GameScene: SKPhysicsContactDelegate{
             playSoundCandieCollected()
             GameScene.sharedGVC.candyCollectedInOneGame += 1
             GameScene.sharedGVC.totalCandyCollectedScore += 1
-            GameScene.sharedGVC.highCandyScore(number: GameScene.sharedGVC.candyCollectedInOneGame )
-            GameScene.sharedGVC.allCandiesCollected(number: GameScene.sharedGVC.totalCandyCollectedScore)
             GameScene.sharedGVC.showScores()
             
             // Vibração
@@ -84,8 +82,6 @@ extension GameScene: SKPhysicsContactDelegate{
             playSoundCandieCollected()
             GameScene.sharedGVC.candyCollectedInOneGame += 1
             GameScene.sharedGVC.totalCandyCollectedScore += 1
-            GameScene.sharedGVC.highCandyScore(number: GameScene.sharedGVC.candyCollectedInOneGame )
-            GameScene.sharedGVC.allCandiesCollected(number: GameScene.sharedGVC.totalCandyCollectedScore)
             GameScene.sharedGVC.showScores()
             
             // Vibração
