@@ -9,10 +9,11 @@ import SpriteKit
 
 class HUD {
     
+    // Propriedades
     let Gameview: SKScene
+    let cameraNode: SKCameraNode
     let pauseButtom: SKSpriteNode
     let playButtom: SKSpriteNode
-    let cameraNode: SKCameraNode
     let pumpkin: SKSpriteNode
     let countCandyLabel: SKLabelNode
     let metersLabel: SKLabelNode
@@ -21,7 +22,7 @@ class HUD {
     
     
     init(view: SKScene, camera: SKCameraNode){
-        // Atributos da gameScene
+        // Propriedades da gameScene
         self.Gameview = view
         self.cameraNode = camera
         
@@ -32,7 +33,6 @@ class HUD {
         
         // Textos
         self.countCandyLabel = SKLabelNode(fontNamed: "HelveticaNeue-CondensedBold")
-        
         self.metersLabel = SKLabelNode(fontNamed: "HelveticaNeue-CondensedBold")
         
         // Contadores

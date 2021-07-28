@@ -11,13 +11,29 @@ import SpriteKit
 
 class MainMenuScene: SKScene{
     
+    var startMenu: StartMenu!
+    
+    
+    override init(size: CGSize) {
+        super.init(size: size)
+        
+        self.startMenu = StartMenu(view: self)
+        
+    }
+    
+   
+    
     
     override func didMove(to view: SKView) {
         print("Dentro do Menu")
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
+        // Adicionado as imagens na cena
+        startMenu.CreatebackGroundHUD()
+        
+        
         playSoundMainMenu()
-        createBackground()
+        //createBackground()
         soundButton()
         gameCenterButton()
         playButton()
@@ -114,7 +130,9 @@ class MainMenuScene: SKScene{
 
     
 
-    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
     
