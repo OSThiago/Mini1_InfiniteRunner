@@ -82,6 +82,8 @@ extension GameScene: SKPhysicsContactDelegate{
                 GameScene.sharedGVC.callGameCenter(self)
                 GameScene.sharedGVC.candyCollectedInOneGame = countCandy
                 
+            
+                
             }
         
         if (contact.bodyA.node?.name == "player" && contact.bodyB.node?.name == "Ground"){

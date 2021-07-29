@@ -140,7 +140,7 @@ class HUD {
     }
     
     func clearMeters() {
-        self.meters = 0
+        //self.meters = 0
         self.metersLabel.text = "\(self.meters)"
         // mandar para a GameCenter
         // GameScene.sharedGVC.distanceReachedInOneGame = 0
