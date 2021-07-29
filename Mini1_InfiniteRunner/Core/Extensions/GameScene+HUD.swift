@@ -30,19 +30,20 @@ extension GameScene {
     
     func endCameraPosition() {
         
+        // IMAGENS
         self.endMenu.backGroundGameover.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(0.0))
         
-        self.endMenu.homeButton.position = CGPoint(x: frame.size.width*(-0.065), y: frame.size.height*(-0.3))
+        self.endMenu.homeButton.position = CGPoint(x: frame.size.width*(-0.05), y: frame.size.height*(-0.25))
         
-        self.endMenu.returnButton.position = CGPoint(x: frame.size.width*(0.065), y: frame.size.height*(-0.3))
+        self.endMenu.returnButton.position = CGPoint(x: frame.size.width*(0.05), y: frame.size.height*(-0.25))
         
-        self.endMenu.candyLabel.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(-0.05))
+        self.endMenu.candy.position = CGPoint(x: frame.size.width*(-0.05), y: frame.size.height*(-0.03))
         
-        self.endMenu.metersLabel.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(-0.12))
+        self.endMenu.distance.position = CGPoint(x: frame.size.width*(-0.05), y: frame.size.height*(-0.12))
+        // TEXTOS
+        self.endMenu.candyLabel.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(-0.047))
         
-        self.endMenu.candy.position = CGPoint(x: frame.size.width*(-0.03), y: frame.size.height*(-0.03))
-        
-        self.endMenu.distance.position = CGPoint(x: frame.size.width*(-0.03), y: frame.size.height*(-0.10))
+        self.endMenu.metersLabel.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(-0.135))
         
     }
     

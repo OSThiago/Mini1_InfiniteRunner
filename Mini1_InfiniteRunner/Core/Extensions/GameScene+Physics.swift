@@ -20,25 +20,26 @@ extension GameScene: SKPhysicsContactDelegate{
     func didBegin(_ contact: SKPhysicsContact) {
             if (contact.bodyA.node?.name == "player" && contact.bodyB.node?.name == "enemy"){
                 contact.bodyA.node?.removeFromParent()
-                //print("you loser my brother")
                 
                 player.isAlive = false
                 
                 let generator = UIImpactFeedbackGenerator()
                 generator.impactOccurred()
                 
+                
+                // Removendo os elementos da tela
+                hud.metersLabel.removeFromParent()
+                hud.pumpkin.removeFromParent()
+                hud.countCandyLabel.removeFromParent()
+                hud.pauseButtom.removeFromParent()
+                
                 // Coloca as imagens na tela
                 self.endMenu.gameOverHud(candy: self.countCandy, meters: hud.getMeters())
                 endCameraPosition()
                 
                 //Enviar as pontuações de doces para o gameCenter
-                
                 GameScene.sharedGVC.callGameCenter(self)
-//                ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
-                self.countCandy = 0
                 GameScene.sharedGVC.candyCollectedInOneGame = 0
-        
-
             }
             
             if (contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "player"){
@@ -51,14 +52,27 @@ extension GameScene: SKPhysicsContactDelegate{
                 generator.impactOccurred()
                  
                 
-                // Coloca as imagens na tela
-                self.endMenu.gameOverHud(candy: self.countCandy, meters: hud.getMeters())
-                endCameraPosition()
+                // Removendo os elementos da tela
+                let removeHUDElements = SKAction.run {
+                    self.hud.metersLabel.removeFromParent()
+                    self.hud.pumpkin.removeFromParent()
+                    self.hud.countCandyLabel.removeFromParent()
+                    self.hud.pauseButtom.removeFromParent()
+                }
                 
-//                GameScene.sharedGVC.callGameCenter(self)
-//                ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
-//                self.countCandy = 0
-//                GameScene.sharedGVC.candyCollectedInOneGame = 0
+                // Coloca as imagens na tela
+                let gameOverHUD = SKAction.run {
+                    self.endMenu.gameOverHud(candy: self.countCandy, meters: self.hud.getMeters())
+                    self.endCameraPosition()
+                }
+                
+                let sequence = SKAction.sequence([removeHUDElements,gameOverHUD])
+                
+                self.run(sequence)
+                
+                //Enviar as pontuações de doces para o gameCenter
+                GameScene.sharedGVC.callGameCenter(self)
+                GameScene.sharedGVC.candyCollectedInOneGame = 0
             }
         
         if (contact.bodyA.node?.name == "player" && contact.bodyB.node?.name == "Ground"){
