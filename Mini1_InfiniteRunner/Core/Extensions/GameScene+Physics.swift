@@ -26,16 +26,28 @@ extension GameScene: SKPhysicsContactDelegate{
                 let generator = UIImpactFeedbackGenerator()
                 generator.impactOccurred()
                 
-                // Coloca as imagens na tela
-                self.endMenu.gameOverHud(candy: self.countCandy, meters: hud.getMeters())
-                endCameraPosition()
                 
+                let removeHUD = SKAction.run {
+                    self.hud.pumpkin.removeFromParent()
+                    self.hud.pauseButtom.removeFromParent()
+                    self.hud.metersLabel.removeFromParent()
+                    self.hud.countCandyLabel.removeFromParent()
+                }
+                
+                // Coloca o hud de game over na tela
+                let gameOverHUD = SKAction.run {
+                    // Coloca as imagens na tela
+                    self.endMenu.gameOverHud(candy: self.countCandy, meters: self.hud.getMeters())
+                    self.endCameraPosition()
+                }
+                
+                let sequence = SKAction.sequence([removeHUD,gameOverHUD])
+                
+                self.run(sequence)
                 //Enviar as pontuações de doces para o gameCenter
                 
                 GameScene.sharedGVC.callGameCenter(self)
-                GameScene.sharedGVC.candyCollectedInOneGame = 0
-        
-
+                GameScene.sharedGVC.candyCollectedInOneGame = countCandy
             }
             
             if (contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "player"){
@@ -48,16 +60,27 @@ extension GameScene: SKPhysicsContactDelegate{
                 generator.impactOccurred()
                  
                 
-                // Coloca as imagens na tela
-                self.endMenu.gameOverHud(candy: self.countCandy, meters: hud.getMeters())
-                endCameraPosition()
+                let removeHUD = SKAction.run {
+                    self.hud.pumpkin.removeFromParent()
+                    self.hud.pauseButtom.removeFromParent()
+                    self.hud.metersLabel.removeFromParent()
+                    self.hud.countCandyLabel.removeFromParent()
+                }
                 
+                // Coloca o hud de game over na tela
+                let gameOverHUD = SKAction.run {
+                    // Coloca as imagens na tela
+                    self.endMenu.gameOverHud(candy: self.countCandy, meters: self.hud.getMeters())
+                    self.endCameraPosition()
+                }
                 
+                let sequence = SKAction.sequence([removeHUD,gameOverHUD])
                 
+                self.run(sequence)
                 //Enviar as pontuações de doces para o gameCenter
                 
                 GameScene.sharedGVC.callGameCenter(self)
-                GameScene.sharedGVC.candyCollectedInOneGame = 0
+                GameScene.sharedGVC.candyCollectedInOneGame = countCandy
                 
             }
         
