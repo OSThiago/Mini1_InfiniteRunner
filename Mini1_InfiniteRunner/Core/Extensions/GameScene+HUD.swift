@@ -32,9 +32,17 @@ extension GameScene {
         
         self.endMenu.backGroundGameover.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(0.0))
         
-        self.endMenu.homeButton.position = CGPoint(x: frame.size.width*(0.1), y: frame.size.height*(-0.2))
+        self.endMenu.homeButton.position = CGPoint(x: frame.size.width*(-0.065), y: frame.size.height*(-0.3))
         
-        self.endMenu.returnButton.position = CGPoint(x: frame.size.width*(-0.1), y: frame.size.height*(-0.2))
+        self.endMenu.returnButton.position = CGPoint(x: frame.size.width*(0.065), y: frame.size.height*(-0.3))
+        
+        self.endMenu.candyLabel.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(-0.05))
+        
+        self.endMenu.metersLabel.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(-0.12))
+        
+        self.endMenu.candy.position = CGPoint(x: frame.size.width*(-0.03), y: frame.size.height*(-0.03))
+        
+        self.endMenu.distance.position = CGPoint(x: frame.size.width*(-0.03), y: frame.size.height*(-0.10))
         
     }
     

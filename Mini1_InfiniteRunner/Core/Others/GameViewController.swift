@@ -21,13 +21,17 @@ class GameViewController: UIViewController{
     //Total de distancia percorrida em uma partida
     var distanceReachedInOneGame = Float()
 
+    static var teste = CGSize()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
             
             let menu = MainMenuScene(size: view.frame.size)
-            print(view.frame.size)
+            GameViewController.teste = view.frame.size
+            print("testando a frame", GameViewController.teste)
+            //print(view.frame.size)
             menu.scaleMode = .resizeFill
             view.presentScene(menu)
             

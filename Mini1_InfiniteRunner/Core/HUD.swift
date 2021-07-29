@@ -54,6 +54,8 @@ class HUD {
     func pauseGame() {
         let playAction = SKAction.run {
             self.addHudPause()
+            //self.addMainMenuButton()
+            //self.addPlayButtom()
         }
         let pauseAction = SKAction.run {
             self.Gameview.scene?.view?.isPaused = true
@@ -133,6 +135,10 @@ class HUD {
         }
     }
     
+    func getMeters() -> Int {
+        self.meters
+    }
+    
     func clearMeters() {
         self.meters = 0
         self.metersLabel.text = "\(self.meters)"
@@ -148,7 +154,7 @@ extension HUD {
     private func addHudPause(){
         hudPause.name = "hudPause"
         hudPause.texture?.filteringMode = .nearest
-        hudPause.zPosition = 10
+        hudPause.zPosition = 11
         self.addPlayButtom()
         self.addMainMenuButton()
         self.addAudioButton()
@@ -160,7 +166,7 @@ extension HUD {
     private func addPlayButtom() {
         playButtom.name = "playButtom"
         playButtom.texture?.filteringMode = .nearest
-        playButtom.zPosition = 11
+        playButtom.zPosition = 15
         cameraNode.addChild(playButtom)
     }
     
@@ -168,7 +174,7 @@ extension HUD {
     private func addMainMenuButton(){
         mainButton.name = "mainButton"
         mainButton.texture?.filteringMode = .nearest
-        mainButton.zPosition = 11
+        mainButton.zPosition = 15
         cameraNode.addChild(mainButton)
     }
     
@@ -177,7 +183,7 @@ extension HUD {
     private func addAudioButton(){
         soundButton.name = "soundButton"
         soundButton.texture?.filteringMode = .nearest
-        soundButton.zPosition = 11
+        soundButton.zPosition = 15
         cameraNode.addChild(soundButton)
     }
     
