@@ -75,7 +75,7 @@ class StartMenu {
         GameView.addChild(musicButton)
     }
     
-    // MARK: - GameCenter BUTTON
+    // MARK: - Music BUTTON
     func createGameCenterButtom() {
         scoreButton.name = "gameCenterButton"
         scoreButton.zPosition = 1

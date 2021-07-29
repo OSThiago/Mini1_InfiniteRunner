@@ -24,5 +24,15 @@ extension GameScene {
         
     }
     
+    func endCameraPosition() {
+        
+        self.endMenu.backGroundGameover.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(0.0))
+        
+        self.endMenu.homeButton.position = CGPoint(x: frame.size.width*(0.1), y: frame.size.height*(-0.2))
+        
+        self.endMenu.returnButton.position = CGPoint(x: frame.size.width*(-0.1), y: frame.size.height*(-0.2))
+        
+    }
+    
     
 }
