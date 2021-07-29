@@ -40,6 +40,10 @@ extension GameScene {
         
         self.endMenu.metersLabel.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(-0.12))
         
+        self.endMenu.candy.position = CGPoint(x: frame.size.width*(-0.03), y: frame.size.height*(-0.03))
+        
+        self.endMenu.distance.position = CGPoint(x: frame.size.width*(-0.03), y: frame.size.height*(-0.10))
+        
     }
     
     

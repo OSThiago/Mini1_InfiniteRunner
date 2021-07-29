@@ -32,7 +32,7 @@ class EndMenu {
         self.backGroundGameover = SKSpriteNode(imageNamed: "Gameover")
         self.returnButton = SKSpriteNode(imageNamed: "returnButton")
         self.homeButton = SKSpriteNode(imageNamed: "homeButton")
-        self.distance = SKSpriteNode(imageNamed: "distance")
+        self.distance = SKSpriteNode(imageNamed: "distancia")
         self.candy = SKSpriteNode(imageNamed: "doces")
         
         // Textos
@@ -48,10 +48,14 @@ class EndMenu {
         
         
         let addElements = SKAction.run {
+            // Imagens
             self.removeAll()
             self.createBackGround()
             self.createhomeButton()
             self.createReturnButton()
+            self.createCandy()
+            self.createDistance()
+            // Textos
             self.createCandyLabel(candy: candy)
             self.createMetersLabel(meters: meters)
         }
@@ -71,6 +75,8 @@ class EndMenu {
         self.returnButton.removeFromParent()
         self.candyLabel.removeFromParent()
         self.metersLabel.removeFromParent()
+        self.candy.removeFromParent()
+        self.distance.removeFromParent()
     }
     
     
@@ -86,7 +92,7 @@ class EndMenu {
     private func createReturnButton() {
         returnButton.name = "returnButton"
         returnButton.zPosition = 21
-        returnButton.setScale(2.5)
+        returnButton.setScale(2.3)
         returnButton.texture?.filteringMode = .nearest
         self.cameraNode.addChild(returnButton)
     }
@@ -97,9 +103,25 @@ class EndMenu {
         homeButton.setScale(2.5)
         homeButton.texture?.filteringMode = .nearest
         self.cameraNode.addChild(homeButton)
-        //homeButton.position = CGPoint(x: Gameview.frame.size.width*(-0.1), y: cameraNode.frame.size.height*(0.5))
     }
     
+    
+    private func createDistance() {
+        distance.name = "distance"
+        distance.zPosition = 22
+        distance.setScale(2.0)
+        distance.texture?.filteringMode = .nearest
+        self.cameraNode.addChild(distance)
+        
+    }
+    
+    private func createCandy() {
+        candy.name = "candy"
+        candy.zPosition = 22
+        candy.setScale(2.0)
+        candy.texture?.filteringMode = .nearest
+        self.cameraNode.addChild(candy)
+    }
     
     private func createCandyLabel(candy: Int) {
         candyLabel.fontName = "Early GameBoy"
