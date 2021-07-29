@@ -20,25 +20,48 @@ extension GameScene: SKPhysicsContactDelegate{
     func didBegin(_ contact: SKPhysicsContact) {
             if (contact.bodyA.node?.name == "player" && contact.bodyB.node?.name == "enemy"){
                 contact.bodyA.node?.removeFromParent()
-                print("you loser my brother")
+                //print("you loser my brother")
+                
+                player.isAlive = false
                 
                 let generator = UIImpactFeedbackGenerator()
                 generator.impactOccurred()
                 
+                // Coloca as imagens na tela
+//                endMenu.createBackGround()
+//                endMenu.createhomeButton()
+//                endMenu.createReturnButton()
+//                endCameraPosition()
+                
+                
+                
                 //Enviar as pontuações de doces para o gameCenter
+                
                 GameScene.sharedGVC.callGameCenter(self)
                 ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
                 self.countCandy = 0
                 GameScene.sharedGVC.candyCollectedInOneGame = 0
+        
+
             }
             
             if (contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "player"){
                 contact.bodyB.node?.removeFromParent()
-                print("you loser my brother")
+                
+                player.isAlive = false
+                
+                // vibracao
                 let generator = UIImpactFeedbackGenerator()
                 generator.impactOccurred()
+                 
                 
-                //Enviar as pontuações de doces para o gameCenter
+                // Coloca as imagens na tela
+//                endMenu.createBackGround()
+//                endMenu.createhomeButton()
+//                endMenu.createReturnButton()
+//                endCameraPosition()
+                
+                
                 GameScene.sharedGVC.callGameCenter(self)
                 ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
                 self.countCandy = 0

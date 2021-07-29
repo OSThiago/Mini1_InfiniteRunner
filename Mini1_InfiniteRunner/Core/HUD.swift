@@ -23,7 +23,6 @@ class HUD {
     var meters: Int
     
     
-    
     init(view: SKScene, camera: SKCameraNode){
         // Propriedades da gameScene
         self.Gameview = view

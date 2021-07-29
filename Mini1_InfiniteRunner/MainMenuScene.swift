@@ -38,9 +38,7 @@ class MainMenuScene: SKScene{
         
         // Adicionado as imagens na cena
         //startMenu.CreatebackGroundHUD()
-        
-        
-        
+        audioNode.removeFromParent()
         if !MainMenuScene.flag{
             audioNode.autoplayLooped = true
             audioNode.name = "AudioMainMenu"
