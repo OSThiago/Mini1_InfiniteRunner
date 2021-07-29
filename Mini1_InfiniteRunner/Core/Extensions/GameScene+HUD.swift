@@ -18,9 +18,23 @@ extension GameScene {
         
         self.hud.metersLabel.position = CGPoint(x: frame.size.width*(-0.02), y: frame.size.height*(0.355))
         
-        self.hud.playButtom.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(0.0))
+        self.hud.playButtom.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(-0.08))
+        
+        self.hud.mainButton.position = CGPoint(x: frame.size.width*(-0.045), y: frame.size.height*(-0.08))
+        
+        self.hud.soundButton.position = CGPoint(x: frame.size.width*(0.045), y: frame.size.height*(-0.08))
         
         self.hud.pauseButtom.position = CGPoint(x: frame.size.width*(-0.42), y: frame.size.height*(0.38))
+        
+    }
+    
+    func endCameraPosition() {
+        
+        self.endMenu.backGroundGameover.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(0.0))
+        
+        self.endMenu.homeButton.position = CGPoint(x: frame.size.width*(0.1), y: frame.size.height*(-0.2))
+        
+        self.endMenu.returnButton.position = CGPoint(x: frame.size.width*(-0.1), y: frame.size.height*(-0.2))
         
     }
     

@@ -31,6 +31,7 @@ class GameScene: SKScene {
     var meters: Float = 0.0
     
     var hud: HUD!
+    var endMenu: EndMenu!
     
     // Constantes usadas na configuração do som
     static let sharedGS = MainMenuScene(size: CGSize(width: 844, height: 390) )
@@ -74,7 +75,12 @@ class GameScene: SKScene {
         cameraNode.position.y = size.height/2
         boundsCamera()
         
+        // MARK:- TELAS DE HUD E FIM
         self.hud = HUD(view: self, camera: self.cameraNode)
+        
+        self.endMenu = EndMenu(view: self, camera: cameraNode)
+        
+        
         
         self.generator.prepare()
         
@@ -114,6 +120,9 @@ class GameScene: SKScene {
         self.hud.metersLabelHUD()
         self.hud.startCountMeters()
         
+        
+        
+        
         //HUDMetersCount()
         addSwipeGestureRecognizers()
     }
@@ -131,6 +140,20 @@ class GameScene: SKScene {
     }
     
    
+    func son(){
+        if !MainMenuScene.flag {
+            self.hud.soundButton = SKSpriteNode(imageNamed: "button_sound_on")
+            audioNode.autoplayLooped = true
+            audioNode.name = "AudioGameStarted"
+            audioNode.run(.changeVolume(by: 0.10, duration: 0))
+            self.addChild(audioNode)
+        } else {
+            self.hud.soundButton = SKSpriteNode(imageNamed: "button_sound_off")
+            self.removeChildren(in: [self.audioNode] )
+           // audioNode.run(.changeVolume(to: 0.0, duration: 0))
+        }
+    }
+    
     // Ações que ocorrem ao clicar nos botoes da tela de pause
     func touchPaused(node: SKSpriteNode) {
         switch node.name {
@@ -138,6 +161,12 @@ class GameScene: SKScene {
             hud.pauseGame()
         case "playButtom":
             hud.playGame()
+            
+        
+        
+        case "mainButton":
+            ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene)
+        
         default:
             break
         }
@@ -148,6 +177,13 @@ class GameScene: SKScene {
         
         moveCamera()
         HUDCameraPosition()
+        endCameraPosition()
+        
+//        if !player.isAlive {
+//            self.endMenu.createhomeButton()
+//            endCameraPosition()
+//        }
+        
         
         
         if player.position.x != size.width/2{
