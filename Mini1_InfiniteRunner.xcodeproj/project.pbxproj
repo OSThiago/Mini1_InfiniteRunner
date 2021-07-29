@@ -17,6 +17,7 @@
 		9C198EDA26B08AC800254DEC /* Sound8bitMainMenu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9C198ED926B08AC800254DEC /* Sound8bitMainMenu.wav */; };
 		9C198EDC26B0AC2A00254DEC /* SoundReverseDown.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9C198EDB26B0AC2A00254DEC /* SoundReverseDown.wav */; };
 		9C198EDE26B0AC2E00254DEC /* SoundReverseUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9C198EDD26B0AC2E00254DEC /* SoundReverseUp.wav */; };
+		9C198EE026B23F7A00254DEC /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C198EDF26B23F7A00254DEC /* Sounds.swift */; };
 		9C96E977269E459F0044B930 /* GameScene+Mechanics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C96E976269E459F0044B930 /* GameScene+Mechanics.swift */; };
 		9E2B61B426B0A08700703A67 /* Early GameBoy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E2B61B326B0A08700703A67 /* Early GameBoy.ttf */; };
 		9E2B61B626B127C000703A67 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B61B526B127C000703A67 /* HUD.swift */; };
@@ -51,6 +52,7 @@
 		9C198ED926B08AC800254DEC /* Sound8bitMainMenu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Sound8bitMainMenu.wav; path = Sounds/Sound8bitMainMenu.wav; sourceTree = SOURCE_ROOT; };
 		9C198EDB26B0AC2A00254DEC /* SoundReverseDown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SoundReverseDown.wav; sourceTree = "<group>"; };
 		9C198EDD26B0AC2E00254DEC /* SoundReverseUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = SoundReverseUp.wav; sourceTree = "<group>"; };
+		9C198EDF26B23F7A00254DEC /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
 		9C96E976269E459F0044B930 /* GameScene+Mechanics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Mechanics.swift"; sourceTree = "<group>"; };
 		9E2B61B326B0A08700703A67 /* Early GameBoy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Early GameBoy.ttf"; sourceTree = "<group>"; };
 		9E2B61B526B127C000703A67 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				9E7F7AA9269D00B90062CC06 /* Core */,
 				9E7F7AA1269CFFE10062CC06 /* Assets.xcassets */,
 				9E7F7AA3269CFFE10062CC06 /* Info.plist */,
+				9C198EDF26B23F7A00254DEC /* Sounds.swift */,
 			);
 			path = Mini1_InfiniteRunner;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				9C96E977269E459F0044B930 /* GameScene+Mechanics.swift in Sources */,
 				9ED45ECA26ADF74F002B33F5 /* GameScene+Candy.swift in Sources */,
 				27732D4926AE01090013654F /* GameScene+Camera.swift in Sources */,
+				9C198EE026B23F7A00254DEC /* Sounds.swift in Sources */,
 				9E7F7A95269CFFDE0062CC06 /* AppDelegate.swift in Sources */,
 				9E906A5626A1D6E50026B7A7 /* GameScene+EnemyGenerator.swift in Sources */,
 			);

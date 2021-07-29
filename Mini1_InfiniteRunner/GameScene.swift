@@ -42,7 +42,6 @@ class GameScene: SKScene {
         super.init(size: size)
         //self.hud.clearMeters()
         
-        //self.playSoundGameStarted()
         
         self.physicsWorld.contactDelegate = self
         
@@ -80,14 +79,23 @@ class GameScene: SKScene {
         self.generator.prepare()
         
         if !MainMenuScene.flag {
-            audioNode.autoplayLooped = true
-            audioNode.name = "AudioGameStarted"
-            audioNode.run(.changeVolume(by: 0.10, duration: 0))
-            self.addChild(audioNode)
-        } else {
-            self.removeChildren(in: [self.audioNode] )
-           // audioNode.run(.changeVolume(to: 0.0, duration: 0))
-        }
+            /*
+                    audioNode.autoplayLooped = true
+                    audioNode.name = "AudioGameStarted"
+                    audioNode.run(.changeVolume(by: 0.10, duration: 0))
+                    self.addChild(audioNode)
+                } else {
+                    self.removeChildren(in: [self.audioNode] )
+                   // audioNode.run(.changeVolume(to: 0.0, duration: 0))*/
+            Sounds.shared.playSoundGameStarted()
+                }
+        /*
+        if UserDefaults.standard.stateMusic() == true {
+            Sounds.shared.playSoundGameStarted()
+                    
+        }else{
+            Sounds.shared.pause()
+        }*/
         
         
         
@@ -166,7 +174,7 @@ class GameScene: SKScene {
   
     
     
-//
+
 //    func playSoundGameStarted(){
 //        let audioNode = SKAudioNode(fileNamed: "Sound8bitGameStarted.wav")
 //        audioNode.autoplayLooped = true
@@ -174,7 +182,7 @@ class GameScene: SKScene {
 //        self.addChild(audioNode)
 //        audioNode.run(.changeVolume(by: 0.10, duration: 0))
 //    }
-    
+//
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

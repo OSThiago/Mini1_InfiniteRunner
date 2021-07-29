@@ -15,6 +15,7 @@ class MainMenuScene: SKScene{
     
     
     var music = true
+    var teste = 0
         
     let audioNode = SKAudioNode(fileNamed: "Sound8bitMainMenu.wav")
         
@@ -38,13 +39,24 @@ class MainMenuScene: SKScene{
         
         // Adicionado as imagens na cena
         //startMenu.CreatebackGroundHUD()
-        
+       
         if !MainMenuScene.flag{
+            /*
             audioNode.autoplayLooped = true
             audioNode.name = "AudioMainMenu"
             audioNode.run(.changeVolume(to: 0.50, duration: 0))
-            addChild(audioNode)
+            addChild(audioNode)*/
+            Sounds.shared.playSoundMenu()
         }
+        /*
+        UserDefaults.standard.changeStateMusic(true)
+        if UserDefaults.standard.stateMusic() == true {
+            Sounds.shared.playSoundMenu()
+                    
+        }else{
+            Sounds.shared.pause()
+        }*/
+        
 
         // Colocando as imagens da tela de inicio
         startMenu.createbackGroundHUD()
@@ -65,6 +77,7 @@ class MainMenuScene: SKScene{
                     switch node.name {
                     case "playButton":
                         if node.contains(touch.location(in: self)){
+                            Sounds.shared.pause()
                             ActionManage.shared.sceneTransition(self, toScene: .GameScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
                             // Vibração
                             let generator = UIImpactFeedbackGenerator()
@@ -73,14 +86,27 @@ class MainMenuScene: SKScene{
                     case "soundButton":
                         if node.contains(touch.location(in: self)){
                             if MainMenuScene.flag {
-                                self.audioNode.run(.changeVolume(to: 0.5, duration: 0))
-                                self.addChild(self.audioNode)
+                                Sounds.shared.playSoundMenu()
                                 MainMenuScene.flag = false
                             } else {
-                                self.audioNode.run(.changeVolume(to: 0.0, duration: 0))
-                                self.removeChildren(in: [self.audioNode])
+                                Sounds.shared.pause()
                                 MainMenuScene.flag = true
                             }
+                           // UserDefaults.standard.changeStateMusic(true)
+//                            if UserDefaults.standard.stateMusic() {
+//                                self.run(SKAction.playSoundFileNamed("Sound8bitMainMenu.wav", waitForCompletion: false))
+//
+//                            }
+//                            if UserDefaults.standard.stateMusic() == true {
+//                                //Sounds.shared.pause()
+//                                Sounds.shared.playSoundMenu()
+//
+//                            }else{
+//                               // Sounds.shared.playSoundMenu()
+//                                Sounds.shared.pause()
+//                            }
+                          
+                            
 
                         }
                     case "gameCenterButton":
@@ -150,7 +176,7 @@ class MainMenuScene: SKScene{
 //        audioNode.run(.changeVolume(to: 0.50, duration: 0))
 //        self.addChild(audioNode)
 //    }
-//
+
     
 
     
