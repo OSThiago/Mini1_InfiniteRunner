@@ -52,6 +52,13 @@ extension GameScene: SKPhysicsContactDelegate{
                 self.endMenu.gameOverHud(candy: self.countCandy, meters: hud.getMeters())
                 endCameraPosition()
                 
+                
+                
+                //Enviar as pontuações de doces para o gameCenter
+                
+                GameScene.sharedGVC.callGameCenter(self)
+                GameScene.sharedGVC.candyCollectedInOneGame = 0
+                
             }
         
         if (contact.bodyA.node?.name == "player" && contact.bodyB.node?.name == "Ground"){
