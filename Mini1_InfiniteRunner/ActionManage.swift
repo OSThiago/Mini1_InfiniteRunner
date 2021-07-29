@@ -20,7 +20,6 @@ class ActionManage {
     }
     
     static let shared = ActionManage()
-    static let sharedV = GameViewController()
     
     public func launch(){
         firstLaunch()
@@ -52,7 +51,7 @@ class ActionManage {
     func getScene(_ sceneType: SceneType) -> SKScene?{
         switch sceneType {
         case SceneType.MainMenuScene:
-            return MainMenuScene(size: GameViewController.teste) //693.0   320.0
+            return MainMenuScene(size: GameViewController.teste ) //693.0   320.0
         case SceneType.GameScene:
             return GameScene(size: GameViewController.teste)
 
