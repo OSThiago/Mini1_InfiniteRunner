@@ -33,7 +33,6 @@ extension GameScene: SKPhysicsContactDelegate{
                 //Enviar as pontuações de doces para o gameCenter
                 
                 GameScene.sharedGVC.callGameCenter(self)
-                self.countCandy = 0
                 GameScene.sharedGVC.candyCollectedInOneGame = 0
         
 
