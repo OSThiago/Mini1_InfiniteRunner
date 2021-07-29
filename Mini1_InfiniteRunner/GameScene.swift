@@ -156,9 +156,12 @@ class GameScene: SKScene {
         
         case "soundButton":
             if MainMenuScene.flag {
+                self.hud.soundButton.texture = SKTexture(imageNamed: "button_sound_on")
                 Sounds.shared.playSoundGameStarted()
                 MainMenuScene.flag = false
             } else {
+               
+                self.hud.soundButton.texture = SKTexture(imageNamed: "button_sound_off")
                 Sounds.shared.pause()
                 MainMenuScene.flag = true
             }

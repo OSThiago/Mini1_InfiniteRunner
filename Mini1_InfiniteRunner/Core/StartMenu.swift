@@ -16,7 +16,7 @@ class StartMenu {
     let logo: SKSpriteNode
     let playButton: SKSpriteNode
     let scoreButton: SKSpriteNode
-    let musicButton: SKSpriteNode
+    var musicButton: SKSpriteNode
     
     init(view: SKScene) {
         // Propriedades da gameScene

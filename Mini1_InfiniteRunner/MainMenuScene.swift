@@ -71,7 +71,7 @@ class MainMenuScene: SKScene{
         for touch in touches{
             if touch == touches.first{
                 print("Indo para o jogo")
-                enumerateChildNodes(withName: "//*", using: {(node,stop) in
+                enumerateChildNodes(withName: "//*", using: { [self](node,stop) in
                     
                     
                     switch node.name {
@@ -86,9 +86,13 @@ class MainMenuScene: SKScene{
                     case "soundButton":
                         if node.contains(touch.location(in: self)){
                             if MainMenuScene.flag {
+                                startMenu.musicButton.texture = SKTexture(imageNamed: "button_sound_on")
+                                startMenu.musicButton.texture?.filteringMode = .nearest
                                 Sounds.shared.playSoundMenu()
                                 MainMenuScene.flag = false
                             } else {
+                                startMenu.musicButton.texture = SKTexture(imageNamed: "button_sound_off")
+                                startMenu.musicButton.texture?.filteringMode = .nearest
                                 Sounds.shared.pause()
                                 MainMenuScene.flag = true
                             }
@@ -153,6 +157,7 @@ class MainMenuScene: SKScene{
     
     
     func soundButton(){
+        
         let configButton = SKSpriteNode(imageNamed: "soundButton")
         configButton.name = "soundButton"
         configButton.position = CGPoint.init(x: 290, y: 120)
