@@ -5,6 +5,7 @@
 //  Created by Team 10 on 12/07/21.
 //
 
+import  UIKit
 import SpriteKit
 import GameplayKit
 
@@ -144,15 +145,24 @@ class GameScene: SKScene {
     func touchPaused(node: SKSpriteNode) {
         switch node.name {
         case "pauseButton":
+            let generator = UIImpactFeedbackGenerator()
+            generator.impactOccurred()
             hud.pauseGame()
         case "playButtom":
+            let generator = UIImpactFeedbackGenerator()
+            generator.impactOccurred()
             hud.playGame()
         case "mainButton":
+            let generator = UIImpactFeedbackGenerator()
+            generator.impactOccurred()
             ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene)
         
         case "soundButton":
+            let generator = UIImpactFeedbackGenerator()
+            generator.impactOccurred()
             if MainMenuScene.flag {
                 self.hud.soundButton.texture = SKTexture(imageNamed: "button_sound_on")
+                
                 Sounds.shared.playSoundGameStarted()
                 MainMenuScene.flag = false
             } else {
@@ -163,8 +173,12 @@ class GameScene: SKScene {
             }
             
         case "homeButton":
+            let generator = UIImpactFeedbackGenerator()
+            generator.impactOccurred()
             ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene)
         case "returnButton":
+            let generator = UIImpactFeedbackGenerator()
+            generator.impactOccurred()
             ActionManage.shared.sceneTransition(self, toScene: .GameScene)
         default:
             break
