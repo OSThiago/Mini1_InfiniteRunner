@@ -173,6 +173,8 @@ extension HUD {
         cameraNode.addChild(mainButton)
     }
     
+    
+    // alterar
     private func addAudioButton(){
         soundButton.name = "soundButton"
         soundButton.texture?.filteringMode = .nearest
