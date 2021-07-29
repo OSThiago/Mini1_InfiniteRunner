@@ -15,6 +15,9 @@ class HUD {
     let pauseButtom: SKSpriteNode
     let playButtom: SKSpriteNode
     let pumpkin: SKSpriteNode
+    let hudPause: SKSpriteNode
+    let mainButton: SKSpriteNode
+    var soundButton: SKSpriteNode
     let countCandyLabel: SKLabelNode
     let metersLabel: SKLabelNode
     var meters: Int
@@ -27,9 +30,18 @@ class HUD {
         self.cameraNode = camera
         
         // Imagens
-        self.playButtom = SKSpriteNode(imageNamed: "forward")
+        self.playButtom = SKSpriteNode(imageNamed: "button_play2")
         self.pumpkin = SKSpriteNode(imageNamed: "pontuacao")
         self.pauseButtom = SKSpriteNode(imageNamed: "button_pause")
+        self.hudPause = SKSpriteNode(imageNamed: "Hud_pause")
+        self.mainButton = SKSpriteNode(imageNamed: "button_menu")
+        
+        if !MainMenuScene.flag{
+            self.soundButton = SKSpriteNode(imageNamed: "button_sound_on")
+        }else{
+            self.soundButton = SKSpriteNode(imageNamed: "button_sound_off")
+        }
+       
         
         // Textos
         self.countCandyLabel = SKLabelNode(fontNamed: "HelveticaNeue-CondensedBold")
@@ -42,7 +54,7 @@ class HUD {
     
     func pauseGame() {
         let playAction = SKAction.run {
-            self.addPlayButtom()
+            self.addHudPause()
         }
         let pauseAction = SKAction.run {
             self.Gameview.scene?.view?.isPaused = true
@@ -53,7 +65,7 @@ class HUD {
     
     func playGame() {
         Gameview.scene?.view?.isPaused = false
-        removePlayButtom()
+        removePauseHud()
     }
     
     //MARK:- PAUSE
@@ -134,17 +146,50 @@ class HUD {
 //MARK:- Metodos privados
 extension HUD {
     
+    private func addHudPause(){
+        hudPause.name = "hudPause"
+        hudPause.texture?.filteringMode = .nearest
+        hudPause.zPosition = 10
+        self.addPlayButtom()
+        self.addMainMenuButton()
+        //self.addAudioButton()
+        cameraNode.addChild(hudPause)
+    }
+    
+    
+    // adcionar botao de play
     private func addPlayButtom() {
         playButtom.name = "playButtom"
-        playButtom.setScale(5)
         playButtom.texture?.filteringMode = .nearest
-        playButtom.zPosition = 10
+        playButtom.zPosition = 11
         cameraNode.addChild(playButtom)
     }
     
-    private func removePlayButtom() {
-        self.playButtom.removeFromParent()
+    // adicionar o botao de menu
+    private func addMainMenuButton(){
+        mainButton.name = "mainButton"
+        mainButton.texture?.filteringMode = .nearest
+        mainButton.zPosition = 11
+        cameraNode.addChild(mainButton)
     }
+    
+    private func addAudioButton(){
+        soundButton.name = "soundButton"
+        soundButton.texture?.filteringMode = .nearest
+        soundButton.zPosition = 11
+        cameraNode.addChild(soundButton)
+    }
+    
+    
+    // remover tpdp p hud de pause
+    private func removePauseHud() {
+        self.hudPause.removeFromParent()
+        self.playButtom.removeFromParent()
+        self.mainButton.removeFromParent()
+        //self.soundButton.removeFromParent()
+        
+    }
+    
     
     
 }

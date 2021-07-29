@@ -79,15 +79,8 @@ class GameScene: SKScene {
         
         self.generator.prepare()
         
-        if !MainMenuScene.flag {
-            audioNode.autoplayLooped = true
-            audioNode.name = "AudioGameStarted"
-            audioNode.run(.changeVolume(by: 0.10, duration: 0))
-            self.addChild(audioNode)
-        } else {
-            self.removeChildren(in: [self.audioNode] )
-           // audioNode.run(.changeVolume(to: 0.0, duration: 0))
-        }
+        
+        son()
         
         
         
@@ -123,6 +116,20 @@ class GameScene: SKScene {
     }
     
    
+    func son(){
+        if !MainMenuScene.flag {
+            self.hud.soundButton = SKSpriteNode(imageNamed: "button_sound_on")
+            audioNode.autoplayLooped = true
+            audioNode.name = "AudioGameStarted"
+            audioNode.run(.changeVolume(by: 0.10, duration: 0))
+            self.addChild(audioNode)
+        } else {
+            self.hud.soundButton = SKSpriteNode(imageNamed: "button_sound_off")
+            self.removeChildren(in: [self.audioNode] )
+           // audioNode.run(.changeVolume(to: 0.0, duration: 0))
+        }
+    }
+    
     // Ações que ocorrem ao clicar nos botoes da tela de pause
     func touchPaused(node: SKSpriteNode) {
         switch node.name {
@@ -130,6 +137,12 @@ class GameScene: SKScene {
             hud.pauseGame()
         case "playButtom":
             hud.playGame()
+            
+        
+        
+        case "mainButton":
+            ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene)
+        
         default:
             break
         }
