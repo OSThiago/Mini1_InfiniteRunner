@@ -18,11 +18,11 @@ extension GameScene {
         
         self.hud.metersLabel.position = CGPoint(x: frame.size.width*(-0.02), y: frame.size.height*(0.355))
         
-        self.hud.playButtom.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(-0.08))
+        self.hud.playButtom.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(-0.15))
         
-        self.hud.mainButton.position = CGPoint(x: frame.size.width*(-0.045), y: frame.size.height*(-0.08))
+        self.hud.mainButton.position = CGPoint(x: frame.size.width*(-0.080), y: frame.size.height*(-0.19))
         
-        self.hud.soundButton.position = CGPoint(x: frame.size.width*(0.045), y: frame.size.height*(-0.08))
+        self.hud.soundButton.position = CGPoint(x: frame.size.width*(0.080), y: frame.size.height*(-0.19))
         
         self.hud.pauseButtom.position = CGPoint(x: frame.size.width*(-0.42), y: frame.size.height*(0.38))
         

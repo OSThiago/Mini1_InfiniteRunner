@@ -155,6 +155,8 @@ extension HUD {
         hudPause.name = "hudPause"
         hudPause.texture?.filteringMode = .nearest
         hudPause.zPosition = 11
+        hudPause.setScale(2)
+        
         self.addPlayButtom()
         self.addMainMenuButton()
         self.addAudioButton()
@@ -167,6 +169,7 @@ extension HUD {
         playButtom.name = "playButtom"
         playButtom.texture?.filteringMode = .nearest
         playButtom.zPosition = 15
+        playButtom.setScale(1.8)
         cameraNode.addChild(playButtom)
     }
     
@@ -175,6 +178,7 @@ extension HUD {
         mainButton.name = "mainButton"
         mainButton.texture?.filteringMode = .nearest
         mainButton.zPosition = 15
+        mainButton.setScale(1.8)
         cameraNode.addChild(mainButton)
     }
     
@@ -184,6 +188,7 @@ extension HUD {
         soundButton.name = "soundButton"
         soundButton.texture?.filteringMode = .nearest
         soundButton.zPosition = 15
+        soundButton.setScale(1.8)
         cameraNode.addChild(soundButton)
     }
     
