@@ -172,6 +172,7 @@ class GameScene: SKScene {
                 MainMenuScene.flag = true
             }
             
+            
         case "homeButton":
             let generator = UIImpactFeedbackGenerator()
             generator.impactOccurred()
