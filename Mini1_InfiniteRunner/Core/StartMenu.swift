@@ -30,9 +30,10 @@ class StartMenu {
         self.musicButton = SKSpriteNode(imageNamed: "button_sound_on")
     }
     
-    // MARK:- BACKGROUND
     
-    // opa
+    
+    
+    // MARK:- BACKGROUND
     func createbackGroundHUD() {
         backGround.name = "backGround"
         backGround.zPosition = -3
@@ -44,7 +45,6 @@ class StartMenu {
     }
     
     // MARK: - TITULO LOGO
-    
     func createLogo() {
         logo.name = "logo"
         logo.zPosition = 1
@@ -65,8 +65,7 @@ class StartMenu {
         GameView.addChild(playButton)
     }
     
-    // MARK: - Music BUTTON
-    
+    // MARK: - MUSIC BUTTON
     func createMusicButtom() {
         musicButton.name = "soundButton"
         musicButton.zPosition = 1
@@ -76,7 +75,7 @@ class StartMenu {
         GameView.addChild(musicButton)
     }
     
-    // MARK: - Music BUTTON
+    // MARK: - GAMECENTER BUTTON
     func createGameCenterButtom() {
         scoreButton.name = "gameCenterButton"
         scoreButton.zPosition = 1
@@ -90,11 +89,3 @@ class StartMenu {
     
 }
 
-
-
-extension StartMenu {
-    
-    
-    
-    
-}

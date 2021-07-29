@@ -21,7 +21,7 @@ class Enemy: SKSpriteNode {
         self.zPosition = 1
         self.name = "enemy"
         self.physicsBody = createEnemyBody(imageNamed: image)
-        self.zPosition = 10
+        self.zPosition = 8
         
         // Alterar o anchorPoint só altera a imagem, nao alteraa a posicao do node
         //self.anchorPoint = CGPoint(x: 0.5, y: 0.0)

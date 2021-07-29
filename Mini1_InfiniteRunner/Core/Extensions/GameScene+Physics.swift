@@ -28,17 +28,13 @@ extension GameScene: SKPhysicsContactDelegate{
                 generator.impactOccurred()
                 
                 // Coloca as imagens na tela
-//                endMenu.createBackGround()
-//                endMenu.createhomeButton()
-//                endMenu.createReturnButton()
-//                endCameraPosition()
-                
-                
+                self.endMenu.gameOverHud(candy: self.countCandy, meters: hud.getMeters())
+                endCameraPosition()
                 
                 //Enviar as pontuações de doces para o gameCenter
                 
                 GameScene.sharedGVC.callGameCenter(self)
-                ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+//                ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
                 self.countCandy = 0
                 GameScene.sharedGVC.candyCollectedInOneGame = 0
         
@@ -56,16 +52,13 @@ extension GameScene: SKPhysicsContactDelegate{
                  
                 
                 // Coloca as imagens na tela
-//                endMenu.createBackGround()
-//                endMenu.createhomeButton()
-//                endMenu.createReturnButton()
-//                endCameraPosition()
+                self.endMenu.gameOverHud(candy: self.countCandy, meters: hud.getMeters())
+                endCameraPosition()
                 
-                
-                GameScene.sharedGVC.callGameCenter(self)
-                ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
-                self.countCandy = 0
-                GameScene.sharedGVC.candyCollectedInOneGame = 0
+//                GameScene.sharedGVC.callGameCenter(self)
+//                ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+//                self.countCandy = 0
+//                GameScene.sharedGVC.candyCollectedInOneGame = 0
             }
         
         if (contact.bodyA.node?.name == "player" && contact.bodyB.node?.name == "Ground"){

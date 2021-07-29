@@ -77,7 +77,6 @@ class GameScene: SKScene {
         
         // MARK:- TELAS DE HUD E FIM
         self.hud = HUD(view: self, camera: self.cameraNode)
-        
         self.endMenu = EndMenu(view: self, camera: cameraNode)
         
         
@@ -148,21 +147,12 @@ class GameScene: SKScene {
             hud.pauseGame()
         case "playButtom":
             hud.playGame()
-            
-        
-        
         case "mainButton":
             ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene)
-        
-        case "soundButton":
-            if MainMenuScene.flag {
-                Sounds.shared.playSoundGameStarted()
-                MainMenuScene.flag = false
-            } else {
-                Sounds.shared.pause()
-                MainMenuScene.flag = true
-            }
-            
+        case "homeButton":
+            ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene)
+        case "returnButton":
+            ActionManage.shared.sceneTransition(self, toScene: .GameScene)
         default:
             break
         }
@@ -173,7 +163,7 @@ class GameScene: SKScene {
         
         moveCamera()
         HUDCameraPosition()
-        self.endCameraPosition()
+        //endCameraPosition()
         
 //        if !player.isAlive {
 //            self.endMenu.createhomeButton()

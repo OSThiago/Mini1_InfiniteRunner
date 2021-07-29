@@ -8,13 +8,16 @@
 import Foundation
 import SpriteKit
 
-class ActionManage{
+class ActionManage {
     
     enum SceneType{
         case MainMenuScene, GameScene
     }
     
-    private init(){}
+    
+    init(){
+        
+    }
     
     static let shared = ActionManage()
     
@@ -37,10 +40,10 @@ class ActionManage{
         
         guard let scene = getScene(toScene) else{ return }
         if let transition = transition{
-            scene.scaleMode = .aspectFill
+            scene.scaleMode = .aspectFit
             fromScene.view?.presentScene(scene, transition: transition)
         }else{
-            scene.scaleMode = .aspectFill
+            scene.scaleMode = .aspectFit
             fromScene.view?.presentScene(scene)
         }
     }
@@ -48,7 +51,7 @@ class ActionManage{
     func getScene(_ sceneType: SceneType) -> SKScene?{
         switch sceneType {
         case SceneType.MainMenuScene:
-            return MainMenuScene(size: CGSize(width: 693.0, height: 320.0))
+            return MainMenuScene(size: CGSize(width: 844.0, height: 390.0)) //693.0   320.0
         case SceneType.GameScene:
             return GameScene(size: CGSize(width: 844.0, height: 390.0))
 
