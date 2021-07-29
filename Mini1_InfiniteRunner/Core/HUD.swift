@@ -125,7 +125,7 @@ class HUD {
             self.meters += 10
             self.metersLabel.text = "\(self.meters)"
             // Mandar aqui para o GameCenter
-            // GameScene.sharedGVC.distanceReachedInOneGame = self.meters
+            GameScene.sharedGVC.distanceReachedInOneGame = Float(self.meters)
         }
         let wait = SKAction.wait(forDuration: 0.2)
         let sequence = SKAction.sequence([sumMeters,wait])
