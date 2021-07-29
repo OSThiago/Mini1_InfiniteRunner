@@ -15,6 +15,7 @@ enum mask: Int {
 extension GameScene: SKPhysicsContactDelegate{
     
     static let sharedGVC = GameViewController()
+    static let sharedMMS = MainMenuScene(size: CGSize(width: 844.0, height: 390.0))
     
     func didBegin(_ contact: SKPhysicsContact) {
             if (contact.bodyA.node?.name == "player" && contact.bodyB.node?.name == "enemy"){
@@ -60,7 +61,9 @@ extension GameScene: SKPhysicsContactDelegate{
             self.hud.incrementCandyLabel(count: self.countCandy)
             
             //Contador de doces
-            playSoundCandieCollected()
+            if !MainMenuScene.flag{
+                playSoundCandieCollected()
+            }
             GameScene.sharedGVC.candyCollectedInOneGame += 1
             GameScene.sharedGVC.totalCandyCollectedScore += 1
             
@@ -79,7 +82,9 @@ extension GameScene: SKPhysicsContactDelegate{
             self.hud.incrementCandyLabel(count: self.countCandy)
             
             //Contador de doces
-            playSoundCandieCollected()
+            if !MainMenuScene.flag{
+                playSoundCandieCollected()
+            }
             GameScene.sharedGVC.candyCollectedInOneGame += 1
             GameScene.sharedGVC.totalCandyCollectedScore += 1
             

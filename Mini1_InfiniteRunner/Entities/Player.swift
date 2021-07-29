@@ -14,6 +14,7 @@ class Player: SKSpriteNode {
     var isJuping: Bool = false
     var isAlive = true
     private var playerSide: PlayerSide
+    static let sharedMMS = MainMenuScene(size: CGSize(width: 844.0, height: 390.0))
     
     // Inicializadores
     init(imageName: String) {
@@ -59,10 +60,15 @@ class Player: SKSpriteNode {
         switch self.playerSide {
         case .TOP:
             self.playerSide = .BOTTOM
-            self.playReverseSoundDown()
+            if !MainMenuScene.flag{
+                self.playReverseSoundDown()
+            }
         case .BOTTOM:
             self.playerSide = .TOP
-            self.playReverseSoundUp()
+            if !MainMenuScene.flag{
+                self.playReverseSoundUp()
+            }
+            
         }
     }
     

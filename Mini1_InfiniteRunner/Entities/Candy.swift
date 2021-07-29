@@ -10,6 +10,7 @@ import SpriteKit
 class Candy: SKSpriteNode {
     // Propriedades
     let imageNamed: String
+
     
     // Inicializadores
     init(image: String, position: CGPoint){
