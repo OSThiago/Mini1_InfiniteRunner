@@ -109,14 +109,14 @@ class GameViewController: UIViewController{
         }
     }
     
-    /* FUNÇÃO PARA TESTE RÁPIDO E ESPECÍFICO
+    
     //MARK: - FUNÇÃO PARA CHAMAR OS LEADERBOARDS
     func transitionToGameCenter(){
         print("Opening Game Center")
         let viewController = GKGameCenterViewController(state: .leaderboards)
         viewController.gameCenterDelegate = self
         present(viewController, animated: true, completion: nil)
-    }*/
+    }
 
     
     /*
