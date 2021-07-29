@@ -167,6 +167,9 @@ class GameScene: SKScene {
         case "mainButton":
             ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene)
         
+        case "soundButton":
+            son()
+            
         default:
             break
         }
@@ -177,7 +180,7 @@ class GameScene: SKScene {
         
         moveCamera()
         HUDCameraPosition()
-        endCameraPosition()
+        self.endCameraPosition()
         
 //        if !player.isAlive {
 //            self.endMenu.createhomeButton()

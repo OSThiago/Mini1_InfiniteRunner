@@ -151,7 +151,7 @@ extension HUD {
         hudPause.zPosition = 10
         self.addPlayButtom()
         self.addMainMenuButton()
-        //self.addAudioButton()
+        self.addAudioButton()
         cameraNode.addChild(hudPause)
     }
     
@@ -187,7 +187,7 @@ extension HUD {
         self.hudPause.removeFromParent()
         self.playButtom.removeFromParent()
         self.mainButton.removeFromParent()
-        //self.soundButton.removeFromParent()
+        self.soundButton.removeFromParent()
         
     }
     
