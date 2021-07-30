@@ -30,20 +30,33 @@ extension GameScene {
     
     func endCameraPosition() {
         
+        
+        // BUTTONS
+        
+        // Caso nao tenha visto a propaganda ainda ele mostra um tipo de layout, caso ja tenha visto mostra outro layout
+        if !endMenu.adsView {
+            self.endMenu.homeButton.position = CGPoint(x: frame.size.width*(-0.05), y: frame.size.height*(-0.25))
+            
+            self.endMenu.returnButton.position = CGPoint(x: frame.size.width*(0.05), y: frame.size.height*(-0.25))
+        } else {
+            self.endMenu.homeButton.position = CGPoint(x: frame.size.width*(-0.08), y: frame.size.height*(-0.25))
+            
+            self.endMenu.returnButton.position = CGPoint(x: frame.size.width*(0.08), y: frame.size.height*(-0.25))
+            
+            self.endMenu.adsButton.position = CGPoint(x: frame.size.width*(0.00), y: frame.size.height*(-0.25))
+        }
+        
+        
         // IMAGENS
         self.endMenu.backGroundGameover.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(0.0))
         
-        self.endMenu.homeButton.position = CGPoint(x: frame.size.width*(-0.05), y: frame.size.height*(-0.25))
+        self.endMenu.candy.position = CGPoint(x: frame.size.width*(-0.05), y: frame.size.height*(0.03))
         
-        self.endMenu.returnButton.position = CGPoint(x: frame.size.width*(0.05), y: frame.size.height*(-0.25))
-        
-        self.endMenu.candy.position = CGPoint(x: frame.size.width*(-0.05), y: frame.size.height*(-0.03))
-        
-        self.endMenu.distance.position = CGPoint(x: frame.size.width*(-0.05), y: frame.size.height*(-0.12))
+        self.endMenu.distance.position = CGPoint(x: frame.size.width*(-0.05), y: frame.size.height*(-0.07))
         // TEXTOS
-        self.endMenu.candyLabel.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(-0.047))
+        self.endMenu.candyLabel.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(0.01))
         
-        self.endMenu.metersLabel.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(-0.135))
+        self.endMenu.metersLabel.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(-0.088))
         
     }
     

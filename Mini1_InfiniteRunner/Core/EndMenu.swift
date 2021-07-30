@@ -8,13 +8,19 @@
 import SpriteKit
 
 class EndMenu {
+    var adsView = true
+    
     // GAMESCENE
     let Gameview: SKScene
     let cameraNode: SKCameraNode
-    // IMAGENS
-    let backGroundGameover: SKSpriteNode
+    
+    // BUTTONS
     let returnButton: SKSpriteNode
     let homeButton: SKSpriteNode
+    let adsButton: SKSpriteNode
+    
+    // IMAGENS
+    let backGroundGameover: SKSpriteNode
     let distance: SKSpriteNode
     let candy: SKSpriteNode
     
@@ -32,6 +38,7 @@ class EndMenu {
         self.backGroundGameover = SKSpriteNode(imageNamed: "Gameover")
         self.returnButton = SKSpriteNode(imageNamed: "returnButton")
         self.homeButton = SKSpriteNode(imageNamed: "homeButton")
+        self.adsButton = SKSpriteNode(imageNamed: "adsButton")
         self.distance = SKSpriteNode(imageNamed: "distancia")
         self.candy = SKSpriteNode(imageNamed: "doces")
         
@@ -45,8 +52,6 @@ class EndMenu {
     // MARK:- Colocando o HUD da tela final
     
     func gameOverHud(candy: Int, meters: Int) {
-        
-        
         let addElements = SKAction.run {
             // Imagens
             self.removeAll()
@@ -55,6 +60,7 @@ class EndMenu {
             self.createBackGround()
             self.createhomeButton()
             self.createReturnButton()
+            self.createAdsButton()
             // Textos
             self.createCandyLabel(candy: candy)
             self.createMetersLabel(meters: meters)
@@ -65,7 +71,32 @@ class EndMenu {
         }
         let sequence = SKAction.sequence([addElements,pauseAction])
         Gameview.run(sequence)
+    }
+    
+    func revive(hud: HUD, player: Player) {
         
+        
+        // Voltar o player na tela
+        let revivePlaye = SKAction.run {
+            self.Gameview.addChild(player)
+        }
+        
+        // voltar o HUD da tela
+        let HUDGame = SKAction.run {
+            hud.pumpkinHUD()
+            hud.pauseButtonHUD()
+            hud.metersLabelHUD()
+            hud.countCandyLabelHUD()
+        }
+        
+        // tirar o HUD da morte
+        let removeHUD = SKAction.run {
+            self.removeAll()
+        }
+        
+        let sequence = SKAction.sequence([removeHUD,HUDGame, revivePlaye])
+        
+        Gameview.run(sequence)
     }
     
     
@@ -77,6 +108,7 @@ class EndMenu {
         self.metersLabel.removeFromParent()
         self.distance.removeFromParent()
         self.candy.removeFromParent()
+        self.adsButton.removeFromParent()
     }
     
     
@@ -105,6 +137,15 @@ class EndMenu {
         self.cameraNode.addChild(homeButton)
     }
     
+    private func createAdsButton() {
+        if adsView {
+            adsButton.name = "adsButton"
+            adsButton.zPosition = 22
+            adsButton.setScale(2.0)
+            adsButton.texture?.filteringMode = .nearest
+            self.cameraNode.addChild(adsButton)
+        }
+    }
     
     private func createDistance() {
         distance.name = "distancia"

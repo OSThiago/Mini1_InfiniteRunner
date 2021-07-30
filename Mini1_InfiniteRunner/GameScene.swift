@@ -156,7 +156,6 @@ class GameScene: SKScene {
             let generator = UIImpactFeedbackGenerator()
             generator.impactOccurred()
             ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene)
-        
         case "soundButton":
             let generator = UIImpactFeedbackGenerator()
             generator.impactOccurred()
@@ -171,8 +170,6 @@ class GameScene: SKScene {
                 Sounds.shared.pause()
                 MainMenuScene.flag = true
             }
-            
-            
         case "homeButton":
             let generator = UIImpactFeedbackGenerator()
             generator.impactOccurred()
@@ -181,6 +178,16 @@ class GameScene: SKScene {
             let generator = UIImpactFeedbackGenerator()
             generator.impactOccurred()
             ActionManage.shared.sceneTransition(self, toScene: .GameScene)
+        case "adsButton":
+            let generator = UIImpactFeedbackGenerator()
+            generator.impactOccurred()
+            self.endMenu.adsView = false
+            self.scene?.view?.isPaused = false
+
+            // COLOCAR ADS AQUI
+            
+            endMenu.revive(hud: self.hud, player: self.player)
+            
         default:
             break
         }

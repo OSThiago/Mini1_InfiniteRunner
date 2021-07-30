@@ -41,8 +41,11 @@ extension GameScene: SKPhysicsContactDelegate{
                     self.endCameraPosition()
                 }
                 
-                let sequence = SKAction.sequence([removeHUD,gameOverHUD])
+                let removeEnemy = SKAction.run {
+                    contact.bodyB.node?.removeFromParent()
+                }
                 
+                let sequence = SKAction.sequence([removeHUD,removeEnemy,gameOverHUD])
                 self.run(sequence)
                 //Enviar as pontuações de doces para o gameCenter
                 
@@ -50,6 +53,8 @@ extension GameScene: SKPhysicsContactDelegate{
                 GameScene.sharedGVC.candyCollectedInOneGame = 0
                 GameScene.sharedGVC.distanceReachedInOneGame = 0
                 //GameScene.sharedGVC.candyCollectedInOneGame = countCandy
+                
+                
             }
             
             if (contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "player"){
@@ -76,7 +81,11 @@ extension GameScene: SKPhysicsContactDelegate{
                     self.endCameraPosition()
                 }
                 
-                let sequence = SKAction.sequence([removeHUD,gameOverHUD])
+                let removeEnemy = SKAction.run {
+                    contact.bodyB.node?.removeFromParent()
+                }
+                
+                let sequence = SKAction.sequence([removeHUD,removeEnemy,gameOverHUD])
                 
                 self.run(sequence)
                 //Enviar as pontuações de doces para o gameCenter
