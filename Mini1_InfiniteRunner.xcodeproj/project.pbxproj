@@ -161,8 +161,6 @@
 				9E7F7AA9269D00B90062CC06 /* Core */,
 				9E7F7AA1269CFFE10062CC06 /* Assets.xcassets */,
 				9E7F7AA3269CFFE10062CC06 /* Info.plist */,
-				9C198EDF26B23F7A00254DEC /* Sounds.swift */,
-				9C02AE3D26B434DF00ADF19E /* Hybris-Bridging-Header.h */,
 			);
 			path = Mini1_InfiniteRunner;
 			sourceTree = "<group>";
@@ -218,6 +216,7 @@
 		9E7F7AAD269D01960062CC06 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				9C198EDF26B23F7A00254DEC /* Sounds.swift */,
 				9E7F7AAF269D0F060062CC06 /* Player.swift */,
 				9ED45EBD26AB8032002B33F5 /* Enemy.swift */,
 				9ED45EC526ADDDE7002B33F5 /* Grounds.swift */,
@@ -229,6 +228,7 @@
 		9E906A5726A1D7D50026B7A7 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				9C02AE3D26B434DF00ADF19E /* Hybris-Bridging-Header.h */,
 				9E7F7A94269CFFDE0062CC06 /* AppDelegate.swift */,
 				9E7F7A96269CFFDE0062CC06 /* GameScene.sks */,
 				9E7F7A98269CFFDE0062CC06 /* Actions.sks */,
