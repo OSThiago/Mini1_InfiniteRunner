@@ -39,6 +39,7 @@ class MainMenuScene: SKScene{
         
         // Adicionado as imagens na cena
         //startMenu.CreatebackGroundHUD()
+    
        
         if !MainMenuScene.flag{
             /*
@@ -79,6 +80,8 @@ class MainMenuScene: SKScene{
                     case "playButton":
                         if node.contains(touch.location(in: self)){
                             Sounds.shared.pause()
+                            
+                           
                             ActionManage.shared.sceneTransition(self, toScene: .GameScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
                             // Vibração
                             let generator = UIImpactFeedbackGenerator()
@@ -118,6 +121,8 @@ class MainMenuScene: SKScene{
                         if node.contains(touch.location(in: self)){
                             //implementar o game center ao tocar ak
                             print("Game center")
+                            //MARCAO FEZ
+                            (self.view?.window?.rootViewController as! GameViewController).showAds()
                             
                             guard let gameViewController = self.view?.window?.rootViewController as? GameViewController else {
                                 return
@@ -191,6 +196,8 @@ class MainMenuScene: SKScene{
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+   
     
     
 }

@@ -10,7 +10,8 @@ import SpriteKit
 import GameplayKit
 import GameKit
 
-class GameViewController: UIViewController{
+class GameViewController: UIViewController, CHBRewardedDelegate, CHBInterstitialDelegate{
+
     
     var gameCenterEnabled: Bool = false
     
@@ -23,6 +24,9 @@ class GameViewController: UIViewController{
 
     static var teste = CGSize()
     
+    var ads: CHBRewarded?
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +38,9 @@ class GameViewController: UIViewController{
             //print(view.frame.size)
             menu.scaleMode = .resizeFill
             view.presentScene(menu)
+            
+            ads = CHBRewarded(location: CBLocationDefault, delegate: self)
+            ads?.cache()
             
             self.authenticatePlayer()
         }
@@ -55,6 +62,17 @@ class GameViewController: UIViewController{
         present(viewControler, animated: true, completion: nil)
     }*/
     
+    func showAds(){
+        if ((ads?.isCached) != nil){
+           ads?.show(from: self)
+        }
+    }
+    
+    func didDismissAd(_ event: CHBDismissEvent) {
+        //colocar para continuar o jogo
+        event.ad.cache()
+    }
+    
     
     //MARK: - FUNÇÃO PARA AUTENTICAR O JOGADOR
     func authenticatePlayer(){
@@ -74,9 +92,11 @@ class GameViewController: UIViewController{
     //MARK: - FUNÇÃO PARA MANDAR O PLACAR PARA O GAMECENTER
     func callGameCenter(_ sender: Any){
         highCandyScore(number: candyCollectedInOneGame)
-        allCandiesCollected(number: totalCandyCollectedScore)
+        //allCandiesCollected(number: totalCandyCollectedScore)
         highDistanceScore(number: distanceReachedInOneGame)
     }
+    
+    
     
     //MARK: - FUNÇÃO PARA SALVAR O PLACAR MAIS ALTO
     func highCandyScore(number: Int){
@@ -89,6 +109,8 @@ class GameViewController: UIViewController{
         }
     }
     
+    
+    
     //MARK: - FUNÇÃO PARA SALVAR A DISTANCIA MAIS ALTA
     func highDistanceScore(number: Float){
         if GKLocalPlayer.local.isAuthenticated{
@@ -100,10 +122,26 @@ class GameViewController: UIViewController{
             
         }
     }
-    
+    /*
     //MARK: - FUNÇÃO PARA SALVAR O TOTAL DE DOCES COLETADOS
     func allCandiesCollected(number: Int){
         if GKLocalPlayer.local.isAuthenticated{
+            UserDefaults.standard.integer(forKey: "highCandyCollectedScore")
+
+            //let defaults = UserDefaults.standard
+            defaults.set(number, forKey: "highCandyCollectedScore")
+            defaults.synchronize()
+            
+            print("testando", defaults.object(forKey: "highCandyCollectedScore"))
+
+        
+            let a = GKLeaderboard.loadLeaderboards(IDs: ["com.team10.Mini1.TotalCandies"]){error,void  in
+                if let error = error{
+                    print("nada")
+                }else{}
+            }
+            print("teste do a", a)
+                
             GKLeaderboard.submitScore(number, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.team10.Mini1.TotalCandies"]){error in
                 if let error = error{
                     print(error.localizedDescription)
@@ -111,7 +149,7 @@ class GameViewController: UIViewController{
             }
              
         }
-    }
+    }*/
     
     
     //MARK: - FUNÇÃO PARA CHAMAR OS LEADERBOARDS

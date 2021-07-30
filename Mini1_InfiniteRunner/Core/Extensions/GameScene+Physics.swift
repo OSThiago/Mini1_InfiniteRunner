@@ -41,13 +41,20 @@ extension GameScene: SKPhysicsContactDelegate{
                     self.endCameraPosition()
                 }
                 
-                let sequence = SKAction.sequence([removeHUD,gameOverHUD])
+                let removeEnemy = SKAction.run {
+                    contact.bodyB.node?.removeFromParent()
+                }
                 
+                let sequence = SKAction.sequence([removeHUD,removeEnemy,gameOverHUD])
                 self.run(sequence)
                 //Enviar as pontuações de doces para o gameCenter
                 
                 GameScene.sharedGVC.callGameCenter(self)
-                GameScene.sharedGVC.candyCollectedInOneGame = countCandy
+                GameScene.sharedGVC.candyCollectedInOneGame = 0
+                GameScene.sharedGVC.distanceReachedInOneGame = 0
+                //GameScene.sharedGVC.candyCollectedInOneGame = countCandy
+                
+                
             }
             
             if (contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "player"){
@@ -74,13 +81,19 @@ extension GameScene: SKPhysicsContactDelegate{
                     self.endCameraPosition()
                 }
                 
-                let sequence = SKAction.sequence([removeHUD,gameOverHUD])
+                let removeEnemy = SKAction.run {
+                    contact.bodyB.node?.removeFromParent()
+                }
+                
+                let sequence = SKAction.sequence([removeHUD,removeEnemy,gameOverHUD])
                 
                 self.run(sequence)
                 //Enviar as pontuações de doces para o gameCenter
                 
                 GameScene.sharedGVC.callGameCenter(self)
-                GameScene.sharedGVC.candyCollectedInOneGame = countCandy
+                GameScene.sharedGVC.candyCollectedInOneGame = 0
+                GameScene.sharedGVC.distanceReachedInOneGame = 0
+                //GameScene.sharedGVC.candyCollectedInOneGame = countCandy
                 
             
                 
@@ -119,7 +132,6 @@ extension GameScene: SKPhysicsContactDelegate{
             
             // HUD
             self.countCandy += 1
-            //self.countLabel.text = "\(self.countCandy)"
             self.hud.incrementCandyLabel(count: self.countCandy)
             
             //Contador de doces
