@@ -10,7 +10,8 @@ import SpriteKit
 import GameplayKit
 import GameKit
 
-class GameViewController: UIViewController{
+class GameViewController: UIViewController, CHBRewardedDelegate, CHBInterstitialDelegate{
+
     
     var gameCenterEnabled: Bool = false
     
@@ -23,7 +24,8 @@ class GameViewController: UIViewController{
 
     static var teste = CGSize()
     
-    let defaults = UserDefaults.standard
+    var ads: CHBRewarded?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,9 @@ class GameViewController: UIViewController{
             //print(view.frame.size)
             menu.scaleMode = .resizeFill
             view.presentScene(menu)
+            
+            ads = CHBRewarded(location: CBLocationDefault, delegate: self)
+            ads?.cache()
             
             self.authenticatePlayer()
         }
@@ -56,6 +61,17 @@ class GameViewController: UIViewController{
         viewControler.gameCenterDelegate = self
         present(viewControler, animated: true, completion: nil)
     }*/
+    
+    func showAds(){
+        if ((ads?.isCached) != nil){
+           ads?.show(from: self)
+        }
+    }
+    
+    func didDismissAd(_ event: CHBDismissEvent) {
+        //colocar para continuar o jogo
+        event.ad.cache()
+    }
     
     
     //MARK: - FUNÇÃO PARA AUTENTICAR O JOGADOR

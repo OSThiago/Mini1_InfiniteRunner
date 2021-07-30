@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		27732D4926AE01090013654F /* GameScene+Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27732D4826AE01090013654F /* GameScene+Camera.swift */; };
 		94E6D59526ADD7E900B82E17 /* GameScene+Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E6D59426ADD7E900B82E17 /* GameScene+Ground.swift */; };
+		9C02AE3026B3A44000ADF19E /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C02AE2F26B3A44000ADF19E /* Chartboost.framework */; };
+		9C02AE3226B3A49E00ADF19E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C02AE3126B3A49E00ADF19E /* StoreKit.framework */; };
+		9C02AE3426B3A4E300ADF19E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C02AE3326B3A4E300ADF19E /* Foundation.framework */; };
+		9C02AE3626B3A4F700ADF19E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C02AE3526B3A4F700ADF19E /* CoreGraphics.framework */; };
+		9C02AE3826B3A50C00ADF19E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C02AE3726B3A50C00ADF19E /* WebKit.framework */; };
+		9C02AE3A26B3A52000ADF19E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C02AE3926B3A52000ADF19E /* UIKit.framework */; };
 		9C05885026A209A50014AA23 /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C05884F26A209A50014AA23 /* MainMenuScene.swift */; };
 		9C05885226A209D20014AA23 /* ActionManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C05885126A209D20014AA23 /* ActionManage.swift */; };
 		9C05885526A215C70014AA23 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C05885426A215C70014AA23 /* GameKit.framework */; };
@@ -45,6 +51,13 @@
 /* Begin PBXFileReference section */
 		27732D4826AE01090013654F /* GameScene+Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Camera.swift"; sourceTree = "<group>"; };
 		94E6D59426ADD7E900B82E17 /* GameScene+Ground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Ground.swift"; sourceTree = "<group>"; };
+		9C02AE2F26B3A44000ADF19E /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
+		9C02AE3126B3A49E00ADF19E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		9C02AE3326B3A4E300ADF19E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9C02AE3526B3A4F700ADF19E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9C02AE3726B3A50C00ADF19E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		9C02AE3926B3A52000ADF19E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9C02AE3D26B434DF00ADF19E /* Hybris-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hybris-Bridging-Header.h"; sourceTree = "<group>"; };
 		9C05884F26A209A50014AA23 /* MainMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
 		9C05885126A209D20014AA23 /* ActionManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionManage.swift; sourceTree = "<group>"; };
 		9C05885426A215C70014AA23 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
@@ -85,7 +98,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C02AE3226B3A49E00ADF19E /* StoreKit.framework in Frameworks */,
 				9C05885526A215C70014AA23 /* GameKit.framework in Frameworks */,
+				9C02AE3826B3A50C00ADF19E /* WebKit.framework in Frameworks */,
+				9C02AE3026B3A44000ADF19E /* Chartboost.framework in Frameworks */,
+				9C02AE3626B3A4F700ADF19E /* CoreGraphics.framework in Frameworks */,
+				9C02AE3A26B3A52000ADF19E /* UIKit.framework in Frameworks */,
+				9C02AE3426B3A4E300ADF19E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +122,11 @@
 		9C05885326A215C70014AA23 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9C02AE3926B3A52000ADF19E /* UIKit.framework */,
+				9C02AE3726B3A50C00ADF19E /* WebKit.framework */,
+				9C02AE3526B3A4F700ADF19E /* CoreGraphics.framework */,
+				9C02AE3326B3A4E300ADF19E /* Foundation.framework */,
+				9C02AE3126B3A49E00ADF19E /* StoreKit.framework */,
 				9C05885426A215C70014AA23 /* GameKit.framework */,
 			);
 			name = Frameworks;
@@ -128,6 +152,7 @@
 		9E7F7A93269CFFDE0062CC06 /* Mini1_InfiniteRunner */ = {
 			isa = PBXGroup;
 			children = (
+				9C02AE2F26B3A44000ADF19E /* Chartboost.framework */,
 				9E7F7A9A269CFFDE0062CC06 /* GameScene.swift */,
 				9C05885126A209D20014AA23 /* ActionManage.swift */,
 				9C05884F26A209A50014AA23 /* MainMenuScene.swift */,
@@ -137,6 +162,7 @@
 				9E7F7AA1269CFFE10062CC06 /* Assets.xcassets */,
 				9E7F7AA3269CFFE10062CC06 /* Info.plist */,
 				9C198EDF26B23F7A00254DEC /* Sounds.swift */,
+				9C02AE3D26B434DF00ADF19E /* Hybris-Bridging-Header.h */,
 			);
 			path = Mini1_InfiniteRunner;
 			sourceTree = "<group>";
@@ -454,6 +480,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H77RA5JQW6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Mini1_InfiniteRunner",
+				);
 				INFOPLIST_FILE = Mini1_InfiniteRunner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -461,6 +491,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.team10.Mini1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/douguer/Documents/Mini1_InfiniteRunner/Mini1_InfiniteRunner/Hybris-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -473,6 +504,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H77RA5JQW6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Mini1_InfiniteRunner",
+				);
 				INFOPLIST_FILE = Mini1_InfiniteRunner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -480,6 +515,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.team10.Mini1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/douguer/Documents/Mini1_InfiniteRunner/Mini1_InfiniteRunner/Hybris-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
