@@ -21,6 +21,7 @@ class HUD {
     let countCandyLabel: SKLabelNode
     let metersLabel: SKLabelNode
     var meters: Int
+    var pause: Bool
     
     
     init(view: SKScene, camera: SKCameraNode){
@@ -49,24 +50,33 @@ class HUD {
         // Contadores
         self.meters = 0
         
+        // verificador de pause
+        self.pause = false
+        
     }
     
     func pauseGame() {
-        let playAction = SKAction.run {
-            self.addHudPause()
-            //self.addMainMenuButton()
-            //self.addPlayButtom()
+        if !pause{
+            pause = true
+            let playAction = SKAction.run {
+                self.addHudPause()
+                //self.addMainMenuButton()
+                //self.addPlayButtom()
+            }
+            let pauseAction = SKAction.run {
+                self.Gameview.scene?.view?.isPaused = true
+            }
+            let sequence = SKAction.sequence([playAction,pauseAction])
+            
+            Gameview.run(sequence)
         }
-        let pauseAction = SKAction.run {
-            self.Gameview.scene?.view?.isPaused = true
-        }
-        let sequence = SKAction.sequence([playAction,pauseAction])
-        Gameview.run(sequence)
+        
     }
     
     func playGame() {
         Gameview.scene?.view?.isPaused = false
         removePauseHud()
+        pause = false
     }
     
     //MARK:- PAUSE
