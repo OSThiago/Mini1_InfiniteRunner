@@ -64,6 +64,7 @@ class MainMenuScene: SKScene{
         startMenu.createPlayButtom()
         startMenu.createGameCenterButtom()
         startMenu.createMusicButtom()
+        startMenu.createCoruja()
     
     }
     
