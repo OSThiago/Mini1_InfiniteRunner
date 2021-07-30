@@ -152,6 +152,7 @@
 		9E7F7A93269CFFDE0062CC06 /* Mini1_InfiniteRunner */ = {
 			isa = PBXGroup;
 			children = (
+				9C02AE3D26B434DF00ADF19E /* Hybris-Bridging-Header.h */,
 				9C02AE2F26B3A44000ADF19E /* Chartboost.framework */,
 				9E7F7A9A269CFFDE0062CC06 /* GameScene.swift */,
 				9C05885126A209D20014AA23 /* ActionManage.swift */,
@@ -228,7 +229,6 @@
 		9E906A5726A1D7D50026B7A7 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				9C02AE3D26B434DF00ADF19E /* Hybris-Bridging-Header.h */,
 				9E7F7A94269CFFDE0062CC06 /* AppDelegate.swift */,
 				9E7F7A96269CFFDE0062CC06 /* GameScene.sks */,
 				9E7F7A98269CFFDE0062CC06 /* Actions.sks */,
@@ -491,7 +491,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.team10.Mini1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Mini1_InfiniteRunner/Mini1_InfiniteRunner/Hybris-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Hybris-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -515,7 +515,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.team10.Mini1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Mini1_InfiniteRunner/Mini1_InfiniteRunner/Hybris-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Hybris-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
