@@ -139,12 +139,13 @@ class HUD {
         self.meters
     }
     
+    /* N ESTÁ SENDO CHAMADO, OPCIONAL, TESTES.
     func clearMeters() {
         //self.meters = 0
         self.metersLabel.text = "\(self.meters)"
         // mandar para a GameCenter
         // GameScene.sharedGVC.distanceReachedInOneGame = 0
-    }
+    }*/
     
 }
 

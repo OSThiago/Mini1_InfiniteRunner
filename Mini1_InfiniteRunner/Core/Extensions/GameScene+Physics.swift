@@ -47,6 +47,8 @@ extension GameScene: SKPhysicsContactDelegate{
                 //Enviar as pontuações de doces para o gameCenter
                 
                 GameScene.sharedGVC.callGameCenter(self)
+                GameScene.sharedGVC.candyCollectedInOneGame = 0
+                GameScene.sharedGVC.distanceReachedInOneGame = 0
                 //GameScene.sharedGVC.candyCollectedInOneGame = countCandy
             }
             
@@ -80,6 +82,8 @@ extension GameScene: SKPhysicsContactDelegate{
                 //Enviar as pontuações de doces para o gameCenter
                 
                 GameScene.sharedGVC.callGameCenter(self)
+                GameScene.sharedGVC.candyCollectedInOneGame = 0
+                GameScene.sharedGVC.distanceReachedInOneGame = 0
                 //GameScene.sharedGVC.candyCollectedInOneGame = countCandy
                 
             
@@ -119,7 +123,6 @@ extension GameScene: SKPhysicsContactDelegate{
             
             // HUD
             self.countCandy += 1
-            //self.countLabel.text = "\(self.countCandy)"
             self.hud.incrementCandyLabel(count: self.countCandy)
             
             //Contador de doces
