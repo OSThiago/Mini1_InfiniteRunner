@@ -121,8 +121,9 @@ class MainMenuScene: SKScene{
                         if node.contains(touch.location(in: self)){
                             //implementar o game center ao tocar ak
                             print("Game center")
+                            
                             //MARCAO FEZ
-                            (self.view?.window?.rootViewController as! GameViewController).showAds()
+//                            (self.view?.window?.rootViewController as! GameViewController).showAds()
                             
                             guard let gameViewController = self.view?.window?.rootViewController as? GameViewController else {
                                 return

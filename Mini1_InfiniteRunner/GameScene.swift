@@ -102,11 +102,8 @@ class GameScene: SKScene {
         }else{
             Sounds.shared.pause()
         }*/
-        
-        
-        
     }
-
+    
     
     
     
@@ -179,19 +176,38 @@ class GameScene: SKScene {
             generator.impactOccurred()
             ActionManage.shared.sceneTransition(self, toScene: .GameScene)
         case "adsButton":
+            // COLOCAR ADS AQUI
             let generator = UIImpactFeedbackGenerator()
             generator.impactOccurred()
-            self.endMenu.adsView = false
-            self.scene?.view?.isPaused = false
-
-            // COLOCAR ADS AQUI
             
+            //self.scene?.view?.isPaused = false
+            hud.pauseGame()
+            
+            (self.view?.window?.rootViewController as! GameViewController).showAds()
+            self.endMenu.adsView = true
+            
+            //self.scene?.view?.isPaused = true
+            hud.playGame()
             endMenu.revive(hud: self.hud, player: self.player)
             
         default:
             break
         }
     }
+    
+    /*
+    func didDismissAd(_ event: CHBDismissEvent) {
+        //colocar para continuar o jogo
+        event.ad.cache()/*
+        let generator = UIImpactFeedbackGenerator()
+        generator.impactOccurred()
+        self.endMenu.adsView = false
+        self.scene?.view?.isPaused = false
+        endMenu.revive(hud: self.hud, player: self.player)*/
+    }*/
+
+    
+    
     
     
     override func update(_ currentTime: TimeInterval) {

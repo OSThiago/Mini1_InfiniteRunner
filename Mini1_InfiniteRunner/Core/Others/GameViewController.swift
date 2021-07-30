@@ -24,6 +24,8 @@ class GameViewController: UIViewController, CHBRewardedDelegate, CHBInterstitial
 
     static var teste = CGSize()
     
+    static var shared = GameScene(size: teste)
+    
     var ads: CHBRewarded?
 
     
@@ -71,6 +73,11 @@ class GameViewController: UIViewController, CHBRewardedDelegate, CHBInterstitial
     func didDismissAd(_ event: CHBDismissEvent) {
         //colocar para continuar o jogo
         event.ad.cache()
+        //GameViewController.shared.scene?.view?.isPaused = false
+        //GameViewController.shared.hud.playGame()
+        //GameViewController.shared.endMenu.revive(hud: GameViewController.shared.hud, player: GameViewController.shared.player)
+        
+       
     }
     
     

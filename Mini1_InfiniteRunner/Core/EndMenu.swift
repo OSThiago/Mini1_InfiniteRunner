@@ -75,6 +75,9 @@ class EndMenu {
     
     func revive(hud: HUD, player: Player) {
         
+//        let aids = SKAction.run {
+//            (self.Gameview.view?.window?.rootViewController as! GameViewController).showAds()
+//        }
         
         // Voltar o player na tela
         let revivePlaye = SKAction.run {
