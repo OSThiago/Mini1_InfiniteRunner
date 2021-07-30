@@ -81,22 +81,64 @@ class GameViewController: UIViewController{
     //MARK: - FUNÇÃO PARA SALVAR O PLACAR MAIS ALTO
     func highCandyScore(number: Int){
         if GKLocalPlayer.local.isAuthenticated{
+            let defaults = UserDefaults.standard
+            defaults.set(number, forKey: "highCandyScore")
+                defaults.synchronize()
+
+            let scoreReporter = GKScore(leaderboardIdentifier: "com.team10.Mini1.CandiesCollected")
+            print("ScoreReporter: \(scoreReporter)")
+
+            scoreReporter.value = Int64(number)
+
+            let scoreArray: [GKScore] = [scoreReporter]
+
+            GKScore.report(scoreArray, withCompletionHandler: {error -> Void in
+                    if error != nil {
+                        print("error")
+                    }
+                    else{
+                        print("reported correctly")
+                    }
+                })
+            /*
             GKLeaderboard.submitScore(number, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.team10.Mini1.CandiesCollected"]){error in
                 if let error = error{
                     print(error.localizedDescription)
                 }else{}
-            }
+            }*/
         }
     }
+    
+    
     
     //MARK: - FUNÇÃO PARA SALVAR A DISTANCIA MAIS ALTA
     func highDistanceScore(number: Float){
         if GKLocalPlayer.local.isAuthenticated{
+            let defaults = UserDefaults.standard
+            defaults.set(number, forKey: "highDistanceScore")
+                defaults.synchronize()
+
+            let scoreReporter = GKScore(leaderboardIdentifier: "com.team10.Mini1.DistanceReached")
+            print("ScoreReporter: \(scoreReporter)")
+
+            scoreReporter.value = Int64(number)
+
+            let scoreArray: [GKScore] = [scoreReporter]
+
+            GKScore.report(scoreArray, withCompletionHandler: {error -> Void in
+                    if error != nil {
+                        print("error")
+                    }
+                    else{
+                        print("reported correctly")
+                    }
+                })
+            /*
             GKLeaderboard.submitScore(Int(number), context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.team10.Mini1.DistanceReached"]){error in
                 if let error = error{
                     print(error.localizedDescription)
                 }else{}
-            }
+            }*/
             
         }
     }
@@ -104,11 +146,43 @@ class GameViewController: UIViewController{
     //MARK: - FUNÇÃO PARA SALVAR O TOTAL DE DOCES COLETADOS
     func allCandiesCollected(number: Int){
         if GKLocalPlayer.local.isAuthenticated{
+           // let defaults = UserDefaults.standard
+//            defaults.set(number, forKey: "highScore")
+//                defaults.synchronize()
+//
+//                //check if user is signed in
+//
+//
+//                    print("authenticated")
+//
+//                    let scoreReporter = GKScore(leaderboardIdentifier: "com.team10.Mini1.TotalCandies")
+//                    print("ScoreReporter: \(scoreReporter)")
+//
+//                    scoreReporter.value = Int64(number)
+//
+//                    let scoreArray: [GKScore] = [scoreReporter]
+//
+//                GKScore.report(scoreArray, withCompletionHandler: {error -> Void in
+//                        if error != nil {
+//                            print("error")
+//                        }
+//                        else{
+//                            print("reported correctly")
+//                        }
+//                    })
+                
+            /*
+            GKLeaderboard.loadLeaderboards(IDs:["com.team10.Mini1.TotalCandies"]) { (fetchedLBs, error) in
+                guard let lb = fetchedLBs?.first else { return }
+                guard let endDate = lb.startDate?.addingTimeInterval(lb.duration), endDate > Date() else { return }
+                lb.submitScore(number, context: 0, player: GKLocalPlayer.local) { error in
+                }
+            }*//*
             GKLeaderboard.submitScore(number, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.team10.Mini1.TotalCandies"]){error in
                 if let error = error{
                     print(error.localizedDescription)
                 }else{}
-            }
+            }*/
              
         }
     }

@@ -47,7 +47,7 @@ extension GameScene: SKPhysicsContactDelegate{
                 //Enviar as pontuações de doces para o gameCenter
                 
                 GameScene.sharedGVC.callGameCenter(self)
-                GameScene.sharedGVC.candyCollectedInOneGame = countCandy
+                //GameScene.sharedGVC.candyCollectedInOneGame = countCandy
             }
             
             if (contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "player"){
@@ -80,7 +80,7 @@ extension GameScene: SKPhysicsContactDelegate{
                 //Enviar as pontuações de doces para o gameCenter
                 
                 GameScene.sharedGVC.callGameCenter(self)
-                GameScene.sharedGVC.candyCollectedInOneGame = countCandy
+                //GameScene.sharedGVC.candyCollectedInOneGame = countCandy
                 
             
                 
