@@ -152,6 +152,7 @@ class GameScene: SKScene {
         case "mainButton":
             let generator = UIImpactFeedbackGenerator()
             generator.impactOccurred()
+            
             ActionManage.shared.sceneTransition(self, toScene: .MainMenuScene)
         case "soundButton":
             let generator = UIImpactFeedbackGenerator()
@@ -184,6 +185,8 @@ class GameScene: SKScene {
             hud.pauseGame()
             
             (self.view?.window?.rootViewController as! GameViewController).showAds()
+            
+        
             self.endMenu.adsView = true
             
             //self.scene?.view?.isPaused = true

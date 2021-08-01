@@ -69,7 +69,7 @@ extension GameScene {
         
         
         // Movendo o player de posicao
-        let move = SKAction.moveTo(y: size.height*(heightPosition), duration: 0.3)
+        let move = SKAction.moveTo(y: size.height*(heightPosition), duration: 0.2)
         
         // Recolocando a fisica de volta para o player
         let replacePhysics = SKAction.run {

@@ -41,7 +41,6 @@ extension GameScene{
           // chamada "recursiva para atualizar a velocidade do grround"
          ground.run(sequence) {
              self.start(ground: ground)
-             print(ground)
          }
      }
     

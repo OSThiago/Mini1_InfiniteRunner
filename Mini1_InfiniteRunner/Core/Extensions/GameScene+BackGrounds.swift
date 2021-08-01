@@ -130,7 +130,12 @@ extension GameScene {
         //background.scale(to: CGSize(width: frame.size.width, height: frame.size.height*2))
         
         //teste escala
-        background.setScale(2.15)
+        
+        //aparentemente isso conserta o bug
+        background.size = CGSize(width: self.frame.width, height: self.frame.height*2.15)
+        
+        
+        //background.setScale(2.15)
         background.texture?.filteringMode = .nearest
         
         return background
