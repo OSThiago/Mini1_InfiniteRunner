@@ -230,11 +230,14 @@ class GameScene: SKScene {
 //        if !player.isAlive {
 //            self.endMenu.createhomeButton()
 //            endCameraPosition()
+        
+        
+        
 //        }
         
         
         
-        if player.position.x != size.width*0.3 { 
+        if player.position.x != size.width*0.3 {
         player.position.x = size.width*0.3
         }
         
