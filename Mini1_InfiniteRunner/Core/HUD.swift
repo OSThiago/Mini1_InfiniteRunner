@@ -73,6 +73,9 @@ class HUD {
         
     }
     
+    
+    
+    
     func playGame() {
         Gameview.scene?.view?.isPaused = false
         removePauseHud()

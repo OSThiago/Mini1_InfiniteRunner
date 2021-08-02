@@ -16,7 +16,7 @@ extension GameScene {
         
         self.hud.pumpkin.position = CGPoint(x: frame.size.width*(0.35), y: frame.size.height*(0.39))
         
-        self.hud.metersLabel.position = CGPoint(x: frame.size.width*(-0.02), y: frame.size.height*(0.355))
+        self.hud.metersLabel.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(0.355))
         
         self.hud.playButtom.position = CGPoint(x: frame.size.width*(0.0), y: frame.size.height*(-0.15))
         

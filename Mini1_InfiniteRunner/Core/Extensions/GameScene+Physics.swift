@@ -19,14 +19,18 @@ extension GameScene: SKPhysicsContactDelegate{
     
     func didBegin(_ contact: SKPhysicsContact) {
             if (contact.bodyA.node?.name == "player" && contact.bodyB.node?.name == "enemy"){
+                // Tirando o node do inimigo da tela
                 contact.bodyA.node?.removeFromParent()
                 
+                // Trocando o status
                 player.isAlive = false
                 
+                // Colocando vibracao no celular
                 let generator = UIImpactFeedbackGenerator()
                 generator.impactOccurred()
                 
                 
+                // Removendo o HUD de gameplay de tela
                 let removeHUD = SKAction.run {
                     self.hud.pumpkin.removeFromParent()
                     self.hud.pauseButtom.removeFromParent()
@@ -50,8 +54,8 @@ extension GameScene: SKPhysicsContactDelegate{
                 //Enviar as pontuações de doces para o gameCenter
                 
                 GameScene.sharedGVC.callGameCenter(self)
-                GameScene.sharedGVC.candyCollectedInOneGame = 0
-                GameScene.sharedGVC.distanceReachedInOneGame = 0
+                GameScene.sharedGVC.candyCollectedInOneGame = self.countCandy
+                //GameScene.sharedGVC.distanceReachedInOneGame = 0
                 //GameScene.sharedGVC.candyCollectedInOneGame = countCandy
                 
                 
@@ -59,14 +63,18 @@ extension GameScene: SKPhysicsContactDelegate{
             
             if (contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "player"){
                 contact.bodyB.node?.removeFromParent()
+                // Tirando o node do inimigo da tela
+                contact.bodyA.node?.removeFromParent()
                 
+                // Trocando o status
                 player.isAlive = false
                 
-                // vibracao
+                // Colocando vibracao no celular
                 let generator = UIImpactFeedbackGenerator()
                 generator.impactOccurred()
-                 
                 
+                
+                // Removendo o HUD de gameplay de tela
                 let removeHUD = SKAction.run {
                     self.hud.pumpkin.removeFromParent()
                     self.hud.pauseButtom.removeFromParent()
@@ -86,16 +94,13 @@ extension GameScene: SKPhysicsContactDelegate{
                 }
                 
                 let sequence = SKAction.sequence([removeHUD,removeEnemy,gameOverHUD])
-                
                 self.run(sequence)
                 //Enviar as pontuações de doces para o gameCenter
                 
                 GameScene.sharedGVC.callGameCenter(self)
-                GameScene.sharedGVC.candyCollectedInOneGame = 0
-                GameScene.sharedGVC.distanceReachedInOneGame = 0
+                GameScene.sharedGVC.candyCollectedInOneGame = self.countCandy
+                //GameScene.sharedGVC.distanceReachedInOneGame = 0
                 //GameScene.sharedGVC.candyCollectedInOneGame = countCandy
-                
-            
                 
             }
         

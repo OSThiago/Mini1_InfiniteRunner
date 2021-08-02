@@ -51,7 +51,7 @@ class GameScene: SKScene {
         initialGround(time: 1.9)
         
         // Adicionando o Player a cena
-        let initalPosition = CGPoint(x: size.width*0.5, y: size.height*0.7)
+        let initalPosition = CGPoint(x: size.width*0.2, y: size.height*0.7)
         
         self.addChild(player)
         self.player.position = initalPosition
@@ -177,17 +177,25 @@ class GameScene: SKScene {
             generator.impactOccurred()
             ActionManage.shared.sceneTransition(self, toScene: .GameScene)
         case "adsButton":
+            
+            
+            
             // COLOCAR ADS AQUI
             let generator = UIImpactFeedbackGenerator()
             generator.impactOccurred()
             
-            //self.scene?.view?.isPaused = false
+            //self.scene?.view?.isPaused = true
+            
+            (self.view?.window?.rootViewController as! GameViewController).showAds()
             hud.pauseGame()
+            
+            // Chamando o anuncio
+            
             
             (self.view?.window?.rootViewController as! GameViewController).showAds()
             
         
-            self.endMenu.adsView = true
+            self.endMenu.adsView = false
             
             //self.scene?.view?.isPaused = true
             hud.playGame()
@@ -226,9 +234,9 @@ class GameScene: SKScene {
         
         
         
-        if player.position.x != size.width/2{
-            player.position.x = size.width/2
-        }
+//        if player.position.x != size.width/2{
+//            player.position.x = size.width/2
+//        }
         
         
         // atualiza o seconds a cada segundo

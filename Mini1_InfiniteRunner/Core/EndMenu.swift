@@ -60,7 +60,10 @@ class EndMenu {
             self.createBackGround()
             self.createhomeButton()
             self.createReturnButton()
-            self.createAdsButton()
+            if self.adsView {
+                self.createAdsButton()
+            }
+            
             // Textos
             self.createCandyLabel(candy: candy)
             self.createMetersLabel(meters: meters)
@@ -96,6 +99,8 @@ class EndMenu {
         let removeHUD = SKAction.run {
             self.removeAll()
         }
+        
+        
         
         let sequence = SKAction.sequence([removeHUD,HUDGame, revivePlaye])
         
