@@ -51,7 +51,7 @@ class GameScene: SKScene {
         initialGround(time: 1.9)
         
         // Adicionando o Player a cena
-        let initalPosition = CGPoint(x: size.width*0.2, y: size.height*0.7)
+        let initalPosition = CGPoint(x: size.width*0.3, y: size.height*0.7)
         
         self.addChild(player)
         self.player.position = initalPosition
