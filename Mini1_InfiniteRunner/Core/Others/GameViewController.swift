@@ -129,25 +129,25 @@ class GameViewController: UIViewController, CHBRewardedDelegate, CHBInterstitial
             
         }
     }
-    /*
+    
     //MARK: - FUNÇÃO PARA SALVAR O TOTAL DE DOCES COLETADOS
     func allCandiesCollected(number: Int){
         if GKLocalPlayer.local.isAuthenticated{
             UserDefaults.standard.integer(forKey: "highCandyCollectedScore")
 
             //let defaults = UserDefaults.standard
-            defaults.set(number, forKey: "highCandyCollectedScore")
-            defaults.synchronize()
-            
-            print("testando", defaults.object(forKey: "highCandyCollectedScore"))
-
-        
-            let a = GKLeaderboard.loadLeaderboards(IDs: ["com.team10.Mini1.TotalCandies"]){error,void  in
-                if let error = error{
-                    print("nada")
-                }else{}
-            }
-            print("teste do a", a)
+//            defaults.set(number, forKey: "highCandyCollectedScore")
+//            defaults.synchronize()
+//
+//            print("testando", defaults.object(forKey: "highCandyCollectedScore"))
+//
+//
+//            let a = GKLeaderboard.loadLeaderboards(IDs: ["com.team10.Mini1.TotalCandies"]){error,void  in
+//                if let error = error{
+//                    print("nada")
+//                }else{}
+//            }
+//            print("teste do a", a)
                 
             GKLeaderboard.submitScore(number, context: 0, player: GKLocalPlayer.local, leaderboardIDs: ["com.team10.Mini1.TotalCandies"]){error in
                 if let error = error{
@@ -156,7 +156,7 @@ class GameViewController: UIViewController, CHBRewardedDelegate, CHBInterstitial
             }
              
         }
-    }*/
+    }
     
     
     //MARK: - FUNÇÃO PARA CHAMAR OS LEADERBOARDS

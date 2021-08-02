@@ -234,9 +234,9 @@ class GameScene: SKScene {
         
         
         
-//        if player.position.x != size.width/2{
-//            player.position.x = size.width/2
-//        }
+        if player.position.x != size.width*0.3 { 
+        player.position.x = size.width*0.3
+        }
         
         
         // atualiza o seconds a cada segundo
